@@ -64,4 +64,4 @@ This repo is the canonical source — edit here, commit, push. Users pull update
   conda activate modelflow_test
   ```
   or `pip install modelflowib`
-- **Manual (PDF):** see `MFMod_Python_Modelflow.pdf` in the ModelFlow repo
+- **Manual:** https://worldbank.github.io/MFMod-ModelFlow/content/introduction.html
