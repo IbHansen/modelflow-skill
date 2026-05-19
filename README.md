@@ -58,5 +58,10 @@ This repo is the canonical source — edit here, commit, push. Users pull update
 ## Related
 
 - **ModelFlow source:** https://github.com/IbHansen/modelflow2
-- **Install ModelFlow:** `conda install modelflow_test -c ibh -c conda-forge` or `pip install modelflowib`
+- **Install ModelFlow:**
+  ```
+  conda create -n modelflow_test modelflow_test -c ibh -c conda-forge
+  conda activate modelflow_test
+  ```
+  or `pip install modelflowib`
 - **Manual (PDF):** see `MFMod_Python_Modelflow.pdf` in the ModelFlow repo
