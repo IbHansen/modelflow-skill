@@ -1,6 +1,6 @@
 # ModelFlow Skill for Claude Code
 
-A [Claude Code](https://docs.claude.com/en/docs/claude-code) skill that teaches Claude how to work with the [ModelFlow](https://github.com/IbHansen/modelflow) Python framework — loading and building macro-structural models, running scenarios, estimating equations, decomposing impacts, and reporting results.
+A [Claude Code](https://docs.claude.com/en/docs/claude-code) skill that teaches Claude how to work with the [ModelFlow](https://github.com/IbHansen/modelflow2) Python framework — loading and building macro-structural models, running scenarios, estimating equations, decomposing impacts, and reporting results.
 
 Install it once and Claude will automatically use it whenever you mention ModelFlow, MFMod, or any of the related APIs (`Makemodel`, `Estimate_*`, `.mfcalc`, `.upd`, `model.modelload`, …) — across every project on your machine.
 
@@ -57,6 +57,6 @@ This repo is the canonical source — edit here, commit, push. Users pull update
 
 ## Related
 
-- **ModelFlow source:** https://github.com/IbHansen/modelflow
+- **ModelFlow source:** https://github.com/IbHansen/modelflow2
 - **Install ModelFlow:** `conda install modelflow_test -c ibh -c conda-forge` or `pip install modelflowib`
 - **Manual (PDF):** see `MFMod_Python_Modelflow.pdf` in the ModelFlow repo
