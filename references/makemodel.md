@@ -405,6 +405,8 @@ Use `record['estimator_object'].mfresult.get_html_report()` for the full single-
 | `mm.showlists` | Pretty-prints the LIST definitions. |
 | `mm.render` | Renders the markdown source (equations + prose) in a notebook. |
 | `mm.render_est` | Same as `render`, plus estimation tables inline. |
+| `mm.markdown_with_estimation` | Markdown source string with inline coefficient tables inserted after each `<estimator=…>` line. |
+| `mm.markdown_with_estimation_no_list` | Same as `markdown_with_estimation` but with `>list`/`>tlist` definition blocks stripped (used by `%%Makemymodel render_list=0`). |
 | `mm.estimation_records` | List of estimation result records (see above). |
 
 ## Aligning to historic data — `init_addfactors`
@@ -431,6 +433,158 @@ full.mmodel   # contains both blocks
 ```
 
 LIST definitions are merged. Useful for keeping a base model in one cell and scenario overrides in another.
+
+## Authoring from a Jupyter cell — the `%%Makemymodel` magic
+
+`%%Makemymodel` is the notebook-cell front end to `Makemodel`. Instead of passing model
+text to `Makemodel("""...""")` in Python, you write the markdown/LaTeX model **as the body
+of a cell**, put options on the magic line, and the magic builds a `Makemodel`, stores it
+in the notebook namespace under the name you gave, and renders it. It lives in
+`modeljupytermagic.py` and delegates all the real work to `Makemodel` / `display_model`
+from `modelconstruct_estimation.py` — so **every equation format, tag, template, and
+estimation feature above applies unchanged**. This section only covers the magic layer.
+
+### Loading
+
+The magics register via decorators that run **at import time** — there is no `%load_ext`.
+Import once per kernel:
+
+```python
+import modeljupytermagic          # registers %%Makemymodel, %latexflow, %%graphviz, ...
+```
+
+If import prints `no magic`, IPython wasn't importable when the module loaded (the whole
+block is wrapped in `try/except`); re-import inside a live IPython kernel.
+
+### Example
+
+```python
+import modeljupytermagic
+from modelestimator_new import Estimate_nls
+ls = Estimate_nls.with_defaults(input_df=df, smpl=(2002, 2018))
+```
+
+```text
+%%Makemymodel con input_df=df estimator=ls smpl="(2002, 2018)"
+A small consumption model.
+
+> <estimator=ls> LOG(C) = C(1) + C(2)*LOG(Y) + C(3)*R
+> <ident>        S = Y - C
+> <ident>        I = S - DEF
+```
+
+After the cell runs, `con` is a `Makemodel` in the namespace (name = first token on the
+line); the cell renders the markdown with inline estimation tables. `con.mmodel`,
+`con.show`, `con.draw`, `con.estimation_report()` all work as above. The magic **discards**
+the returned object (`_ = _mdmodel_impl(...)`) — grab the model **by name**, not from the
+cell output.
+
+### Line vs cell form
+
+| Form | Use |
+|---|---|
+| `%%Makemymodel name [opts]` + cell body | Build (or extend) a model from the cell's markdown/LaTeX. |
+| `%Makemymodel name [opts]` | **Re-render / rebuild an existing model** with no new content (cell is `None`) — e.g. to re-display a segmented model once all pieces are in, or re-render with different switches. |
+
+Both are backed by the same `_mdmodel_impl(line, cell)`.
+
+### The magic line — name and options
+
+`get_options()` tokenizes the line with `shlex` (POSIX):
+
+- **First token = the model name**, and the resulting `Makemodel` is stored under exactly
+  that name. Empty line → name defaults to `test`.
+- **Remaining tokens = options**, each `key=value` or a bare flag:
+  - Bare flag (`show`, `draw`, `latex`, `segment`) → `True`.
+  - `key=0` / `key=False` → `False` (this is how you turn a default-on switch **off**, e.g.
+    `render_est=0`). Bare flags only turn things *on*.
+  - It's `shlex` POSIX, so **quote values containing spaces**: `smpl="(2002, 2018)"`,
+    `caption="My model"`. Only the first `=` splits key from value.
+
+Option values that name Python objects are resolved by `_resolve_option`: first
+`ast.literal_eval(value)` (so `replacements="[('__dim','_IB')]"` and `smpl="(2010, 2019)"`
+work as literals), then a lookup **by name in the notebook namespace** (so `input_df=df`
+and `estimator=ls` resolve to live objects). If a value is neither a literal nor a known
+name, a warning is printed (`⚠️ Warning: input_df=dff not found in namespace and not a
+literal.`) and the option **silently falls back to its default** — watch for that warning.
+
+**Options mapped onto `Makemodel(...)` kwargs:**
+
+| Option | Effect |
+|---|---|
+| `input_df=NAME` | DataFrame passed to estimators for tagged equations. |
+| `estimator=NAME` / `est=NAME` | Default estimator for `<estimator>` flags (`estimator` wins; `est` is the fallback alias). |
+| `smpl="(START, END)"` | Default estimation sample; per-equation `<smpl=…>` still overrides. |
+| `replacements="[('OLD','NEW'), …]"` | String substitutions applied before parsing. |
+| `funks=NAME` | List of user functions available inside the model. |
+| `spec=markdown` \| `spec=latex` | Which renderer `display_model` uses (default `markdown`). |
+
+The magic always passes `estimator_namespace=ip.user_ns`, so `<estimator=ls>` resolves
+against the notebook namespace with no extra wiring.
+
+**Rendering / output switches** (default on except where noted):
+
+| Option | Default | Effect |
+|---|---|---|
+| `render_est` | on | Render `markdown_with_estimation` (source + inline coefficient tables). |
+| `render` | on | Used only when `render_est=0`: render plain model text (no estimation tables). |
+| `render_list` | on | Include LIST definitions in the render. `render_list=0` drops `>list`/`>tlist` blocks from the rendered markdown (estimation tables are kept). |
+| `show` | off | Also `print` the normalized FRMLs (`emodel.show`). |
+| `draw` | off | Also draw the dependency graph (suppressed when `display` is on). |
+| `latex` | off | Build a LaTeX version and open a PDF via `LatexRepo(...).pdf(pdfopen=True)`; prints `no latex` on failure. |
+| `display` | off | Verbose: render the model text, list the segments it was built from, and `print(emodel)`. |
+
+`render_list=0` renders `emodel.markdown_with_estimation_no_list` (with `render_est` on) or
+the plain `model_text_no_list` (with `render_est=0`) — in both cases the `>list`/`>tlist`
+definition blocks are dropped from the display while equations and estimation tables are
+kept.
+
+### Segmented models — one model from several cells
+
+Spread a long model across cells, giving each a segment name with `segment=<segname>`. The
+magic keeps `NAME_dict` in the namespace mapping segment → cell text, and reassembles the
+whole model on each run:
+
+```text
+%%Makemymodel npl segment=lists
+>list banks = banks : IB SOREN MARIE
+```
+
+```text
+%%Makemymodel npl segment=behavior input_df=df estimator=ls
+> <estimator=ls> LOG(LOSS__{banks}) = C(1) + C(2)*LOG(GDP)
+```
+
+```text
+%%Makemymodel npl segment=identities
+> doable NPL__{banks} = LOSS__{banks} * FACTOR__{banks}
+```
+
+- Each `segment=SEG` run stores/overwrites `NAME_dict[SEG]` with the cell.
+- **Segments whose name starts with `list` or `text` are display-only** for that cell: they
+  render and return, but their content is still stored and folded into the assembled model
+  (so you can show list tables / prose in place).
+- When building, all `list…` segments plus the current cell are concatenated, so list
+  definitions are always in scope for the equations.
+- Re-run a single segment cell to edit just that part; the model rebuilds from the full
+  `NAME_dict`. `%Makemymodel npl` (line form) rebuilds/re-renders from the accumulated
+  segments — use it after the last piece, or with `display`/`latex`.
+
+Naming segments `lists`, `behavior`, `identities` is convention; only the `list`/`text`
+*prefixes* are special.
+
+### Sibling magics
+
+`modeljupytermagic.py` registers other cell magics that share the same `get_options()` line
+parser (first token = name):
+
+| Magic | Purpose |
+|---|---|
+| `%%latexflow name` | Build from a LaTeX document via `model_latex.latextotxt` → `model.from_eq` (older path; prefer `Makemymodel`). |
+| `%%latexmodelgrab name` | Build via the dataclass `a_latex_model` (`model_latex_class`); supports `segment=`, `all`, `render`, `display`. |
+| `%%graphviz name` | Render a Graphviz graph through `model.display_graph`. |
+| `%%dataframe name` | Turn a whitespace/tab table in the cell into a DataFrame (options `t`, `melt`, `periods=`, `prefix=`, `start=`, `show`); pushes `NAME` / `NAME_melted`. Yearly data. |
+| `%%modeleviews name` | Run EViews commands from the cell (requires `pyeviews`; developmental). |
 
 ## Recipes
 
@@ -556,6 +710,15 @@ mm_tex = Makemodel(r"""
 - **LaTeX equation skipped silently** — every equation environment needs `\label{eq:...}`. Equations without a label are treated as display-only and dropped by the parser. Add a label even if you don't reference it elsewhere.
 - **`ModelSpecificationError: Some LaTeX has survived`** — a LaTeX construct didn't translate (typically a Greek letter or operator not in the conversion table). Either rewrite that part in plain notation, or extend the translation tables in `latex_to_doable` (in `modelconstruct_estimation.py`).
 - **Raw strings for LaTeX** — pass LaTeX-containing model text as `r"""..."""` so backslashes survive intact: `\Delta` would otherwise be interpreted by Python.
+
+### `%%Makemymodel` magic pitfalls
+
+- **Model not found after the cell** — the object is stored under the *first token* on the magic line, not returned. `%%Makemymodel con …` → use `con`, not the cell output.
+- **`input_df=df` "not found" warning** — option values are resolved from the notebook namespace; define `df`/`ls` in an earlier cell and check spelling. A bad name warns and falls back to the default (often `None`), which then trips `input_df is required when any equation has an <estimator=…>`.
+- **Spaces in an option value** — quote it: `smpl="(2002, 2018)"`, not `smpl=(2002, 2018)` (the space would start a new token).
+- **Turning a switch off** — use `=0` / `=False` (`render_est=0`), not just omitting a bare flag; bare flags only turn things *on*.
+- **Magics missing / `no magic` printed** — import `modeljupytermagic` inside a running IPython kernel; the decorators register only when IPython is importable.
+- **Editing one segment** — re-running a `segment=` cell overwrites just that entry in `NAME_dict`; the model reassembles from all segments, so you don't need to re-run the others.
 
 ## Related modules and skills
 
