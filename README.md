@@ -1,67 +1,72 @@
-# ModelFlow Skill for Claude Code
+# ModelFlow plugins for Claude Code
 
-A [Claude Code](https://docs.claude.com/en/docs/claude-code) skill that teaches Claude how to work with the [ModelFlow](https://github.com/IbHansen/modelflow2) Python framework — loading and building macro-structural models, running scenarios, estimating equations, decomposing impacts, and reporting results.
+[Claude Code](https://docs.claude.com/en/docs/claude-code) plugins for the
+[ModelFlow](https://github.com/IbHansen/modelflow2) Python framework, one per
+audience. This repo is a plugin marketplace named `modelflow`.
 
-Install it once and Claude will automatically use it whenever you mention ModelFlow, MFMod, or any of the related APIs (`Makemodel`, `Estimate_*`, `.mfcalc`, `.upd`, `model.modelload`, …) — across every project on your machine.
+| Plugin | For | Skills |
+| --- | --- | --- |
+| `modelflow-user` | People who run existing models (World Bank MFMod, PAK) | install, load, scenarios, results, attribution, reports, `/mf-scenario`, `/mf-compare`, `/mf-explain` |
+| `modelflow-modeller` | People who build and maintain models | equation language, FRML options, normalization, Makemodel, estimation, data, structure, solvers, import, debugging, `/mf-check-model`, `/mf-explain-error`, `/mf-new-equation`, `model-reviewer` agent |
+| `modelflow-dev` | Developers of the ModelFlow framework | architecture, conventions, design notes, ng solvers, code generation, `/mfdev-regress` |
+| `modelflow-onboarding` | People moving a model from Gekko, EViews or GAMS | planned |
+
+Each layer assumes the one below it: a ModelFlow developer also writes models,
+a model developer also runs them. Install the ones you need.
 
 ## Install
 
-```bash
-git clone https://github.com/IbHansen/modelflow-skill ~/.claude/skills/modelflow
-```
-
-On Windows (Git Bash or PowerShell):
-
-```powershell
-git clone https://github.com/IbHansen/modelflow-skill $HOME\.claude\skills\modelflow
-```
-
-That's it — Claude Code picks up the skill on its next run.
-
-## Update
-
-```bash
-cd ~/.claude/skills/modelflow && git pull
-```
-
-## What's inside
+In Claude Code:
 
 ```
-modelflow/
-├── SKILL.md                                 router — Claude reads this first
-└── references/
-    ├── installation.md                      conda / pip setup, Jupyter quirks
-    ├── usage.md                             loading models, .upd, .mfcalc, reports
-    ├── simulation-methods.md                solver options, .fix, add factors
-    ├── worldbank-onboarding.md              MFMod country models
-    ├── model-construction.md                FRML strings, .equpdate
-    ├── makemodel.md                         markdown / LaTeX model authoring
-    ├── estimation.md                        OLS, NLS, constraints, ST. clause
-    └── decomposition.md                     .dekomp, .totdif, causal tracing
+/plugin marketplace add IbHansen/modelflow-skill
+/plugin install modelflow-user@modelflow
+/plugin install modelflow-modeller@modelflow
+/plugin install modelflow-dev@modelflow
 ```
 
-`SKILL.md` is a routing table that points Claude at the right reference file for each kind of task. Claude reads the relevant file(s) before answering, so the guidance is grounded in the actual API rather than improvised from memory.
+From a local clone: `/plugin marketplace add C:\path\to\modelflow-skill`. A local
+marketplace is read from its folder, so edits take effect at the next session
+start or after `/reload-plugins` – no update step.
 
-## How it works
+Update with `/plugin marketplace update modelflow`.
 
-Claude Code looks for skills in two locations:
+## Layout
 
-1. **User-level:** `~/.claude/skills/<name>/` — available across every project
-2. **Project-level:** `<project>/.claude/skills/<name>/` — only when working in that project
+```
+.claude-plugin/marketplace.json
+plugins/
+  modelflow-user/
+    .claude-plugin/plugin.json
+    skills/<name>/SKILL.md          short, loaded when the skill triggers
+    skills/<name>/references/*.md   deeper material, read on demand
+    skills/<name>/scripts/*.py      bundled scripts for the slash commands
+  modelflow-modeller/   (+ agents/)
+  modelflow-dev/
+```
 
-Installing this repo at `~/.claude/skills/modelflow/` enables the skill globally. No further configuration is needed.
+Skill prefixes: `mf-` for the user and modeller plugins, `mfdev-` for the dev
+plugin.
 
-## Updating the skill
+## Where the older single-skill material went
 
-This repo is the canonical source — edit here, commit, push. Users pull updates with `git pull`. The skill update cadence is independent of the ModelFlow package release cadence, so typo fixes and improved examples can ship the moment they're ready.
+This repo used to be one skill (`SKILL.md` + `references/`). The reference files
+now sit with the skill they deepen:
+
+| Old file | Now |
+| --- | --- |
+| `usage.md`, `simulation-methods.md` | `modelflow-user/skills/mf-scenarios/references/` |
+| `worldbank-onboarding.md` | `modelflow-user/skills/mf-load-model/references/` |
+| `decomposition.md` | `modelflow-user/skills/mf-attribution/references/` |
+| `makemodel.md`, `model-construction.md` (→ `modify-model.md`) | `modelflow-modeller/skills/mf-build-model/references/` |
+| `estimation.md` | `modelflow-modeller/skills/mf-estimation/references/` |
+| `gams-to-makemodel.md` | `modelflow-modeller/skills/mf-import/references/` (moves to `modelflow-onboarding`) |
+| `installation.md` | install part → `mf-getting-started`; notebook JS/CSS part → `modelflow-dev/skills/mfdev-architecture/references/jupyter-display.md` |
+
+`skills.ipynb` renders every skill and reference file for reading.
 
 ## Related
 
-- **ModelFlow source:** https://github.com/IbHansen/modelflow2
-- **Install ModelFlow:**
-  ```
-  conda create -n modelflow_test modelflow_test -c ibh -c conda-forge
-  conda activate modelflow_test
-  ```
-  or `pip install modelflowib`
-- **Manual:** https://worldbank.github.io/MFMod-ModelFlow/content/introduction.html
+- ModelFlow source: https://github.com/IbHansen/modelflow2
+- Install ModelFlow: `conda create -n modelflow -c ibh -c conda-forge modelflow` or `pip install ModelFlowIb`
+- Manual: https://worldbank.github.io/MFMod-ModelFlow/content/introduction.html

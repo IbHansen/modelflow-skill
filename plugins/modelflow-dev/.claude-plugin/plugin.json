@@ -1,0 +1,12 @@
+{
+  "name": "modelflow-dev",
+  "version": "0.1.0",
+  "description": "Skills for developing the ModelFlow framework (modelflow2 repo): architecture map, ng solver pattern, solver code generation, design-note workflow and solver regression checks.",
+  "author": {
+    "name": "Ib Hansen"
+  },
+  "homepage": "https://github.com/ibhansen/modelflow2",
+  "repository": "https://github.com/IbHansen/modelflow-skill",
+  "license": "MIT",
+  "keywords": ["modelflow", "economic-models", "solvers", "numba"]
+}

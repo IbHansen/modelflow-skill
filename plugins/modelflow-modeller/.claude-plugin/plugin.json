@@ -1,0 +1,12 @@
+{
+  "name": "modelflow-modeller",
+  "version": "0.1.0",
+  "description": "Skills for building and maintaining economic models in ModelFlow: the equation language, FRML options, normalization, Makemodel and %%Makemymodel, estimation, data, model structure, solver choice and tuning, importing EViews/Gekko/GAMS models, and debugging.",
+  "author": {
+    "name": "Ib Hansen"
+  },
+  "homepage": "https://github.com/ibhansen/modelflow2",
+  "repository": "https://github.com/IbHansen/modelflow-skill",
+  "license": "MIT",
+  "keywords": ["modelflow", "economic-models", "mfmod", "econometrics", "dsl"]
+}

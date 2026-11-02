@@ -1,0 +1,12 @@
+{
+  "name": "modelflow-user",
+  "version": "0.2.0",
+  "description": "Skills for running existing ModelFlow models such as the World Bank MFMod models: installing, loading a model, defining and solving scenarios, comparing results, attribution and reports. Includes an MCP server that keeps models loaded between calls.",
+  "author": {
+    "name": "Ib Hansen"
+  },
+  "homepage": "https://github.com/ibhansen/modelflow2",
+  "repository": "https://github.com/IbHansen/modelflow-skill",
+  "license": "MIT",
+  "keywords": ["modelflow", "mfmod", "world-bank", "scenarios", "macroeconomic-models"]
+}
