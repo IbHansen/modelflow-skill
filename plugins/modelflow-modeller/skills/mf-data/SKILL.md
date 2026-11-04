@@ -83,3 +83,25 @@ res = mmodel(df, 2001, 2025)                        # reproduces the data
 ```
 
 `calc_add_factor_model` exists when the model has `<STOC>` or `<ADD>` equations.
+
+### Identities that do not hold in the data — `get_histmodel`
+
+Add factors only fix behavioural equations. If an identity does not hold in the
+data (rounding aside), the model can not reproduce history for that variable or
+anything that depends on it. Recalculate those identities in history first:
+
+1. Tag them `<IDENT>` (`<ident>` in Makemodel/`%%Makemymodel`), the same as `<>`
+   for solving.
+2. `mhist = mmodel.get_histmodel()` is a model of the `<IDENT>`/`<I>` equations
+   only (`tags=` picks other frml names). Run it over the history:
+   `df = mhist(df, start, end)`. The tagged variables now equal their identity.
+3. Check again: identities that held with the old values can stop holding once
+   their inputs are recalculated. Tag those too and repeat until nothing changes
+   (Mona 2026: 11 failing identities grew to 108 tagged, including GDP aggregates
+   that moved by < 0.1 %).
+4. Then compute the add factors (`calc_add_factor_model`, or
+   `init_addfactors` for a Makemodel) on the recalculated `df`. The model now
+   reproduces history for every variable.
+
+Values before `start` stay as in the data. Show the user the largest changes the
+hist model makes, as they change the historic data.

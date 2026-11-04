@@ -416,6 +416,8 @@ aligned_df = mm.init_addfactors(df, start=2002, end=2020, show=True, check=True)
 
 After this, `mm.mmodel(aligned_df, ...)` reproduces history exactly, and any change to a variable produces a counter-factual.
 
+This only holds if the identities hold in `df`. Identities that do not are tagged `<ident>` and recalculated first with the hist model: `df = mm.mmodel.get_histmodel()(df, start, end)`, then `init_addfactors` on that `df`. See "Identities that do not hold in the data" in the `mf-data` skill.
+
 ## Combining models — `+`
 
 Two `Makemodel` instances can be concatenated:
