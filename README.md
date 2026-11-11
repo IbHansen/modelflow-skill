@@ -15,9 +15,9 @@ audience. This repo is a plugin marketplace named `modelflow`.
 
 | Plugin | For | Skills |
 | --- | --- | --- |
-| `modelflow-user` | People who run existing models (World Bank MFMod, PAK) | install, load, scenarios, results, attribution, reports, `/mf-scenario`, `/mf-compare`, `/mf-explain` |
-| `modelflow-modeller` | People who build and maintain models | equation language, FRML options, normalization, Makemodel, estimation, data, structure, solvers, import, debugging, `/mf-check-model`, `/mf-explain-error`, `/mf-new-equation`, `model-reviewer` agent |
-| `modelflow-dev` | Developers of the ModelFlow framework | architecture, conventions, design notes, ng solvers, code generation, `/mfdev-regress` |
+| `modelflow-user` | People who run existing models (World Bank MFMod, PAK) | install, load, variable names, scenarios, results, ODE simulations, animations, attribution, reports, `/mf-scenario`, `/mf-compare`, `/mf-explain` |
+| `modelflow-modeller` | People who build and maintain models | equation language, FRML options, naming conventions, normalization, Makemodel, ODE models (Runge–Kutta), estimation, data, structure, solvers, import, debugging, `/mf-check-model`, `/mf-explain-error`, `/mf-new-equation`, `model-reviewer` agent |
+| `modelflow-dev` | Developers of the ModelFlow framework | architecture, conventions, design notes, ng solvers, code generation, the ODE preprocessor, `/mfdev-regress` |
 | `modelflow-onboarding` | People moving a model from Gekko, EViews or GAMS | planned |
 
 Each layer assumes the one below it: a ModelFlow developer also writes models,

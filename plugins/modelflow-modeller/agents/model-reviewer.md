@@ -50,7 +50,10 @@ For a `.pcim`, read the equations with
   `Z` (silently damped); `<DAMP>` on multi-LHS equations.
 - *Definitions*: a variable defined twice without `<DROP>`; a variable used but
   never defined and not plausibly exogenous (likely a typo – look for near-identical
-  names); variable names that collide with function names (`LOG`, `EXP`, `MAX`).
+  names); variable names that collide with function names (`LOG`, `EXP`, `MAX`); names ending in
+  a suffix ModelFlow generates (`_A`, `_X`, `_D`, `_FITTED`, `___RES`) for a
+  variable that is not that companion; new names that break the model's naming
+  convention (MFMod 14-character mnemonics, ADAM nomenclature – `mf-naming`).
 - *Time*: current-period references that should be lags (a large simultaneous
   core in a model meant to be recursive); `X(1)` without sign; leads in a model
   that will be solved period by period.

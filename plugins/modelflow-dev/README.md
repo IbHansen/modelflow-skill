@@ -20,6 +20,7 @@ Use it together with the repo's own `modelflow/CLAUDE.md`, which Claude Code loa
 | `mfdev-design-notes` | Write a design note before code; template and review checklist |
 | `mfdev-ng-solvers` | Add or change a solver in `modelsolver_ng.py` |
 | `mfdev-codegen` | The generated solver source: `gen_2d`, `parts`, jit, transpile cache |
+| `mfdev-ode` | The ODE preprocessor `modelode.py`: pipeline, overlay rule, adding integrators, tests |
 | `mfdev-regress` | `/mfdev-regress <solver> [reference]` – compare a solver with a reference on PAK and other test models |
 
 ## Planned

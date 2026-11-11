@@ -69,7 +69,10 @@ pass `eq_start`, `eq_end`, `comment_start` and a `transform` function to
 
 Common translation problems: an EViews function with no ModelFlow equivalent
 (write it as a user function, `mf-dsl`), lags written without a sign, and
-variable names that collide with function names. `replacements=[(old, new)]` on
+variable names that collide with function names. How names change on import
+(upper case, GAMS indices → `NAME__ELEM`, Gekko J/D/Z → `_A`/`_D`/`_X`, FRB/US
+`_AERR`) and the source models' naming conventions (ADAM, MAKRO, FRB/US, MFMod)
+are in `mf-naming`. `replacements=[(old, new)]` on
 `Makemodel` fixes text before parsing.
 
 ## GAMS models

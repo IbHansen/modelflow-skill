@@ -26,7 +26,8 @@ that they build, and show what they generate.
 2. **Write it** in markdown model form (`>` lines) with the conventions of
    `mf-dsl`: `DLOG`/`DIFF` allowed, signed lags `X(-1)`, leads `X(+1)`,
    coefficients `c(1)`, `c(2)` for estimation. Use the model's existing variable
-   names when they are known (read the model or ask); upper case.
+   names when they are known (read the model or ask); upper case. A new name
+   follows the model's convention and avoids reserved suffixes (`mf-naming`).
    Error-correction template:
    `dlog(X) = c(1)*dlog(Y) + c(2)*(log(X(-1)) - log(Y(-1)) - c(3))`
 3. **Check it builds**, when ModelFlow is available:

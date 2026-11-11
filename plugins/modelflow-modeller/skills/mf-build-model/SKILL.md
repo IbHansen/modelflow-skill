@@ -190,6 +190,9 @@ mmodel2, df2 = model.modelload('mymodel.pcim', run=1)
 
 Check a new model with `/mf-check-model` before using it.
 
+A model written as differential equations (laws of motion, `<ODE>`) is built with
+`modelode.ode_makemodel` / `ode_transform`: see `mf-ode`.
+
 ## Deeper reference
 
 - `references/makemodel.md`: the full `Makemodel` guide – LaTeX input, every

@@ -11,19 +11,19 @@
       "name": "modelflow-user",
       "source": "./plugins/modelflow-user",
       "description": "For people who run existing ModelFlow models such as the World Bank MFMod models: install, load, scenarios, results, attribution and reports.",
-      "version": "0.2.0"
+      "version": "0.4.0"
     },
     {
       "name": "modelflow-dev",
       "source": "./plugins/modelflow-dev",
       "description": "For developers of the ModelFlow framework itself: architecture, ng solvers, code generation, design notes and solver regression.",
-      "version": "0.1.0"
+      "version": "0.2.0"
     },
     {
       "name": "modelflow-modeller",
       "source": "./plugins/modelflow-modeller",
       "description": "For people who build and maintain models in ModelFlow: equations, FRML options, Makemodel, estimation, data, structure, solver tuning, importing and debugging.",
-      "version": "0.1.0"
+      "version": "0.3.0"
     }
   ]
 }

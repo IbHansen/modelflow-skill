@@ -1,6 +1,6 @@
 {
   "name": "modelflow-user",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "description": "Skills for running existing ModelFlow models such as the World Bank MFMod models: installing, loading a model, defining and solving scenarios, comparing results, attribution and reports. Includes an MCP server that keeps models loaded between calls.",
   "author": {
     "name": "Ib Hansen"

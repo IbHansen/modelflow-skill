@@ -34,7 +34,7 @@ them or share the model file.
 
 ## Explain
 
-1. **What it is**: description, unit from the mnemonic ending (`KN` real, `CN`
+1. **What it is**: description (the authority), unit from the mnemonic ending (`KN` real, `CN`
    nominal, `XN` deflator or rate, `CD` US$), exogenous or endogenous.
 2. **How it is determined**: the equation in words – the main drivers and their
    lags, the form (log-linear, error correction, identity). Name the add factor
@@ -42,6 +42,9 @@ them or share the model file.
 3. **Where it goes**: the equations that use it.
 4. **How to move it in a scenario**: exogenous → `upd`; endogenous with `_X` →
    `fix` and change `_X`; otherwise through its drivers or add factor.
+
+Say where the meaning comes from: the description, or only the name pattern
+(`mf-variable-names`) when the model has no description.
 
 Keep it short. For a chart of the chain, suggest `mpak.PAKNECONPRVTKN.tracepre(up=2)`
 (needs graphviz).

@@ -44,6 +44,9 @@ the unit. `PAKNYGDPMKTPKN` = Pakistan, GDP at market prices, real (constant loca
 currency). Common unit endings: `KN` real, `CN` nominal local currency, `XN`
 deflator, `CD` current US$. Companion variables of behavioural equations:
 `_A` add factor, `_X` fixed value, `_D` fix dummy, `_FITTED` fitted value.
+Many names do not follow the pattern, and the pattern only suggests a meaning:
+the description confirms it. `mf-variable-names` has the full rules, FRB/US
+names and a parser that checks names against a `.pcim`.
 
 ## Finding variables
 

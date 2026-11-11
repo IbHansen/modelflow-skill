@@ -47,6 +47,9 @@ model(Parquet_Mixin, Zip_Mixin, Json_Mixin, Model_help_Mixin, Solver_Mixin,
 Find a method's owner with `grep -n "^class \|    def <name>" modelclass.py`; the
 class whose line range contains the method owns it.
 
+Outside the class: `modelode.py`, the ODE → Runge–Kutta preprocessor, is a
+standalone overlay that nothing in the core imports (`mfdev-ode`).
+
 ## Solver dispatch (`Solver_Mixin.__call__`)
 
 1. Pick `solverguess` from the model's shape: leads (`maxlead >= 1`) give a stacked
@@ -73,7 +76,7 @@ other work.
 ## Tests and data
 
 - No pytest suite. Checks are `#%%` cell scripts in `modelflow/modeltest/`
-  (`ng_dispatch_test.py`, `speedtest.py`, `jitfile_test.py`, `fixedperiod/`).
+  (`ng_dispatch_test.py`, `speedtest.py`, `jitfile_test.py`, `fixedperiod/`, `odetest/`).
 - Test models: `modeltest/data/pak.pcim` (MFMod Pakistan) and
   `modeltest/data/frbusmcetest.pcim` (FRB/US with model-consistent expectations).
 - See `mfdev-regress` for comparing a solver change.

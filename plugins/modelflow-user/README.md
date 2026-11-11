@@ -21,6 +21,9 @@ and explaining results, and making tables and charts.
 | `mf-results` | Differences from baseline, `keep_plot`, getting numbers out |
 | `mf-attribution` | `totdif` (which shock) and `dekomp` (which input) |
 | `mf-reports` | `mpak.table`, `mpak.plot`, combining, PDF/LaTeX/HTML, stored reports |
+| `mf-variable-names` | Read and check names: MFMod mnemonics, FRB/US names, ModelFlow suffixes; parser script |
+| `mf-ode-simulate` | Run ODE models (orbits, projectiles): the dataframe, events, checking the time step |
+| `mf-animate` | Animations of results in a notebook: 2-D, 3-D, scenarios unfolding; size and saving |
 | `mf-troubleshoot-run` | No effect, not converged, NaN, results that changed |
 | `/mf-scenario` | Turn a described shock into a scenario and run it (bundled script) |
 | `/mf-compare` | Compare scenarios: table, chart, short reading |
