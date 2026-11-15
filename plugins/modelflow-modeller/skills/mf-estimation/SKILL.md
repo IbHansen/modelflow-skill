@@ -95,6 +95,35 @@ option or `estimator_kwargs={'param_names': [...]}`) allows `lambda(1)`,
   solved value, so errors accumulate. With add factors set to the residuals,
   solved `CONS` is actual and `CONS_FITTED` equals the static fit again.
 
+Worked example, two estimated equations in FRML form (run 2026-11-15 on
+synthetic data):
+
+```python
+text = '''
+FRML <est=nls_lmfit, stoc, fit, smpl=1995 2020> dlog(cons) = c(1)*dlog(y) + c(2)*(log(cons(-1)) - log(y(-1)) - c(3)) $
+FRML <est=ols,       stoc, fit, smpl=1995 2020> inv = c(1) + c(2)*y $
+'''
+mm = Makemodel(text, eq_start='FRML', eq_end='$', input_df=df)
+
+for rec in mm.estimation_records:          # 1. static fit, left-hand-side units
+    est = rec['estimator_object']
+    print(est.endo_var, est.af_df, est.residuals_df)
+
+mfit = mm.mmodel                           # 2. static fit in levels
+base = mfit.insertModelVar(df)
+r = mfit(base, 1995, 2020, solver='res_ng')
+r[['CONS_FITTED', 'INV_FITTED']]
+```
+
+`mm.normal_fit` holds the generated fitted equations (rounded):
+
+```
+CONS_FITTED = CONS(-1)*EXP( 1.091*(LOG(Y)-LOG(Y(-1))) - 1.167*(LOG(CONS(-1))-LOG(Y(-1)) + 0.514) )
+INV_FITTED  = -0.583 + 0.204*Y
+```
+
+`af_df` is `dlog(cons)` for the first equation and `inv` for the second.
+
 ## Traps
 
 - **A variable named `C`** in an estimated equation: `c(-1)` is read as a
