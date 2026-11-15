@@ -242,6 +242,19 @@ how well the model tracks history.
 - Tags written inside `< ... >` attach metadata to the equation; `<estimator=...>` is the most important one.
 - Lines not starting with `>` are prose — they are ignored by the model parser, so the file can mix documentation with equations.
 
+### FRML format (no markdown)
+
+Plain `FRML <tags> lhs = rhs $` text works too; pass `eq_start='FRML', eq_end='$'`
+so `Makemodel` knows where each equation starts and ends. Tags and estimation
+behave exactly as in the markdown form (checked 2026-11-15, same coefficients):
+
+```python
+mm = Makemodel('''
+FRML <est=nls_lmfit, stoc, fit, smpl=1995 2020> dlog(cons) = c(1)*dlog(y) + c(2)*(log(cons(-1)) - log(y(-1)) - c(3)) $
+FRML <> y = cons + i + g $
+''', eq_start='FRML', eq_end='$', input_df=df)
+```
+
 ### Basic usage
 
 ```python

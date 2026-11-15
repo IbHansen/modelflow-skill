@@ -4,7 +4,7 @@ description: >
   This skill should be used when estimating ModelFlow equations: "estimate an
   equation", "<estimator=ols>", "<est=nls_lmfit>", "<smpl=...>", "OLS", "NLS",
   "fitted values", "actual vs fitted", "residuals of the estimation",
-  "static or dynamic fit", "_FITTED",
+  "static or dynamic fit", "_FITTED", "FRML <est=...>",
   "lmfit", "EViews estimation", "c(1)", "coefficients", "param_names",
   "Estimate_ols", "Estimate_nls_lmfit", "with_defaults", "error correction",
   "estimation sample", "ST. constraints", "bounds on coefficients", "initial
@@ -45,6 +45,17 @@ Verified result of the first line:
 - `<est>` without a value uses the model-wide `estimator=`; `smpl=` on
   `Makemodel` is the default sample.
 - Combine with `stoc` to get add factors and fixing on the estimated equation.
+
+The same tags work in plain FRML text (no markdown) – tell `Makemodel` where
+equations start and end (verified, same coefficients as the markdown form):
+
+```python
+text = '''
+FRML <est=nls_lmfit, stoc, fit, smpl=1995 2020> dlog(cons) = c(1)*dlog(y) + c(2)*(log(cons(-1)) - log(y(-1)) - c(3)) $
+FRML <> y = cons + i + g $
+'''
+mm = Makemodel(text, eq_start='FRML', eq_end='$', input_df=df)
+```
 
 ## Backends
 
