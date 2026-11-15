@@ -1,54 +1,52 @@
 # MAKRO names (DREAM)
 
+Reading MAKRO names – the prefix system, the Danish words, the set elements,
+the ModelFlow form, the decoder script and the list of all names in a release –
+is the job of `mf-makro-names` in `modelflow-user`. This page keeps what matters
+when *building* or extending a translation.
+
 Authority: the README of DREAM's repository
 (https://github.com/DREAM-DK/MAKRO/blob/main/README.md) and the GAMS code of the
 chosen release. MAKRO is DREAM's model, not Danmarks Nationalbank's.
 
-## Prefixes (longest match first: `jf`, `nv` before `j`, `n`)
+## Prefixes in one line
 
-| Prefix | Meaning |
-| --- | --- |
-| `j` | additive residual |
-| `f` | multiplicative factor |
-| `jf` | multiplicative residual |
-| `E` | expectation operator |
-| `d` | derivative, e.g. `dY2dX` |
-| `s` | structural version |
-| `m` | marginal |
-| `u` | scale/share parameter (μ in the documentation) |
-| `t` | tax/transfer rate |
-| `r` | rate or ratio |
-| `e` | elasticity/exponent |
-| `p` | price, adjusted for steady-state inflation |
-| `q` | quantity, adjusted for steady-state productivity growth |
-| `v` | nominal value, adjusted for both |
-| `nv` | present value, adjusted for both |
-| `n` | number of persons |
-| `h` | hours |
+`p` price, `q` quantity, `v` value, `nv` present value, `n` persons, `h` hours,
+`r` rate/ratio, `t` tax rate, `e` elasticity, `u` scale parameter, `f` factor,
+`j` additive residual, `jf` multiplicative residual, `s` structural, `m` marginal,
+`d` derivative, `E` expectation. They stack (`vt` tax revenue, `jr` residual on a
+rate). `p`, `q`, `v` are growth- and inflation-adjusted. A MAKRO `j` is not an
+ADAM `J` and not a ModelFlow `_A`.
 
-Roots: `C` consumption, `Y` output, `K` capital, `L` labour ... Multi-word names
-are CamelCase after the prefix: `nOrlovRest`, `jvUdlAktRenter`.
-
-`p`, `q`, `v` are growth-adjusted, not raw prices and quantities – matters when
-comparing with another model. A MAKRO `j` is not an ADAM `J`.
-
-## Indices
-
-GAMS sets in brackets: `pC[c,t]` price of consumption group `c`, `qC[c,t]` the
-quantity, `pC[cTot,t]` the aggregate.
-
-## In ModelFlow
-
-GAMS is case-insensitive, and the GDX importers and `doable` use upper case and
-`__` between name and index elements:
+## GAMS to ModelFlow
 
 | GAMS | ModelFlow |
 | --- | --- |
 | `pC[c,t]` in an equation | `PC__{C}` in a `doable` line |
 | `pC['cTot',t]` | `PC__CTOT` |
+| `qI_s[iM,spTot,t]` | `QI_S__IM__SPTOT` (elements in domain order) |
 | `t` | the DataFrame row index |
+| `x[t-1]`, `x[tBase]` | `X(-1)`, `X(2020)` |
+| an index symbol (`a`, `s`, `d_`) | a list of the same name (`A`, `S`, `D_`) |
+| a `$`-condition | a 0/1 sublist, `S_IF_<condition>[_<OUTER>]` |
+| `x[a-1,t]` | `X__{A_PREV}`; `NA` before the first age (a zero column) |
 
-Element names are cleaned by `clean_name` (see `mf-import`,
-`references/gams-to-makemodel.md`). The CamelCase is lost on upper-casing, so
-`jvUdlAktRenter` becomes `JVUDLAKTRENTER`: keep the original name in the
-description.
+Element names are cleaned (`clean_name`: non-alphanumerics to `_`, upper case;
+see `mf-import`, `references/gams-to-makemodel.md`). Total elements keep their
+GAMS names: `TOT` (from `tot` and `Tot`), `CTOT`, `XTOT`, `ITOT`, `GTOT`,
+`SPTOT`, `PENSTOT`. A sublist name must not equal a list name or another looped
+list's sublist name.
+
+## Names a translation adds
+
+`X___RES` for equations kept implicit, the `X_D` / `X_X` switch where GAMS fixes
+the variable in some years (and in the first year of a run for equations with
+`$tx1[t]`), `TEND` for the terminal-year equation, `TVAL` for `t.val`. Keep them
+out of the MAKRO namespace: they are not DREAM names.
+
+## Descriptions
+
+Write DREAM's text with the original name last:
+`<text> [ELEMENTS] (MAKRO pC)`. Upper case loses the CamelCase, and that tail is
+how `mf-makro-names` gets it back; its `build_makro_names.py` rebuilds the name
+list from a translation that follows this format.

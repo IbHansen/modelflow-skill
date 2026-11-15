@@ -7,7 +7,7 @@ description: >
   Bolivia model", "KN CN XN CD", "what is the _ at the end", "_VALUE_2010",
   "FRB/US variable names", "XGDP", "_AERR", or "ZGAP05".
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Variable names
@@ -28,8 +28,9 @@ name exists until it is found in the model.
 
 1. **Which model family?** The loaded model decides, not the look of the name.
    MFMod (World Bank country models): `references/mfmod.md`.
-   FRB/US (Federal Reserve): `references/frbus.md`. ADAM, MAKRO and naming in
-   imported models are covered by `mf-naming` in `modelflow-modeller`.
+   FRB/US (Federal Reserve): `references/frbus.md`. MAKRO (DREAM, names like
+   `PC__CTOT`, `JVHHXAFK`): `mf-makro-names`. ADAM and naming in imported models
+   are covered by `mf-naming` in `modelflow-modeller`.
 2. **Explain**: split the name into its parts, then confirm in the model:
 
    ```python

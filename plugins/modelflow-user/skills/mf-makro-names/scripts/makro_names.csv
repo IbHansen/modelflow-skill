@@ -1,0 +1,1250 @@
+makro,modelflow,domain,instances,endogenous,example,adam,text
+budgetfaktor,BUDGETFAKTOR,t,1,0,BUDGETFAKTOR,,Almindelige offentlige posters konjunkturfølsomhed
+cHh_a,CHH_A,"portf_,a_,t",416,8,CHH_A__BANK__0,,"Aldersafhængigt additivt led i husholdningens aktiv-beholdninger, vHhAkt."
+cHh_t,CHH_T,"portf_,t",4,0,CHH_T__BANK,,"Tidsvariant additivt led i husholdningens aktiv-beholdninger, vHhAkt."
+crRenteBank,CRRENTEBANK,t,1,0,CRRENTEBANK,,Forskel på ECBs og Danmarks pengemarkedsrente.
+crRenteFast,CRRENTEFAST,t,1,0,CRRENTEFAST,,Forskel på renten på 30-årige realkreditlån og gns. obligationer
+crRenteFlex,CRRENTEFLEX,t,1,0,CRRENTEFLEX,,Forskel på renten på flexlån og gns. obligationer
+crRenteObl,CRRENTEOBL,t,1,0,CRRENTEOBL,,Forskel på gennemsnitlig obligationsrente og statsobligationsrente
+crRenteRealKred,CRRENTEREALKRED,t,1,0,CRRENTEREALKRED,,Forskel på gns. rente på realkreditlån og vægtet gns. af flex og fast forrentet
+dArv,DARV,"a_,t",83,41,DARV__100,,Arvefunktion differentieret med hensyn til bolig.
+dFF2dLoen,DFF2DLOEN,t,1,1,DFF2DLOEN,,Fagforeningens værdifunktion i lønforhandling differentieret ift. løn.
+dFinFriktion,DFINFRIKTION,"sp,t",8,8,DFINFRIKTION__BOL,,Afledt af finansiel friktion ift. fri pengestrøm.
+dFormue,DFORMUE,"a_,t",83,83,DFORMUE__100,,Formue-nytte differentieret med hensyn til bolig.
+dIBoligInstOmk2dI,DIBOLIGINSTOMK2DI,t,1,1,DIBOLIGINSTOMK2DI,,Afledt af qIBoligInstOmk[t] ift. qIBolig[t].
+dIBoligInstOmkLead2dI,DIBOLIGINSTOMKLEAD2DI,t,1,1,DIBOLIGINSTOMKLEAD2DI,,Afledt af qIBoligInstOmk[t+1] ift. qIBolig[t].
+dKInstOmk2dK,DKINSTOMK2DK,"k,s_,t",15,15,DKINSTOMK2DK__IB__BOL,,qKInstOmk[t] differentieret ift. qK[t]
+dKInstOmk2dKLag,DKINSTOMK2DKLAG,"k,s_,t",15,15,DKINSTOMK2DKLAG__IB__BOL,,qKInstOmk[t] differentieret ift. qK[t-1]
+dnOvf2dnBesk,DNOVF2DNBESK,"ovf,t",38,38,DNOVF2DNBESK__AKTDAG,,Marginal ændring i antal modtagere af overførsel ovf ved ændring i den samlede beskæftigelse.
+dnOvf2dnPop,DNOVF2DNPOP,"ovf,t",38,38,DNOVF2DNPOP__AKTDAG,,Marginal ændring i antal modtagere af overførsel ovf ved ændring i den samlede befolkningsstørrelse.
+dnvAfskrFradrag2dvI_s,DNVAFSKRFRADRAG2DVI_S,"k,s_,t",15,15,DNVAFSKRFRADRAG2DVI_S__IB__BOL,,Den afledte af nutidsværdien af afskrivningsfradraget knyttet til investeringer.
+dnvKskat2dvI_s,DNVKSKAT2DVI_S,"k,s_,t",15,15,DNVKSKAT2DVI_S__IB__BOL,,Den afledte af nutidsværdien af skattemæssigt kapital knyttet til investeringer.
+dOpslagOmk2dnL,DOPSLAGOMK2DNL,"sp,t",8,8,DOPSLAGOMK2DNL__BOL,,rOpslagOmk * nL differentieret ift. nL.
+dOpslagOmk2dnLLag,DOPSLAGOMK2DNLLAG,"sp,t",8,8,DOPSLAGOMK2DNLLAG__BOL,,rOpslagOmk * nL differentieret ift. nL[t-1]
+dpBoligTraeghed,DPBOLIGTRAEGHED,t,1,1,DPBOLIGTRAEGHED,,Disnytte-effekt fra omstillingsomkostninger på boligpriser.
+dpM2pYTraeghed,DPM2PYTRAEGHED,"dux,s,t",23,23,DPM2PYTRAEGHED__BOL__FRE,,Hjælpevariabel til beregning af effekt fra pristræghed.
+dpXyTraeghed,DPXYTRAEGHED,"x,t",4,4,DPXYTRAEGHED__XENE,,Hjælpevariabel til beregning af effekt fra pristræghed.
+dpYTraeghed,DPYTRAEGHED,"sp,t",8,8,DPYTRAEGHED__BOL,,Hjælpevariabel til beregning af effekt fra omstillingsomkostninger på markup.
+dSoc2dBesk,DSOC2DBESK,"soc,t",49,0,DSOC2DBESK__AKTDAG,,Marginal ændring i antallet i sociogruppe soc ved ændring i den samlede beskæftigelse.
+dSoc2dPop,DSOC2DPOP,"soc,t",49,49,DSOC2DPOP__AKTDAG,,Marginal ændring i antallet i sociogruppe soc ved ændring i den samlede befolkningsstørrelse.
+dULead2dBolig,DULEAD2DBOLIG,"a,t",83,83,DULEAD2DBOLIG__100,,Nytte næste periode differentieret ift. erjerbolig mængde denne periode.
+dvHhAkt2dvBolig,DVHHAKT2DVBOLIG,"portf_,t",7,0,DVHHAKT2DVBOLIG__BANK,,"Ændring i husholdningers finansielle aktiver, vHhAkt, for en ændring i bolig-formuen vBolig."
+dvHhAkt2dvHhx,DVHHAKT2DVHHX,"portf_,t",7,0,DVHHAKT2DVHHX__BANK,,"Ændring i husholdningens finansielle aktiver, vHhAkt, for en ændring i formuen vHhx (eksklusiv pension og bolig)."
+dvHhPas2dvBolig,DVHHPAS2DVBOLIG,"portf_,t",1,0,DVHHPAS2DVBOLIG__BANK,,"Ændring i husholdningers passiver, vHhPas, for en ændring i bolig-formuen vBolig."
+dvHhPas2dvHhx,DVHHPAS2DVHHX,"portf_,t",1,0,DVHHPAS2DVHHX__BANK,,"Ændring i husholdningens passiver, vHhPas, for en ændring i formuen vHhx (eksklusiv pension og bolig)."
+dvHhxAfk2dvBolig,DVHHXAFK2DVBOLIG,t,1,1,DVHHXAFK2DVBOLIG,,"Marginal ændring i afkastet på vHhx efter skat, når boligværdien ændrer sig (lagget effekt via pBoligRigid)"
+dvOvf2dnBesk,DVOVF2DNBESK,"ovf_,t",39,39,DVOVF2DNBESK__AKTDAG,,Marginal ændring i udgifter til overførsel ovf ved ændring i den samlede beskæftigelse.
+dvOvf2dnPop,DVOVF2DNPOP,"ovf_,t",39,39,DVOVF2DNPOP__AKTDAG,,Marginal ændring i udgifter til overførsel ovf ved ændring i den samlede befolkningsstørrelse.
+dWTraeghed,DWTRAEGHED,t,1,1,DWTRAEGHED,,Hjælpevariabel til beregning af effekt fra løntræghed.
+eBolig,EBOLIG,,1,0,EBOLIG,,Substitutionselasticitet mellem boligkapital og land.
+eC,EC,c_,4,0,EC__CTURTJEX,,Substitutionselasticitet i privat forbrugs-nests.
+eDeltag,EDELTAG,,1,0,EDELTAG,,"Parameter, som styrer elasticiteten på arbejdsstyrke-deltagelse, fra ændringer i matching-raten."
+eG,EG,g_,1,0,EG__GTOT,,Substitutionselasticitet mellem forskellige grupper af offentligt forbrug.
+eh,EH,,1,0,EH,,Invers arbejdsudbudselasticitet - intensiv margin.
+eHh,EHH,,1,0,EHH,,Invers af intertemporal substitutionselasticitet.
+eIO,EIO,"d_,s_",23,0,EIO__BOL__FRE,,Substitutionselasticitet mellem import og indenlandsk produktion for diverse input for efterspørgselskomponenterne.
+eKE,EKE,s_,8,0,EKE__BOL,,"Substitutionselasticitet mellem qK[iM,sp] og qE."
+eKEL,EKEL,sp,8,0,EKEL__BOL,,"Substitutionselasticitet mellem qK[iM,sp] og qLUdn."
+eKELB,EKELB,s_,8,0,EKELB__BOL,,"Substitutionselasticitet mellem qKEL[sp] og qKUdn[iB,sp]"
+eKELBR,EKELBR,s_,8,0,EKELBR__BOL,,Substitutionselasticitet mellem qKELB og qR.
+eLUdn,ELUDN,,1,0,ELUDN,,Eksponent som styrer anvendelsen af kapacitetsudnyttelse af arbejdskraft.
+eLUdnPersistens,ELUDNPERSISTENS,,1,0,ELUDNPERSISTENS,,Eksponent som styrer træghed i kapacitetsudnyttelse af arbejdskraft.
+eMatching,EMATCHING,,1,0,EMATCHING,,Eksponent i matching funktion.
+emrKomp,EMRKOMP,,1,0,EMRKOMP,,"Parameter, som styrer elasticiteten på arbejdsstyrke-deltagelse, fra ændringer i kompensationsgrad."
+EmUC,EMUC,"a,t",83,83,EMUC__100,,Forventet marginalnytte af forbrug udover end bolig.
+eNytte,ENYTTE,,1,0,ENYTTE,,Substitutionselasticitet mellem bolig- og andet forbrug.
+EpC,EPC,t,1,1,EPC,,Forventet prisindeks for næste periodes forbrug ekskl. bolig.
+ErOverlev,EROVERLEV,"a,t",83,0,EROVERLEV__100,,Forventet overlevelsesrate - afviger fra den faktiske overlevelsesrate for 100 årige.
+eXUdl,EXUDL,x,5,0,EXUDL__XENE,,Eksportpriselasticitet.
+fB,FB,"s_,t",9,9,FB__BOL,,"Korrektionsfaktor for sammensætningseffekt i bestemmelse af qKUdn['iB',s_,t] - skal være 1 for sp"
+fDemoTraek,FDEMOTRAEK,"a_,t",103,1,FDEMOTRAEK__0,,Demografisk træk.
+fDemoTraek_Over100,FDEMOTRAEK_OVER100,t,1,0,FDEMOTRAEK_OVER100,,Demografisk træk for personer over 100år
+fDisk,FDISK,"a,t",102,102,FDISK__0,,Husholdningens diskonteringsfaktor
+fDiskDeltag,FDISKDELTAG,"a,t",85,0,FDISKDELTAG__100,,Eksogent diskonteringsfaktor i deltagelsesbeslutning.
+fE,FE,"s_,t",9,9,FE__BOL,,"Korrektionsfaktor for sammensætningseffekt i bestemmelse af qE[s_,t] - skal være 1 for sp"
+fHhOvf,FHHOVF,t,2,2,FHHOVF,,"Korrektionsfaktor for overførslerindkomster, som sikrer afbalancering af aldersfordeling."
+fhL,FHL,t,2,2,FHL,,"Balancerings-faktor, som sikrer at arbejdstid matcher fra branche-side og arbejdsudbudsside (aldersfordelt + grænsearbejdere)"
+fhLHh,FHLHH,"a,t",86,86,FHLHH__100,,Korrektionsfaktor til at slå effekter af marginal skat på arbejdsudbud til og fra på intensiv margin.
+fIBoligInstOmk,FIBOLIGINSTOMK,t,1,0,FIBOLIGINSTOMK,,"Vækstfaktor i boliginvesteringer, som giver nul installationsomkostninger."
+fK,FK,"s_,t",8,8,FK__BYG,,"Korrektionsfaktor for sammensætningseffekt i bestemmelse af qKUdn['iM',s_,t] - skal være 1 for sp"
+fL,FL,"s_,t",9,9,FL__BOL,,"Korrektionsfaktor for sammensætningseffekt i bestemmelse af qLUdn[s_,t] - skal være 1 for sp"
+fMigration,FMIGRATION,"a_,t",103,103,FMIGRATION__0,,Korrektion for migrationer (= 1/(1+migrationsrate) eftersom formue deles med ind- og udvandrere).
+fp,FP,,1,0,FP,,"1 year adjustment factor for price inflation, =1+gp"
+fpCPI,FPCPI,"c_,t",6,0,FPCPI__CBIL,,Korrektionsfaktor mellem forbrugerpriser i NR og CPI
+fpCTurist,FPCTURIST,"c,t",3,0,FPCTURIST__CENE,,Korrektion som fanger at turisters forbrug har anden deflator end indenlandske husholdninger.
+fpGInput,FPGINPUT,t,1,0,FPGINPUT,,Korrektionsfaktor. Fremskrives uændret til tabelvariabel pGInput
+fpHICP,FPHICP,t,1,0,FPHICP,,Korrektionsfaktor vedrørende HICP
+fpI_s,FPI_S,"i,t",6,6,FPI_S__IB,,Korrektionsfaktor som sørger for at vI_s summerer til vI.
+fpK_spTot,FPK_SPTOT,"k,t",2,2,FPK_SPTOT__IB,,"Korrektionsfaktor for sammensætningseffekt i bestemmelse af pK[spTot,t]"
+fpnCPI,FPNCPI,"c_,t",6,0,FPNCPI__CBIL,,Korrektionsfaktor for nettoforbrugerprisindeks (nCPI).
+fpOffDirInv,FPOFFDIRINV,t,1,0,FPOFFDIRINV,,Korrektionsfaktor
+fq,FQ,,1,0,FQ,,"1 year adjustment factor for growth in quantities, =1+gq"
+fqLOffInput,FQLOFFINPUT,t,1,0,FQLOFFINPUT,,Korrektionsfaktor - dækker over uddannelsessammensætning af offentligt ansatte
+fqProd,FQPROD,"s_,t",10,2,FQPROD__BOL,,Parameter til at styre branchespecifik produktivitet for arbejdskraft.
+fqt,FQT,t,1,0,FQT,,"Growth adjusment factor, =fq**(t-tBase)"
+fqtNetYOff,FQTNETYOFF,t,1,0,FQTNETYOFF,,Korrektionsfaktor - dækker over sammensætningseffekter på produktionsskatter
+fR,FR,"s_,t",9,9,FR__BOL,,"Korrektionsfaktor for sammensætningseffekt i bestemmelse af qR[s_,t] - skal være 1 for sp"
+frKLeje2Bolig_t,FRKLEJE2BOLIG_T,t,1,0,FRKLEJE2BOLIG_T,,Korrektionsfaktor til aldersfordelt led i rKLeje2Bolig.
+frNet2KapIndPos_t,FRNET2KAPINDPOS_T,t,1,0,FRNET2KAPINDPOS_T,,Tids-afhængigt led i rNet2KapIndPos.
+fSoegBaseHh,FSOEGBASEHH,"a,t",86,0,FSOEGBASEHH__100,,Asymptotisk maksimum for arbejdsmarkedsdeltagelse.
+ftAktieHh,FTAKTIEHH,"a_,t",87,87,FTAKTIEHH__100,,Korrektionsfaktor fra faktisk til implicit skattesats.
+ftAktieHh_a,FTAKTIEHH_A,"a,t",86,0,FTAKTIEHH_A__100,,Alders-specifikt led i ftAktieHh.
+ftAktieHh_t,FTAKTIEHH_T,t,1,0,FTAKTIEHH_T,,Tids-afhængigt led i ftAktieHh.
+ftAktieUdl,FTAKTIEUDL,t,1,0,FTAKTIEUDL,,Belastningsgrad for udbytter til udenlandske aktionærer.
+ftAMBidrag,FTAMBIDRAG,t,1,0,FTAMBIDRAG,,Korrektionsfaktor fra faktisk til implicit skattesats.
+ftBund,FTBUND,"a_,t",87,87,FTBUND__100,,Korrektionsfaktor fra faktisk til implicit skattesats.
+ftBund_a,FTBUND_A,"a,t",86,0,FTBUND_A__100,,Alders-specifikt led i ftBund.
+ftBund_t,FTBUND_T,t,1,0,FTBUND_T,,Tids-afhængigt led i ftBund.
+ftKirke,FTKIRKE,t,1,0,FTKIRKE,,Korrektionsfaktor fra faktisk til implicit skattesats.
+ftKommune,FTKOMMUNE,"a_,t",87,87,FTKOMMUNE__100,,Korrektionsfaktor fra faktisk til implicit skattesats.
+ftKommune_a,FTKOMMUNE_A,"a,t",86,0,FTKOMMUNE_A__100,,Alders-specifikt led i ftKommune.
+ftKommune_t,FTKOMMUNE_T,t,1,0,FTKOMMUNE_T,,Tids-afhængigt led i ftKommune.
+ftSelskab,FTSELSKAB,t,1,0,FTSELSKAB,,Korrektionsfaktor fra faktisk til implicit skattesats.
+ftVirksomhed,FTVIRKSOMHED,t,1,0,FTVIRKSOMHED,,Korrektionsfaktor fra faktisk til implicit skattesats
+fuCturisme,FUCTURISME,t,1,0,FUCTURISME,,Korrektionsfaktor for skalaparametrene til fordeling af udenlandske turisters forbrug i Danmark på forbrugsgrupper.
+fuIO,FUIO,"d_,t",19,0,FUIO__BOL,,Korrektionsfaktor for skalaparametrene for efterspørgselskomponents vægt på diverse input.
+fuIOe,FUIOE,"r,t",9,0,FUIOE__BOL,,Korrektionsfaktor for skalaparametrene for energiinputs vægt på diverse input.
+fuIOXm,FUIOXM,"x,t",4,0,FUIOXM__XENE,,Korrektionsfaktor for skalaparametrene for efterspørgselskomponents vægt på diverse input.
+fuIOXy,FUIOXY,"x,t",4,0,FUIOXY__XENE,,Korrektionsfaktor for skalaparametrene for efterspørgselskomponents vægt på diverse input.
+fuIOym,FUIOYM,"dux,s,t",97,0,FUIOYM__BOL__BYG,,Korrektionsfaktor for skalaparametrene for efterspørgselskomponents vægt på diverse hhv. indenlandske og importerede input.
+fuOvfUbeskat,FUOVFUBESKAT,t,2,2,FUOVFUBESKAT,,"Korrektionsfaktor for ubeskattede indkomstoverførsler, som sikrer afbalancering af aldersfordeling."
+fuPensIndbOP,FUPENSINDBOP,t,2,2,FUPENSINDBOP,,"Korrektionsfaktor for obligatorisk opsparing, som sikrer afbalancering af aldersfordeling."
+fuY,FUY,s_,8,0,FUY__BOL,,Forhold mellem Y og KELBR i basisår hvor pY og pKELBR sættes til 1
+fuY_spTot,FUY_SPTOT,t,1,1,FUY_SPTOT,,"Korrektionsfaktor for sammensætningseffekt i bestemmelse af qKELBR[spTot,t]"
+fv,FV,,1,0,FV,,"1 year composite growth and inflation factor to adjust for growth in values, =(1+gq)(1+gp)"
+fvHhAktieInd,FVHHAKTIEIND,t,1,1,FVHHAKTIEIND,,Korrektionsfaktor fra faktisk til implicit skattesats.
+fVirkDisk,FVIRKDISK,"s_,t",9,9,FVIRKDISK__BOL,,Selskabernes diskonteringsrate.
+fvOffUdbytte,FVOFFUDBYTTE,t,1,0,FVOFFUDBYTTE,,"Andel af statslige udbytter, der går til staten"
+fvPensIndbOP,FVPENSINDBOP,t,1,0,FVPENSINDBOP,,Korrektionsfaktor for obligatorisk opsparing.
+fvtDoedsbo,FVTDOEDSBO,t,1,1,FVTDOEDSBO,,parameter til at fange sammensætningseffekt.
+fXm,FXM,t,1,1,FXM,,Sammensætnings-effekter i import til re-eksport.
+fXmPriser,FXMPRISER,t,1,1,FXMPRISER,,Aggregeret effekt af relative priser på import til re-eksport.
+fXy,FXY,t,1,1,FXY,,Sammensætnings-effekter i direkte eksport.
+fXyPriser,FXYPRISER,t,1,1,FXYPRISER,,Aggregeret effekt af relative priser på direkte eksport.
+hL,HL,"s_,t",12,11,HL__BOL,ADAM[hq<i>]; ADAM[hq],"Erlagte arbejdstimer fordelt på brancher, Kilde: ADAM[hq] eller ADAM[hq<i>]"
+hL2nL,HL2NL,"s_,t",11,11,HL2NL__BOL,,Arbejdstid pr. beskæftiget
+hL2nL0,HL2NL0,"s,t",9,0,HL2NL0__BOL,,Parameter som styrer branchespecifik arbejdstid.
+hLHh,HLHH,"a_,t",87,87,HLHH__100,,"Aldersfordelt arbejdstid, Kilde: FMs Befolkningsregnskab."
+hLLoenmodtager,HLLOENMODTAGER,"s_,t",10,10,HLLOENMODTAGER__BOL,ADAM[Hgw<i>]; ADAM[Hqw]; ADAM[Qw<i>],"Erlagte arbejdstimer for lønmodtagere fordelt på brancher, Kilde: ADAM[Hqw] eller ADAM[Qw<i>]*ADAM[Hgw<i>]"
+hLSelvst,HLSELVST,"s_,t",10,10,HLSELVST__BOL,,"Erlagte arbejdstimer for selvstændige fordelt på brancher, Kilde: Residualt fra hL og hLLoenmodtager"
+hLSelvst2hL,HLSELVST2HL,"s_,t",10,1,HLSELVST2HL__BOL,,Selvstændiges andel af erlagte timer.
+hLxDK,HLXDK,t,1,1,HLXDK,,Samlede erlagte arbejdstimer for grænsearbejdere.
+jfDisk_t,JFDISK_T,t,1,0,JFDISK_T,,J-led
+jfEpC,JFEPC,t,1,0,JFEPC,,J-led.
+jfnOrlov,JFNORLOV,"s_,t",10,2,JFNORLOV__BOL,,J-led
+jfpIO,JFPIO,"d_,t",23,0,JFPIO__BOL,,Pristillæg - fælles for indlandsk og import.
+jfpIOm,JFPIOM,"d_,t",23,0,JFPIOM__BOL,,Pristillæg fra mermarkup fordelt på efterspørgseler - er 0 historisk.
+jfpIOm_s,JFPIOM_S,"s_,t",10,10,JFPIOM_S__ENE,,J-led.
+jfpIOy,JFPIOY,"d_,t",22,0,JFPIOY__BOL,,Pristillæg fra mermarkup fordelt på efterspørgseler - er 0 historisk.
+jfpIOy_s,JFPIOY_S,"s_,t",18,18,JFPIOY_S__BOL,,J-led.
+jfpOffAfskr,JFPOFFAFSKR,"k,t",2,0,JFPOFFAFSKR__IB,,"J-led, som afspejler forskel mellem deflatoren for offentlige afskrivninger og investeringer."
+jfpOffIndirInv,JFPOFFINDIRINV,t,1,0,JFPOFFINDIRINV,,J-led
+jfqIO_g_off,JFQIO_G_OFF,t,1,0,JFQIO_G_OFF,,J-led
+jfqOffAfskr,JFQOFFAFSKR,"k,t",2,0,JFQOFFAFSKR__IB,,"J-led, som afspejler forskel mellem deflatoren for offentlige afskrivninger og investeringer."
+jfrLUdn,JFRLUDN,"sp,t",8,0,JFRLUDN__BOL,,J-led.
+jfrLUdn_t,JFRLUDN_T,t,1,0,JFRLUDN_T,,J-led.
+jfrPensIndb,JFRPENSINDB,"pens,t",4,0,JFRPENSINDB__ALDER,,J-led på rPensIndb
+jfrPensUdb,JFRPENSUDB,"pens,t",4,0,JFRPENSUDB__ALDER,,J-led på rPensUdb
+jfuBolig,JFUBOLIG,t,1,0,JFUBOLIG,,J-led
+jfvSkatteplInd,JFVSKATTEPLIND,t,1,0,JFVSKATTEPLIND,,Multiplikativt J-led.
+jhLHh,JHLHH,t,1,1,JHLHH,,J-led i timebeslutning.
+jhLHh_a,JHLHH_A,"a,t",86,0,JHLHH_A__100,,J-led i timebeslutning.
+jhLHh_t,JHLHH_T,t,1,0,JHLHH_T,,J-led i timebeslutning.
+jluIOm,JLUIOM,"s,t",2,2,JLUIOM__UDV,,J-led.
+jmrHhxAfk,JMRHHXAFK,t,1,0,JMRHHXAFK,,J-led.
+jmrMarkup,JMRMARKUP,"s_,t",7,0,JMRMARKUP__BOL,,J-led.
+jmtVirk,JMTVIRK,t,1,0,JMTVIRK,,"J-led - der sikrer, at mtVirk ikke svinger med ftSelskab historisk."
+jnSoc,JNSOC,"soc,t",49,0,JNSOC__AKTDAG,,J-led.
+jnSoegBaseHh,JNSOEGBASEHH,"a_,t",103,1,JNSOEGBASEHH__0,,J-led
+jpBoligUC,JPBOLIGUC,t,1,0,JPBOLIGUC,,J-led
+jpI_iL_lag,JPI_IL_LAG,t,1,0,JPI_IL_LAG,,J-led
+jpILager,JPILAGER,t,1,0,JPILAGER,,J-led
+jpIOm2pIOy,JPIOM2PIOY,"dux,s,t",23,0,JPIOM2PIOY__BOL__FRE,,J-led
+jpIStam,JPISTAM,t,1,0,JPISTAM,,J-led
+jpK_s,JPK_S,"k,sp,t",14,0,JPK_S__IB__BYG,,J-led.
+jpK_t,JPK_T,"k,t",2,0,JPK_T__IB,,J-led.
+jpW,JPW,t,1,0,JPW,,J-led
+jpY_bol,JPY_BOL,t,1,0,JPY_BOL,,j-led.
+jrBoligTraeghed,JRBOLIGTRAEGHED,t,1,0,JRBOLIGTRAEGHED,,J-led
+jrBVTGabError,JRBVTGABERROR,t,1,0,JRBVTGABERROR,,J-led
+jrHhAktieInd,JRHHAKTIEIND,"a_,t",102,102,JRHHAKTIEIND__0,,Aldersfordelt j-led i vHhAktieInd
+jrHhAktieInd_a,JRHHAKTIEIND_A,"a,t",86,0,JRHHAKTIEIND_A__100,,Aldersfordelt j-led i vHhAktieInd
+jrHhAktieInd_t,JRHHAKTIEIND_T,t,2,2,JRHHAKTIEIND_T,,Tids-afhængigt led i j-led i vHhAktieInd
+jrHhAktOmv,JRHHAKTOMV,"portf_,t",8,2,JRHHAKTOMV__BANK,,J-led som dækker forskel mellem husholdningens rente og den gennemsnitlige omvurdering på aktivet/passivet.
+jrHhAktRenter,JRHHAKTRENTER,"portf_,t",7,0,JRHHAKTRENTER__BANK,,J-led som dækker forskel mellem husholdningens rente og den gennemsnitlige rente på aktivet/passivet.
+jrHhPasOmv,JRHHPASOMV,"portf_,t",7,0,JRHHPASOMV__BANK,,J-led som dækker forskel mellem husholdningens rente og den gennemsnitlige omvurdering på aktivet/passivet.
+jrHhPasRenter,JRHHPASRENTER,"portf_,t",7,0,JRHHPASRENTER__BANK,,J-led som dækker forskel mellem husholdningens rente og den gennemsnitlige rente på aktivet/passivet.
+jrHhPensAfk,JRHHPENSAFK,"pens_,t",4,0,JRHHPENSAFK__ALDER,,Ikke-aldersfordelt multiplikativt j-led
+jrJobFinding,JRJOBFINDING,"a_,t",88,2,JRJOBFINDING__100,,J-led
+jrJobFinding_t,JRJOBFINDING_T,t,1,0,JRJOBFINDING_T,,J-led
+jrKInstOmk,JRKINSTOMK,"k,sp,t",15,0,JRKINSTOMK__IB__BOL,,J-led.
+jrOffAktOmv,JROFFAKTOMV,"portf_,t",7,0,JROFFAKTOMV__BANK,,J-led som dækker forskel mellem den offentlige sektors og den gennemsnitlige omvurdering på aktivet/passivet.
+jrOffAktRenter,JROFFAKTRENTER,"portf_,t",4,0,JROFFAKTRENTER__BANK,,J-led som dækker forskel mellem det offentliges og den gennemsnitlige rente på aktivet/passivet.
+jrOffPasOmv,JROFFPASOMV,"portf_,t",7,0,JROFFPASOMV__BANK,,J-led som dækker forskel mellem den offentlige sektors og den gennemsnitlige omvurdering på aktivet/passivet.
+jrOffPasRenter,JROFFPASRENTER,"portf_,t",3,0,JROFFPASRENTER__BANK,,J-led som dækker forskel mellem det offentliges og den gennemsnitlige rente på aktivet/passivet.
+jrOpslagOmkSqr,JROPSLAGOMKSQR,"s_,t",9,0,JROPSLAGOMKSQR__BOL,,J-led
+jrPensionAktOmv,JRPENSIONAKTOMV,"portf_,t",7,0,JRPENSIONAKTOMV__BANK,,J-led.
+jrPensionAktRenter,JRPENSIONAKTRENTER,"portf_,t",7,0,JRPENSIONAKTRENTER__BANK,,J-led.
+jrpYTraeghed,JRPYTRAEGHED,"sp,t",8,0,JRPYTRAEGHED__BOL,,J-led.
+jrRefBolig,JRREFBOLIG,t,1,0,JRREFBOLIG,,J-led
+jrUdlPensUdb,JRUDLPENSUDB,t,1,0,JRUDLPENSUDB,,J-led
+jrVirkAktOmv,JRVIRKAKTOMV,"portf_,t",7,0,JRVIRKAKTOMV__BANK,,J-led som dækker forskel mellem selskabernes og den gennemsnitlige omvurdering på aktivet/passivet.
+jrVirkAktRenter,JRVIRKAKTRENTER,"portf_,t",6,0,JRVIRKAKTRENTER__BANK,,J-led som dækker forskel mellem selskabernes og den gennemsnitlige rente på aktivet/passivet.
+jrVirkPasOmv,JRVIRKPASOMV,"portf_,t",7,0,JRVIRKPASOMV__BANK,,J-led som dækker forskel mellem selskabernes og den gennemsnitlige omvurdering på aktivet/passivet.
+jrVirkPasRenter,JRVIRKPASRENTER,"portf_,t",4,0,JRVIRKPASRENTER__BANK,,J-led som dækker forskel mellem selskabernes og den gennemsnitlige rente på aktivet/passivet.
+jrvKapIndNeg_a,JRVKAPINDNEG_A,"a_,t",88,2,JRVKAPINDNEG_A__100,,Alders-specifikt j-led i vKapIndNeg.
+jrvKapIndNeg_t,JRVKAPINDNEG_T,t,1,0,JRVKAPINDNEG_T,,Tids-afhængigt j-led i fvKapIndNeg.
+jrvKapIndPos_a,JRVKAPINDPOS_A,"a_,t",88,2,JRVKAPINDPOS_A__100,,Alders-specifikt j-led i vKapIndPos.
+jrvKapIndPos_t,JRVKAPINDPOS_T,t,1,0,JRVKAPINDPOS_T,,Tids-afhængigt j-led i vKapIndPos.
+jrWTraeghed,JRWTRAEGHED,t,1,0,JRWTRAEGHED,,J-led
+jsnSoegxDK,JSNSOEGXDK,t,1,0,JSNSOEGXDK,,J-led
+jsqBVT,JSQBVT,"s_,t",1,0,JSQBVT__SPTOT,,J-led
+jsrJobFinding,JSRJOBFINDING,"a_,t",88,2,JSRJOBFINDING__100,,J-led
+juDeltag_t,JUDELTAG_T,t,1,0,JUDELTAG_T,,J-led
+juhLxDK,JUHLXDK,t,1,0,JUHLXDK,,J-led
+jvBNI,JVBNI,t,1,0,JVBNI,,J-led.
+jvFormueBase,JVFORMUEBASE,"a,t",83,0,JVFORMUEBASE__100,,J-led
+jvHhOmv,JVHHOMV,t,1,1,JVHHOMV,,Aggregeret J-led.
+jvHhPensAfk,JVHHPENSAFK,"pens_,a_,t",352,4,JVHHPENSAFK__ALDER__100,,Aldersfordelt additivt j-led
+jvHhxAfk,JVHHXAFK,"a_,t",101,0,JVHHXAFK__1,,J-led.
+jvKolPensAfk,JVKOLPENSAFK,t,1,0,JVKOLPENSAFK,,j-led
+jvKolPensOmv,JVKOLPENSOMV,t,1,0,JVKOLPENSOMV,,j-led
+jvKskat,JVKSKAT,"i_,s_,t",15,0,JVKSKAT__IB__BOL,,J-led.
+jvOffAkt,JVOFFAKT,"portf_,t",2,0,JVOFFAKT__INDLAKTIER,,J-led
+jvOffOmv,JVOFFOMV,t,1,1,JVOFFOMV,,Aggregeret J-led
+jvOvf,JVOVF,"ovf_,t",39,1,JVOVF__AKTDAG,,"J-led som fanger at nogle grupper har en overførsel, men ingen modtagere. Fordeles til husholdningerne gennem fHhOvf."
+jvPensionOmv,JVPENSIONOMV,t,1,1,JVPENSIONOMV,,Aggregeret J-led
+jvPensionRenter,JVPENSIONRENTER,t,1,1,JVPENSIONRENTER,,Aggregeret J-led
+jvtDirekte,JVTDIREKTE,t,1,0,JVTDIREKTE,,J-led afspejler datamæssige uoverensstemmelser - skal være 0 i fremskrivning.
+jvtPal,JVTPAL,t,1,0,JVTPAL,,J-led
+jvtPALudl,JVTPALUDL,t,1,0,JVTPALUDL,,J-led
+jvUdlAktOmv,JVUDLAKTOMV,"portf_,t",5,5,JVUDLAKTOMV__BANK,,J-led som dækker forskel mellem selskabernes og den gennemsnitlige omvurdering på aktivet/passivet.
+jvUdlAktRenter,JVUDLAKTRENTER,"portf_,t",5,5,JVUDLAKTRENTER__BANK,,J-led som dækker forskel mellem selskabernes og den gennemsnitlige rente på aktivet/passivet.
+jvUdlNFE,JVUDLNFE,t,1,1,JVUDLNFE,,J-led
+jvUdlPasOmv,JVUDLPASOMV,"portf_,t",4,4,JVUDLPASOMV__BANK,,J-led som dækker forskel mellem selskabernes og den gennemsnitlige omvurdering på aktivet/passivet.
+jvUdlPasRenter,JVUDLPASRENTER,"portf_,t",4,4,JVUDLPASRENTER__BANK,,J-led som dækker forskel mellem selskabernes og den gennemsnitlige rente på aktivet/passivet.
+jvVirkOmv,JVVIRKOMV,t,1,1,JVVIRKOMV,,Aggregeret J-led
+mpLand,MPLAND,t,1,1,MPLAND,,Imputeret marginal pris på grundværdien af land til boligbenyttelse.
+mrBankLaan2K,MRBANKLAAN2K,"i_,s_,t",18,2,MRBANKLAAN2K__IB__BOL,,Bankfinansieringsandel for investeringer.
+mrHhAktAfk,MRHHAKTAFK,"portf_,t",7,7,MRHHAKTAFK__BANK,,Husholdningens marginale afkast efter skat for aktive/passiv typen.
+mrHhPasAfk,MRHHPASAFK,"portf_,t",7,7,MRHHPASAFK__BANK,,Husholdningens marginale afkast efter skat for aktive/passiv typen.
+mrHhxAfk,MRHHXAFK,t,1,1,MRHHXAFK,,"Marginalt afkast efter skat på vHhx (husholdningernes formue ekskl. pension, bolig og realkreditgæld)."
+mrKomp,MRKOMP,"a_,t",86,0,MRKOMP__100,,Marginal netto-kompensationsgrad.
+mrLaan2K,MRLAAN2K,"i_,s_,t",27,27,MRLAAN2K__IB__BOL,,Marginal gældsfinansieringsandel for investeringer.
+mrMarkup,MRMARKUP,"s_,t",11,11,MRMARKUP__BOL,,Marginal markup.
+mrNet2KapIndPos,MRNET2KAPINDPOS,t,1,0,MRNET2KAPINDPOS,,Marginal stigning i positiv nettokapitalindkomst ved stigning i kapitalindkomst.
+mrOffRente,MROFFRENTE,t,1,1,MROFFRENTE,,Offentlig marginalrente
+mrRealKred2Bolig,MRREALKRED2BOLIG,t,1,0,MRREALKRED2BOLIG,,Marginal realkredit-belåningsgrad.
+mrRealKredLaan2K,MRREALKREDLAAN2K,"i_,s_,t",18,2,MRREALKREDLAAN2K__IB__BOL,,Realkreditfinansieringsandel for investeringer.
+mrVirkDriftPasOmv,MRVIRKDRIFTPASOMV,"i_,s_,t",18,18,MRVIRKDRIFTPASOMV__IB__BOL,,Gennemsnitlig marginal omvurdering på gæld til virksomhedsinvesteringer (imputeret)
+mrVirkDriftPasRente,MRVIRKDRIFTPASRENTE,"i_,s_,t",18,18,MRVIRKDRIFTPASRENTE__IB__BOL,,Gennemsnitlig marginalrente til virksomhedsinvesteringer ekskl. omvurderinger (imputeret)
+mtHhAktAfk,MTHHAKTAFK,"portf,t",7,4,MTHHAKTAFK__BANK,,Marginalskat på husholdningers kapitalindkomster.
+mtHhAktAfkRest,MTHHAKTAFKREST,"portf,t",2,0,MTHHAKTAFKREST__INDLAKTIER,,Forskel mellem gennemsnitlig og marginal kapital beskatningskat.
+mtHhPasAfk,MTHHPASAFK,"portf,t",7,2,MTHHPASAFK__BANK,,Marginalskat på husholdningers renteudgifter.
+mtInd,MTIND,"a_,t",86,86,MTIND__100,,Marginal skattesats på lønindkomst.
+mtIndRest,MTINDREST,"a,t",86,0,MTINDREST__100,,Residual-led i marginal skattesats på lønindkomst.
+mtVirk,MTVIRK,t,1,1,MTVIRK,,Marginal indkomstskat hos virksomheder.
+muBolig,MUBOLIG,"a,t",83,83,MUBOLIG__100,,Marginalnytte af bolig.
+mUC,MUC,"a,t",86,86,MUC__100,,Marginalnytte af forbrug udover end bolig.
+nBruttoArbsty,NBRUTTOARBSTY,t,1,1,NBRUTTOARBSTY,,Brutto-arbejdsstyrke inkl. grænsearbejdere. Antal 1.000 personer.
+nBruttoLedig,NBRUTTOLEDIG,t,1,1,NBRUTTOLEDIG,ADAM[Ulb],Bruttoledige. Antal 1.000 personer. Kilde: ADAM[Ulb]
+nL,NL,"s_,t",12,12,NL__BOL,ADAM[Q<i>]; ADAM[Q],"Beskæftigelse fordelt på brancher, Kilde: ADAM[Q] eller ADAM[Q<i>]"
+nL_inklOrlov,NL_INKLORLOV,"s_,t",12,12,NL_INKLORLOV__BOL,ADAM[Qb1]; ADAM[Qb<i>],"Beskæftigede i alt inkl. orlov fordelt på brancher, Kilde: ADAM[Qb1] eller ADAM[Qb<i>]."
+nLFuldtid,NLFULDTID,"s_,t",12,12,NLFULDTID__BOL,,Fuldtidsbeskæftigelse
+nLHh,NLHH,"a_,t",88,87,NLHH__100,,Beskæftigelse.
+nLLoenmodtager,NLLOENMODTAGER,"s_,t",10,10,NLLOENMODTAGER__BOL,ADAM[Qw<i>]; ADAM[Qw],"Beskæftigede lønmodtagere fordelt på brancher, Kilde: ADAM[Qw] eller ADAM[Qw<i>]"
+nLSelvst,NLSELVST,"s_,t",10,10,NLSELVST__BOL,ADAM[Qs<i>]; ADAM[Qs],"Beskæftigede selvstændige fordelt på brancher, Kilde: ADAM[Qs] eller ADAM[Qs<i>]"
+nLSelvst2nL,NLSELVST2NL,"s_,t",10,1,NLSELVST2NL__BOL,,Selvstændiges andel af beskæftigelse.
+nLxDK,NLXDK,t,1,1,NLXDK,,Grænsearbejdere i antal hoveder - inkluderer pt. sort arbejde.
+nNettoArbsty,NNETTOARBSTY,t,1,1,NNETTOARBSTY,ADAM[Ua],Netto-arbejdsstyrke inkl. grænsearbejdere. Antal 1.000 personer. Kilde: ADAM[Ua]
+nNettoLedig,NNETTOLEDIG,t,1,1,NNETTOLEDIG,ADAM[Ul],Nettoledige. Antal 1.000 personer. Kilede: ADAM[Ul]
+nOpslag,NOPSLAG,"s_,t",10,10,NOPSLAG__BOL,,Samlet antal jobopslag.
+nOrlov,NORLOV,"s_,t",12,11,NORLOV__BOL,ADAM[Qm<i>]; ADAM[Qm],"Personer som er midlertidigt fraværende fra beskæftigelse, Kilde: ADAM[Qm] eller ADAM[Qm<i>]."
+nOrlovRest,NORLOVREST,t,1,0,NORLOVREST,,Personer i større arbejdsmarkedskonflikter mv.
+nOvf,NOVF,"ovf,t",38,38,NOVF__AKTDAG,,Basen til sociale overførsler i antal 1000 personer fordelt på ordninger.
+nOvf2nSoc,NOVF2NSOC,"ovf_,soc,t",1862,0,NOVF2NSOC__AKTDAG__AKTDAG,,Mapping mellem modtagere af overførsler og BFR-grupper.
+nPop,NPOP,"a_,t",107,4,NPOP__0,,Befolningstotaler
+nPop_Over100,NPOP_OVER100,t,1,0,NPOP_OVER100,,Befolkningen over 100 år.
+nPopInklOver100,NPOPINKLOVER100,t,1,1,NPOPINKLOVER100,ADAM[U],Befolkningen inkl. personer over 100 år. Kilde: BFR eller ADAM[U].
+nSoc,NSOC,"soc,t",49,49,NSOC__AKTDAG,,"Befolkning fordelt på socio-grupper, antal 1.000 personer, Kilde: BFR."
+nSoegBaseHh,NSOEGBASEHH,"a_,t",103,87,NSOEGBASEHH__0,,Sum af jobsøgende og beskæftigede.
+nSoegBasexDK,NSOEGBASEXDK,t,1,0,NSOEGBASEXDK,,Sum af grænsearbejdere og jobsøgende potentielle grænsearbejdere.
+nSoegHh,NSOEGHH,"a_,t",87,87,NSOEGHH__100,,Jobsøgende.
+nSoegxDK,NSOEGXDK,t,1,1,NSOEGXDK,,Jobsøgende potentielle grænsearbejdere.
+nSubLoen,NSUBLOEN,t,1,1,NSUBLOEN,,Antal personer på lønstilskud
+nvBidrag,NVBIDRAG,"a_,t",1,1,NVBIDRAG__TOT,,Present value of vBidrag
+nvBidragAK,NVBIDRAGAK,t,1,1,NVBIDRAGAK,,Present value of vBidragAK
+nvBidragEL,NVBIDRAGEL,t,1,1,NVBIDRAGEL,,Present value of vBidragEL
+nvBidragFri,NVBIDRAGFRI,t,1,1,NVBIDRAGFRI,,Present value of vBidragFri
+nvBidragObl,NVBIDRAGOBL,t,1,1,NVBIDRAGOBL,,Present value of vBidragObl
+nvBidragTjmp,NVBIDRAGTJMP,t,1,1,NVBIDRAGTJMP,,Present value of vBidragTjmp
+nvBNP,NVBNP,t,1,1,NVBNP,,Present value of vBNP
+nvFCFF,NVFCFF,"s_,t",17,17,NVFCFF__BOL,,"Nutidsværdi af frie pengestrømme til virksomheden ekskl. finansielle aktiver og passiver, diskonteret med rWACC."
+nvG,NVG,"g_,t",1,1,NVG__GTOT,,Present value of vG
+nvGInd,NVGIND,t,1,1,NVGIND,,Present value of vGInd
+nvGKol,NVGKOL,t,1,1,NVGKOL,,Present value of vGKol
+nvJordrente,NVJORDRENTE,t,1,1,NVJORDRENTE,,Present value of vJordrente
+nvJordrenteRest,NVJORDRENTEREST,t,1,1,NVJORDRENTEREST,,Present value of vJordrenteRest
+nvOffAfskr,NVOFFAFSKR,"i_,t",1,1,NVOFFAFSKR__ITOT,,Present value of vOffAfskr
+nvOffFraHh,NVOFFFRAHH,t,1,1,NVOFFFRAHH,,Present value of vOffFraHh
+nvOffFraUdlEU,NVOFFFRAUDLEU,t,1,1,NVOFFFRAUDLEU,,Present value of vOffFraUdlEU
+nvOffFraUdlKap,NVOFFFRAUDLKAP,t,1,1,NVOFFFRAUDLKAP,,Present value of vOffFraUdlKap
+nvOffFraUdlRest,NVOFFFRAUDLREST,t,1,1,NVOFFFRAUDLREST,,Present value of vOffFraUdlRest
+nvOffFraVirk,NVOFFFRAVIRK,t,1,1,NVOFFFRAVIRK,,Present value of vOffFraVirk
+nvOffInd,NVOFFIND,t,1,1,NVOFFIND,,Present value of vOffInd
+nvOffIndRest,NVOFFINDREST,t,1,1,NVOFFINDREST,,Present value of vOffIndRest
+nvOffInv,NVOFFINV,t,1,1,NVOFFINV,,Present value of vOffInv
+nvOffOmv,NVOFFOMV,t,1,1,NVOFFOMV,,Present value of vOffOmv
+nvOffPrimInd,NVOFFPRIMIND,t,1,1,NVOFFPRIMIND,,Present value of vOffPrimInd
+nvOffPrimUd,NVOFFPRIMUD,t,1,1,NVOFFPRIMUD,,Present value of vOffPrimUd
+nvOffSub,NVOFFSUB,t,1,1,NVOFFSUB,,Present value of vOffSub
+nvOffUd,NVOFFUD,t,1,1,NVOFFUD,,Present value of vOffUd
+nvOffUdbytte,NVOFFUDBYTTE,t,1,1,NVOFFUDBYTTE,,Present value of vOffUdbytte
+nvOffUdRest,NVOFFUDREST,t,1,1,NVOFFUDREST,,Present value of vOffUdRest
+nvOffVirk,NVOFFVIRK,t,1,1,NVOFFVIRK,,Present value of vOffVirk
+nvOvf,NVOVF,"ovf_,t",11,11,NVOVF__BARSEL,,Present value of vOvf
+nvPrimSaldo,NVPRIMSALDO,t,1,1,NVPRIMSALDO,,Present value of vPrimSaldo
+nvRenteMarginal,NVRENTEMARGINAL,t,1,1,NVRENTEMARGINAL,,Present value of vRenteMarginal
+nvSaldo,NVSALDO,t,1,1,NVSALDO,,Present value of vSaldo
+nvSub,NVSUB,"d_,s_,t",1,1,NVSUB__DTOT__TOT,,Present value of vSub
+nvSubY,NVSUBY,t,1,1,NVSUBY,,Present value of vSubY
+nvtAfg,NVTAFG,"d_,s_,t",1,1,NVTAFG__DTOT__TOT,,Present value of vtAfg
+nvtAktie,NVTAKTIE,t,1,1,NVTAKTIE,,Present value of vtAktie
+nvtArv,NVTARV,"a_,t",1,1,NVTARV__TOT,,Present value of vtArv
+nvtAUB,NVTAUB,"s_,t",1,1,NVTAUB__TOT,,Present value of vtAUB
+nvtBund,NVTBUND,"a_,t",1,1,NVTBUND__TOT,,Present value of vtBund
+nvtDirekte,NVTDIREKTE,t,1,1,NVTDIREKTE,,Present value of vtDirekte
+nvtDoedsbo,NVTDOEDSBO,"a_,t",1,1,NVTDOEDSBO__TOT,,Present value of vtDoedsbo
+nvtEjd,NVTEJD,"a_,t",1,1,NVTEJD__TOT,,Present value of vtEjd
+nvtGrund,NVTGRUND,"s_,t",1,1,NVTGRUND__TOT,,Present value of vtGrund
+nvtHhAM,NVTHHAM,"a_,t",1,1,NVTHHAM__TOT,,Present value of vtHhAM
+nvtHhVaegt,NVTHHVAEGT,"a_,t",1,1,NVTHHVAEGT__TOT,,Present value of vtHhVaegt
+nvtIndirekte,NVTINDIREKTE,t,1,1,NVTINDIREKTE,,Present value of vtIndirekte
+nvtKilde,NVTKILDE,t,1,1,NVTKILDE,,Present value of vtKilde
+nvtKildeRest,NVTKILDEREST,t,1,1,NVTKILDEREST,,Present value of vtKildeRest
+nvtKirke,NVTKIRKE,"a_,t",1,1,NVTKIRKE__TOT,,Present value of vtKirke
+nvtKommune,NVTKOMMUNE,"a_,t",1,1,NVTKOMMUNE__TOT,,Present value of vtKommune
+nvtKulbrinte,NVTKULBRINTE,t,1,1,NVTKULBRINTE,,Present value of vtKulbrinte
+nvtMoms,NVTMOMS,"d_,s_,t",1,1,NVTMOMS__DTOT__TOT,,Present value of vtMoms
+nvtPAL,NVTPAL,t,1,1,NVTPAL,,Present value of vtPAL
+nvtPersRest,NVTPERSREST,"a_,t",1,1,NVTPERSREST__TOT,,Present value of vtPersRest
+nvtReg,NVTREG,"d_,s_,t",1,1,NVTREG__DTOT__TOT,,Present value of vtReg
+nvtSelskab,NVTSELSKAB,"s_,t",1,1,NVTSELSKAB__TOT,,Present value of vtSelskab
+nvtVirkAM,NVTVIRKAM,"s_,t",1,1,NVTVIRKAM__TOT,,Present value of vtVirkAM
+nvtVirksomhed,NVTVIRKSOMHED,"a_,t",1,1,NVTVIRKSOMHED__TOT,,Present value of vtVirksomhed
+nvtVirkVaegt,NVTVIRKVAEGT,"s_,t",1,1,NVTVIRKVAEGT__TOT,,Present value of vtVirkVaegt
+nvtY,NVTY,"s_,t",1,1,NVTY__TOT,,Present value of vtY
+nvtYRest,NVTYREST,"s_,t",1,1,NVTYREST__TOT,,Present value of vtYRest
+pBNP,PBNP,t,1,1,PBNP,ADAM[pY],"BNP-deflator, Kilde: ADAM[pY]"
+pBolig,PBOLIG,t,1,1,PBOLIG,ADAM[phk],"Kontantprisen på enfamiliehuse, Kilde: ADAM[phk]"
+pBoligRigid,PBOLIGRIGID,t,1,1,PBOLIGRIGID,,Rigid boligpris til brug i rRealKred2Bolig.
+pBoligUC,PBOLIGUC,t,1,1,PBOLIGUC,,User cost for ejerbolig.
+pBruttoHandel,PBRUTTOHANDEL,t,1,1,PBRUTTOHANDEL,,Kædeprisindeks for eksport + import
+pBVT,PBVT,"s_,t",12,12,PBVT__BOL,ADAM[pyf<i>]; ADAM[pyf],"BVT-deflator, Kilde: ADAM[pyf] eller ADAM[pyf<i>]"
+pBVTspxudv,PBVTSPXUDV,t,1,1,PBVTSPXUDV,,Deflator for BVT i private brancher ekskl. udvinding
+pBVTxudv,PBVTXUDV,t,1,1,PBVTXUDV,,Deflator for BVT ekskl. udvinding
+pC,PC,"c_,t",11,11,PC__CBIL,,Imputeret prisindeks for forbrugskomponenter for husholdninger - dvs. ekskl. turisters forbrug.
+pCDK,PCDK,"c_,t",7,7,PCDK__CBIL,ADAM[pC<i>],"Forbrugsdeflator for forbrug inkl. turisters fordelt på forbrugsgrupper, Kilde: ADAM[pC<i>]"
+pCGI,PCGI,t,1,1,PCGI,,Deflator for indenlandsk efterspørgsel
+pCGIX,PCGIX,t,1,1,PCGIX,,Deflator for samlet efterspørgsel
+pCGIxLager,PCGIXLAGER,t,1,1,PCGIXLAGER,,Deflator for indenlandsk efterspørgsel ekskl. lagerinvesteringer
+pCPI,PCPI,"c_,t",6,6,PCPI__CBIL,,"Forbrugerprisindeks (CPI), Kilde: FMBANK[pfp] og FMBANK[pfp<i>]."
+pCTurist,PCTURIST,"c,t",6,3,PCTURIST__CBIL,,Price index of tourists consumption by consumption group.
+pE,PE,"r_,t",12,12,PE__BOL,ADAM[pvm<i>]; ADAM[pvm],"Deflator på energi-input fordelt på aftager-brancher, Kilde: ADAM[pvm] eller ADAM[pvm<i>]"
+pG,PG,"g_,t",2,2,PG__G,ADAM[pco],"Deflator for offentligt forbrug, Kilde: ADAM[pco]"
+pGIndMarked,PGINDMARKED,t,1,1,PGINDMARKED,ADAM[pcoim)],"Deflator for offentlig individuel konsumudgift (sociale ydelser i naturalier), markedsmæssig, Kilde: ADAM[pcoim)]"
+pGInput,PGINPUT,t,1,1,PGINPUT,ADAM[pCogl],"Offentligt forbrugsdeflator beregnet med inputmetode, Kilde: ADAM[pCogl]"
+pGxAfskr,PGXAFSKR,t,1,1,PGXAFSKR,ADAM[pCoz],"Deflator for offentligt forbrug fratrukket offentlige afskrivninger, Kilde: ADAM[pCoz]"
+pGxAfskrInput,PGXAFSKRINPUT,t,1,1,PGXAFSKRINPUT,ADAM[pCozgl],"Deflator for offentligt forbrug fratrukket offentlige afskrivninger beregnet med inputmetode, Kilde: ADAM[pCozgl]"
+pHICP,PHICP,t,1,1,PHICP,,"Harmoniseret forbrugerprisindeks (HICP), Kilde: FMBANK[pfphicp]."
+pI,PI,"i_,t",4,4,PI__IB,ADAM[pI]; ADAM[pib]; ADAM[pim],"Investeringsdeflator fordelt på investeringstyper, Kilde: ADAM[pI] eller ADAM[pim] eller ADAM[pib]"
+pI_iL_lag,PI_IL_LAG,t,1,1,PI_IL_LAG,,Lagget lagerinvesteringsdeflator benyttet til foregående års priser
+pI_s,PI_S,"i_,s_,t",40,31,PI_S__IB__BOL,ADAM[pI<i>]; ADAM[pib<i>]; ADAM[pim<i>],"Investeringsdeflator fordelt på brancher, Kilde: ADAM[pI<i>] eller ADAM[pim<i>] eller ADAM[pib<i>]"
+pIbErhverv,PIBERHVERV,t,1,1,PIBERHVERV,,Deflator for private bygningsinvesteringer ekskl. boliginvesteringer
+pIbm,PIBM,t,1,1,PIBM,,Deflator for investeringer ekskl. lagerinvesteringer
+pIBoligUC,PIBOLIGUC,t,1,1,PIBOLIGUC,,Usercost for kapitalinvesteringer i nybyggeri af ejerboliger (investeringspris plus installationsomkostninger).
+pIErhverv,PIERHVERV,t,1,1,PIERHVERV,,Deflator for private investeringer ekskl. lager- og boliginvesteringer
+pILager,PILAGER,t,1,1,PILAGER,,Deflator for lagerinvesteringer alene dvs. ekskl. stambesætninger og værdigenstande
+pIO,PIO,"d_,s_,t",97,97,PIO__BOL__BYG,,Imputeret deflator for branchefordelte leverancer fra både import og indenlandsk produktion fordelt på efterspørgselskomponenter.
+pIOm,PIOM,"d_,s_,t",120,54,PIOM__BOL__ENE,,Imputeret deflator for branchefordelte leverancer fra import fordelt på efterspørgselskomponenter.
+pIOy,PIOY,"d_,s_,t",216,113,PIOY__BOL__BOL,,Imputeret deflator for branchefordelte leverancer fra indenlandsk produktion fordelt på efterspørgselskomponenter.
+pIStam,PISTAM,t,1,1,PISTAM,,Deflator for stambesætninger
+pIVaerdi,PIVAERDI,t,1,1,PIVAERDI,,Deflator for værdigenstande
+pK,PK,"k,s_,t",33,32,PK__IB__BOL,,User cost af kapital (skyggepris i første periode hvor K er eksogen).
+pK_gns,PK_GNS,"k,s_,t",14,14,PK_GNS__IB__BYG,,"User cost af kapital uden marginal justeringsomkostning, og med rAktieDrift som diskonteringsrate"
+pKE,PKE,"sp,t",8,8,PKE__BOL,,CES pris af qKE-aggregat.
+pKEL,PKEL,"sp,t",8,8,PKEL__BOL,,CES pris af qKEL-aggregat.
+pKELB,PKELB,"s_,t",8,8,PKELB__BOL,,CES pris af qKELB-aggregat.
+pKELBR,PKELBR,"s_,t",9,9,PKELBR__BOL,,Marginalomkostning fra produktion før rest-produktionsskatter.
+pKI,PKI,"i_,s_,t",6,6,PKI__IB__SPTOT,,"Investeringspris, pI_s, sammenvejet med kapitalapparat"
+pKUdn,PKUDN,"k,s_,t",18,17,PKUDN__IB__BOL,,User cost af kapital efter kapacitetsudnyttelse. Normaliseret til 1 i basisår.
+pL,PL,"s_,t",17,17,PL__BOL,,User cost for effektiv arbejdskraft i produktionsfunktion.
+pLand,PLAND,t,1,1,PLAND,,Imputeret gennemsnitlig pris på grundværdien af land til boligbenyttelse.
+pLOffInput,PLOFFINPUT,t,1,1,PLOFFINPUT,ADAM[pywo1gl],"Deflator for offentlig lønsum ved input-metoden, Kilde: ADAM[pywo1gl]"
+pLUdn,PLUDN,"s_,t",9,9,PLUDN__BOL,,User cost for effektiv arbejdskraft i produktionsfunktion.
+pM,PM,"s_,t",10,1,PM__BOL,ADAM[pM<i>]; ADAM[pM],"Importdeflator fordelt på importgrupper, Kilde: ADAM[pM] eller ADAM[pM<i>]"
+pMenergi,PMENERGI,t,1,1,PMENERGI,,Deflator for samlet import af energi
+pMtjenester,PMTJENESTER,t,1,1,PMTJENESTER,,Deflator for samlet tjenesteimport
+pMvarer,PMVARER,t,1,1,PMVARER,,Deflator for samlet vareimport
+pMx,PMX,t,1,1,PMX,,Deflator for import af tjenester (ekslusiv søtransport) og fremstilling.
+pnCPI,PNCPI,"c_,t",6,6,PNCPI__CBIL,,"Nettoforbrugerprisindeks (nCPI), Kilde: FMBANK[pnp] og FMBANK[pnp<i>]."
+pOffAfskr,POFFAFSKR,"i_,t",3,3,POFFAFSKR__IB,ADAM[pinvbo1]; ADAM[pinvmo1]; ADAM[pinvo1],"Deflator for offentlige afskrivninger, Kilde: ADAM[pinvo1], ADAM[pinvmo1] eller ADAM[pinvbo1]"
+pOffDirInv,POFFDIRINV,t,1,1,POFFDIRINV,ADAM[pxo1i],"Pris på egenproduktion til investering i offentlig forvaltning og service, Kilde: ADAM[pxo1i]"
+pOffIndirInv,POFFINDIRINV,t,1,1,POFFINDIRINV,,Pris på den offentlige sektors nettokøb af bygninger o.a. eksisterende investeringsgoder
+pOffNyInv,POFFNYINV,t,1,1,POFFNYINV,ADAM[pifo1ny],"Deflator for offentlige nyinvesteringer inkl. direkte investeringer, Kilde: ADAM[pifo1ny]"
+pOffNyInvx,POFFNYINVX,t,1,1,POFFNYINVX,ADAM[pifro1ny],"Deflator for offentlige nyinvesteringer ekskl. direkte investeringer, Kilde: ADAM[pifro1ny]"
+pOffSalg,POFFSALG,t,1,1,POFFSALG,ADAM[pxo1_p)],"Deflator for offentlig sektors salg af varer og tjenester, Kilde: ADAM[pxo1_p)]"
+pOlie,POLIE,t,1,1,POLIE,ADAM[pee3r],"Oliepris i DKK, Kilde: ADAM[pee3r]."
+pOlieBrent,POLIEBRENT,t,1,0,POLIEBRENT,ADAM[boil],"Prisnotering på råolie, Brent (dollar/tønde), Kilde: ADAM[boil]"
+pR,PR,"r_,t",12,12,PR__BOL,ADAM[pvm<i>]; ADAM[pvm],"Deflator på materiale-input fordelt på brancherne som modtager materialeinputtet, Kilde: ADAM[pvm] eller ADAM[pvm<i>]"
+pRE,PRE,"r_,t",10,10,PRE__BOL,ADAM[pv<i>]; ADAM[pv],"Deflator for aggregeret materiale- og energiinput fordelt på brancherne som modtager materialeinputtet, Kilde: ADAM[pv] eller ADAM[pv<i>]"
+ptNetYOff,PTNETYOFF,t,1,1,PTNETYOFF,ADAM[pspz_xo1],"Deflator for offentlige produktionsskatter i faste priser, Kilde: ADAM[pspz_xo1]"
+pW,PW,t,1,1,PW,,Løn pr. produktiv enhed arbejdskraft.
+pX,PX,"x_,t",6,6,PX__XENE,ADAM[pe<i>]; ADAM[pe],"Eksportdeflator fordelt på eksportgrupper, Kilde: ADAM[pe] eller ADAM[pe<i>]"
+pXm,PXM,"x_,t",6,5,PXM__XENE,,Deflator på import til reeksport.
+pXtjenester,PXTJENESTER,t,1,1,PXTJENESTER,,Deflator for samlet tjenesteeksport inkl. søfart og turisme
+pXUdl,PXUDL,"x_,t",6,1,PXUDL__XENE,ADAM[pee<i>],"Eksportkonkurrerende udenlandsk pris, Kilde: ADAM[pee<i>]"
+pXvarer,PXVARER,t,1,1,PXVARER,,Deflator for samlet vareeksport inkl. energi
+pXy,PXY,"x_,t",6,6,PXY__XENE,,Deflator på direkte eksport.
+pY,PY,"s_,t",12,12,PY__BOL,ADAM[pX<i>]; ADAM[pX],"Produktionsdeflator fordelt på brancher, Kilde: ADAM[pX] eller ADAM[pX<i>]"
+pY0,PY0,"s_,t",9,9,PY0__BOL,,Marginalomkostning fra produktion + øvrige produktionsskatter
+pYfixed,PYFIXED,"sp,t",8,0,PYFIXED__BOL,,"Faste omkostninger, som ikke indgår i prisdannelse."
+pYOffInput,PYOFFINPUT,t,1,1,PYOFFINPUT,ADAM[pxo1gl],"Deflator for offentlig produktion ved input-metoden, Kilde: ADAM[pxo1gl]"
+qArvBase,QARVBASE,"a,t",83,83,QARVBASE__100,,Hjælpevariabel til førsteordensbetingelse for arve-nytte.
+qBiler,QBILER,t,1,1,QBILER,ADAM[fKncb],"Kapitalmængde for køretøjer i husholdningerne, Kilde: ADAM[fKncb]"
+qBNP,QBNP,t,1,1,QBNP,ADAM[fY],"BNP, Kilde: ADAM[fY]"
+qBolig,QBOLIG,"a_,t",187,167,QBOLIG__0,,Ejerboliger ejet af husholdningerne (aggregat af kapital og land)
+qBoligxRef,QBOLIGXREF,"a_,t",103,84,QBOLIGXREF__0,,Ejerboliger ejet af husholdningerne ekskl. referenceforbrug.
+qBruttoHandel,QBRUTTOHANDEL,t,1,1,QBRUTTOHANDEL,,Eksport + import i kædepriser
+qBVT,QBVT,"s_,t",12,12,QBVT__BOL,ADAM[fYf<i>]; ADAM[fYf],"BVT, Kilde: ADAM[fYf] eller ADAM[fYf<i>]"
+qBVT2hL,QBVT2HL,"s_,t",10,10,QBVT2HL__BOL,,BVT pr. arbejdstime i mængde.
+qBVT2hLsnit,QBVT2HLSNIT,t,1,1,QBVT2HLSNIT,,Glidende gennemsnit af BVT pr. arbejdstime i mængde.
+qBVTspxudv,QBVTSPXUDV,t,1,1,QBVTSPXUDV,,BVT i private brancher ekskl. udvinding
+qBVTUdl,QBVTUDL,t,1,0,QBVTUDL,,"BVT i verden, Kilde: World Bank, jf. makrobk"
+qBVTxudv,QBVTXUDV,t,1,1,QBVTXUDV,,BVT ekskl. udvinding
+qC,QC,"c_,t",12,12,QC__CBIL,,Husholdningernes samlede forbrug fordelt på forbrugsgrupper og aggregater inkl. lejebolig og imputeret ejerbolig.
+qC_NR,QC_NR,"a_,t",102,102,QC_NR__0,,"Gns. husholdningers forbrug som defineret i Nationalregnskabet - dvs. ud fra qC[cTot,t]"
+qCDK,QCDK,"c_,t",7,7,QCDK__CBIL,ADAM[fC<i>],"Det private forbrug inkl. turisters fordelt på forbrugsgrupper, Kilde: ADAM[fC<i>]"
+qCGI,QCGI,t,1,1,QCGI,,Indenlandsk efterspørgsel
+qCGIX,QCGIX,t,1,1,QCGIX,,Samlet efterspørgsel
+qCGIxLager,QCGIXLAGER,t,1,1,QCGIXLAGER,,Indenlandsk efterspørgsel ekskl. lagerinvesteringer
+qCTurist,QCTURIST,"c,t",6,3,QCTURIST__CBIL,,Turisters forbrug i Danmark (imputeret)
+qCx,QCX,"a_,t",186,167,QCX__0,,Individuelt forbrug ekskl. bolig og finansielle omkostninger.
+qCxRef,QCXREF,"a_,t",103,84,QCXREF__0,,"Forbrug ekskl. bolig, finansielle omkostninger og referenceforbrug."
+qE,QE,"r_,t",12,11,QE__BOL,ADAM[fVe<i>]; ADAM[fVe],"Energiinput fordelt på aftager-brancher, Kilde: ADAM[fVe] eller ADAM[fVe<i>]"
+qFormueBase,QFORMUEBASE,"a,t",83,83,QFORMUEBASE__100,,Hjælpevariabel til førsteordensbetingelse for nytte af formue.
+qG,QG,"g_,t",3,3,QG__G,ADAM[fCo],"Offentligt forbrug, Kilde: ADAM[fCo]"
+qGIndMarked,QGINDMARKED,t,1,1,QGINDMARKED,ADAM[fcoim)],"Real offentlig individuel konsumudgift (sociale ydelser i naturalier), markedsmæssig, Kilde: ADAM[fcoim)]"
+qGInput,QGINPUT,t,1,1,QGINPUT,ADAM[fCogl],"Offentligt forbrug beregnet med inputmetode, Kilde: ADAM[fCogl]"
+qGrus,QGRUS,t,1,0,QGRUS,,"Eksogen mængde af produktion fra udvindingsbranche som ikke udfases, men heller ikke indgår i Nordsøbeskatning."
+qGxAfskr,QGXAFSKR,t,1,1,QGXAFSKR,ADAM[fCoz],"Offentligt forbrug fratrukket offentlige afskrivninger, Kilde: ADAM[fCoz]"
+qGxAfskrInput,QGXAFSKRINPUT,t,1,1,QGXAFSKRINPUT,ADAM[fCozgl],"Offentligt forbrug fratrukket offentlige afskrivninger beregnet med inputmetode, Kilde: ADAM[fCozgl]"
+qHandelsbalance,QHANDELSBALANCE,t,1,1,QHANDELSBALANCE,,Real handelsbalance
+qI,QI,"i_,t",4,4,QI__IB,ADAM[fI]; ADAM[fIb]; ADAM[fIm],"Investeringer fordelt på investeringstype, Kilde: ADAM[fI] eller ADAM[fIm] eller ADAM[fIb]"
+qI_s,QI_S,"i_,s_,t",40,29,QI_S__IB__BOL,ADAM[fI<i>]; ADAM[fIb<i>]; ADAM[fIm<i>],"Investeringer fordelt på brancher, Kilde: ADAM[fI<i>] eller ADAM[fIm<i>] eller ADAM[fIb<i>]"
+qIbErhverv,QIBERHVERV,t,1,1,QIBERHVERV,,Private bygningsinvesteringer ekskl. boliginvesteringer
+qIbm,QIBM,t,1,1,QIBM,,Investeringer ekskl. lagerinvesteringer
+qIBolig,QIBOLIG,t,1,1,QIBOLIG,,Investeringer i ejerboligkapital.
+qIBoligInstOmk,QIBOLIGINSTOMK,t,1,1,QIBOLIGINSTOMK,,Installationsomkostninger for boliginvesteringer i nybyggeri.
+qIErhverv,QIERHVERV,t,1,1,QIERHVERV,ADAM[fIfp1xh],"Private investeringer ekskl. lager- og boliginvesteringer, Kilde: ADAM[fIfp1xh]"
+qILager,QILAGER,t,1,1,QILAGER,,Lagerinvesteringer alene dvs. ekskl. stambesætninger og værdigenstande
+qILagerDiskripans,QILAGERDISKRIPANS,t,1,0,QILAGERDISKRIPANS,,Diskripans i kædeaggregatet for lagerinvesteringer - kan sikre rimelige priser i fremskrivning
+qILejeBolig,QILEJEBOLIG,t,1,1,QILEJEBOLIG,,Investeringer i lejeboligkapital.
+qIO,QIO,"d_,s_,t",97,97,QIO__BOL__BYG,,Imputeret branchefordelte leverancer fra både import og indenlandsk produktion fordelt på efterspørgselskomponenter.
+qIOm,QIOM,"d_,s_,t",216,54,QIOM__BOL__BOL,,Imputeret branchefordelte leverancer fra import fordelt på efterspørgselskomponenter.
+qIOy,QIOY,"d_,s_,t",216,113,QIOY__BOL__BOL,,Imputeret branchefordelte leverancer fra indenlandsk produktion fordelt på efterspørgselskomponenter.
+qIStam,QISTAM,t,1,1,QISTAM,,Stambesætninger
+qIVaerdi,QIVAERDI,t,1,1,QIVAERDI,,Værdigenstande
+qK,QK,"i_,s_,t",38,37,QK__IB__BOL,ADAM[fKnb<i>]; ADAM[fKnm<i>],"Ultimokapital fordelt efter kapitaltype og branche, Kilde: ADAM[fKnm<i>] eller ADAM[fKnb<i>]"
+qKBolig,QKBOLIG,t,1,1,QKBOLIG,ADAM[fKnbhe],"Kapitalmængde af ejerboliger, Kilde: ADAM[fKnbhe]"
+qKE,QKE,"sp,t",8,8,QKE__BOL,,CES-aggregat mellem maskinkapital og Energi.
+qKEL,QKEL,"sp,t",8,8,QKEL__BOL,,CES-aggregat mellem KE-aggregat og arbejdskraft.
+qKELB,QKELB,"s_,t",8,8,QKELB__BOL,,CES-aggregat mellem KEL-aggregat and bygningskapital.
+qKELBR,QKELBR,"s_,t",9,9,QKELBR__BOL,,CES-aggregat mellem KELB-aggregat og materialer.
+qKInstOmk,QKINSTOMK,"i_,s_,t",27,26,QKINSTOMK__IB__BOL,,Installationsomkostninger for kapital fordelt på private brancher.
+qKLejeBolig,QKLEJEBOLIG,"a_,t",103,1,QKLEJEBOLIG__0,,Kapitalapparat i lejeboliger fordelt på alder.
+qKUdn,QKUDN,"i_,s_,t",20,17,QKUDN__IB__BOL,,"Ultimokapital efter kapacitetsudnyttelse, med pris normaliseret til 1 i basisår."
+qL,QL,"s_,t",11,11,QL__BOL,,Arbejdskraft i effektive enheder før kapacitetsudnyttelse.
+qLand,QLAND,t,1,0,QLAND,,Mål for land anvendt til ejerboliger.
+qLandSalg,QLANDSALG,t,1,1,QLANDSALG,,Land solgt fra husholdningerne til at bygge grunde til ejerboliger på.
+qLOffInput,QLOFFINPUT,t,1,1,QLOFFINPUT,ADAM[fYwo1gl],"Offentlig lønsum i faste priser ved input-metoden, Kilde: ADAM[fYwo1gl]"
+qLUdn,QLUDN,"s_,t",10,10,QLUDN__BOL,,Arbejdskraft i effektive enheder.
+qM,QM,"s_,t",10,10,QM__BOL,ADAM[fM<i>]; ADAM[fM],"Import fordelt på importgrupper, Kilde: ADAM[fM] eller ADAM[fM<i>]"
+qMenergi,QMENERGI,t,1,1,QMENERGI,,Samlet import af energi
+qMtjenester,QMTJENESTER,t,1,1,QMTJENESTER,,Samlet tjenesteimport
+qMvarer,QMVARER,t,1,1,QMVARER,,Samlet vareimport
+qMx,QMX,t,1,1,QMX,,Real import af tjenester (ekslusiv søtransport) og fremstilling.
+qNytte,QNYTTE,"a,t",83,83,QNYTTE__100,,CES nest af bolig og andet privat forbrug.
+qOffAfskr,QOFFAFSKR,"i_,t",3,3,QOFFAFSKR__IB,ADAM[fInvbo1]; ADAM[fInvmo1]; ADAM[fInvo1],"Offentlige afskrivninger, Kilde: ADAM[fInvo1], ADAM[fInvmo1] eller ADAM[fInvbo1]"
+qOffDirInv,QOFFDIRINV,t,1,1,QOFFDIRINV,ADAM[fXo1i],"Direkte offentlige investeringer i forskning og udvikling, mængde, Kilde: ADAM[fXo1i]"
+qOffIndirInv,QOFFINDIRINV,t,1,1,QOFFINDIRINV,,Den offentlige sektors nettokøb af bygninger o.a. eksisterende investeringsgoder
+qOffNyInv,QOFFNYINV,t,1,1,QOFFNYINV,ADAM[fIfo1ny],"Offentlige nyinvesteringer inkl. direkte investeringer, Kilde: ADAM[fIfo1ny]"
+qOffNyInvx,QOFFNYINVX,t,1,1,QOFFNYINVX,ADAM[fIfro1ny],"Offentlige nyinvesteringer ekskl. direkte investeringer, Kilde: ADAM[fIfro1ny]"
+qOffSalg,QOFFSALG,t,1,1,QOFFSALG,ADAM[fxo1_p)],"Offentlig sektors salg af varer og tjenester, mængde, Kilde: ADAM[fxo1_p)]"
+qProd,QPROD,"s_,t",12,11,QPROD__BOL,,Branchespecifikt produktivitetsindeks for arbejdskraft.
+qProdHh,QPRODHH,"a_,t",87,87,QPRODHH__100,,Aldersfordelt produktivitet.
+qProdHh_a,QPRODHH_A,"a,t",86,0,QPRODHH_A__100,,Alders-specifikt led i qProdHh.
+qProdHh_t,QPRODHH_T,t,1,0,QPRODHH_T,,Tids-afhængigt led i qProdHh.
+qProdxDK,QPRODXDK,t,1,0,QPRODXDK,,Grænsearbejderes produktivitet.
+qR,QR,"r_,t",12,11,QR__BOL,ADAM[fVm<i>]; ADAM[fVm],"Materialeinput fordelt på brancherne som modtager materialeinputtet, Kilde: ADAM[fVm] eller ADAM[fVm<i>]"
+qRE,QRE,"r_,t",10,10,QRE__BOL,ADAM[fV<i>]; ADAM[fV],"Aggregeret materiale- og energiinput fordelt på brancherne som modtager materialeinputtet, Kilde: ADAM[fV] eller ADAM[fV<i>]"
+qtNetYOff,QTNETYOFF,t,1,1,QTNETYOFF,ADAM[fSpz_xo1],"Offentlige produktionsskatter i faste priser, Kilde: ADAM[fSpz_xo1]"
+qX,QX,"x_,t",6,6,QX__XENE,ADAM[fE<i>]; ADAM[fE],"Eksport, Kilde: ADAM[fE] og ADAM[fE<i>]"
+qXm,QXM,"x_,t",6,5,QXM__XENE,,Import til reeksport.
+qXMarked,QXMARKED,t,1,1,QXMARKED,ADAM[fEe<i>],"Eksportmarkedsstørrelse, Kilde: ADAM[fEe<i>]"
+qXSkala,QXSKALA,t,1,1,QXSKALA,,Endogen udbudseffekt på eksport.
+qXtjenester,QXTJENESTER,t,1,1,QXTJENESTER,,Samlet tjenesteeksport inkl. søfart og turisme
+qXTraek,QXTRAEK,t,1,1,QXTRAEK,,Eksporttræk fra eksportmarkederne.
+qXvarer,QXVARER,t,1,1,QXVARER,,Samlet vareeksport inkl. energi
+qXy,QXY,"x_,t",6,6,QXY__XENE,,Direkte eksport.
+qY,QY,"s_,t",12,11,QY__BOL,ADAM[fX],"Produktion fordelt på brancher, Kilde: ADAM[fX]"
+qYBolig,QYBOLIG,t,1,1,QYBOLIG,,Bruttoproduktion af ejerboliger inkl. installationsomkostninger (aggregat af kapital og land)
+qYOffInput,QYOFFINPUT,t,1,1,QYOFFINPUT,ADAM[fXo1gl],"Offentlig produktion i faste priser ved input-metoden, Kilde: ADAM[fXo1gl]"
+rAfk,RAFK,"portf,t",7,7,RAFK__BANK,,Sum af omvurderinger og renter på finansielt aktiv eller passiv.
+rAfskr,RAFSKR,"k,s_,t",19,2,RAFSKR__IB__BOL,,Afskrivningsrate for kapital.
+rAKFradrag2Bidrag,RAKFRADRAG2BIDRAG,t,1,0,RAKFRADRAG2BIDRAG,,Fradrag for A-kassebidrag som andel af A-kassebidrag.
+rAktieDrift,RAKTIEDRIFT,t,1,1,RAKTIEDRIFT,,Investorernes forventede afkast på vAktieDrift. I fravær af stød er den lig afkastet på vAktieDrift.
+rAktieDriftPrem,RAKTIEDRIFTPREM,t,1,0,RAKTIEDRIFTPREM,,Risikopræmie på indenlandske aktier.
+rAktieOevrigAfk,RAKTIEOEVRIGAFK,t,1,1,RAKTIEOEVRIGAFK,,Afkastrate på virksomhedernes finansielle aktiver efter selskabsskat.
+rArbProd,RARBPROD,t,1,1,RARBPROD,,Timeproduktivitet.
+rArv,RARV,"a,t",102,0,RARV__0,,Andel af den samlede arv som tilfalder hver arving med alderen a.
+rArvKorrektion,RARVKORREKTION,a,102,0,RARVKORREKTION__0,,"Gennemsnitlig formue personer, som dør, relativt til en gennemsnitsperson i samme alder."
+rB2KELB,RB2KELB,"sp,t",8,0,RB2KELB__BOL,,B-andel i KELB-nest.
+rB2KELBR,RB2KELBR,"s_,t",9,9,RB2KELBR__BOL,,B-andel i KELBR-nest.
+rBeskGab,RBESKGAB,t,1,1,RBESKGAB,,Beskæftigelsesgab.
+rBidragsSats,RBIDRAGSSATS,t,1,0,RBIDRAGSSATS,ADAM[iwbid],"Gennemsnitlig bidragssats på realkreditlån, ultimo året. Kilde: ADAM[iwbid]"
+rBilAfskr,RBILAFSKR,t,1,0,RBILAFSKR,,Afskrivningsrate for køretøjer i husholdningerne.
+rBoern,RBOERN,"a,t",86,0,RBOERN__100,,Andel af det samlede antal under 18-årige som en voksen med alderen a har ansvar for.
+rBoligOmkRest,RBOLIGOMKREST,t,1,1,RBOLIGOMKREST,,Øvrige ejerboligomkostninger ift. boligens værdi.
+rBoligOmkRestRes,RBOLIGOMKRESTRES,t,1,0,RBOLIGOMKRESTRES,,"Øvrige ejerboligomkostninger ift. boligens værdi - residual efter materialer, løn og ejendomsværdiskat."
+rBoligPrem,RBOLIGPREM,t,1,0,RBOLIGPREM,,Risikopræmie for boliger.
+rBoligTraeghed,RBOLIGTRAEGHED,t,1,1,RBOLIGTRAEGHED,,Hjælpevariabel til omstillingsomkostninger på boligpriser.
+rBruttoLedig,RBRUTTOLEDIG,t,1,1,RBRUTTOLEDIG,,Bruttoledighedsrate.
+rBruttoLedigGab,RBRUTTOLEDIGGAB,t,1,1,RBRUTTOLEDIGGAB,,Gab i bruttoledighedsrate.
+rBVTGab,RBVTGAB,t,1,1,RBVTGAB,,Outputgab.
+rCPI,RCPI,"c,t",5,0,RCPI__CBIL,,"Vægte i forbrugerprisindeks (CPI), Kilde: FMBANK[pf<i>vgt]."
+rDisk,RDISK,,1,0,RDISK,,De fremadskuende forbrugeres aldersafhængige diskonterings-rate.
+rDollarKurs,RDOLLARKURS,t,1,0,RDOLLARKURS,ADAM[ewus],"Dollarkursen, DKK/Dollar, Kilde: ADAM[ewus]"
+rE2KE,RE2KE,"sp,t",8,0,RE2KE__BOL,,Energi-andel i KE-nest.
+rE2KELBR,RE2KELBR,"s_,t",9,9,RE2KELBR__BOL,,E-andel i KELBR-nest.
+rELFradrag2Bidrag,RELFRADRAG2BIDRAG,t,1,0,RELFRADRAG2BIDRAG,,Fradrag for efterlønsbidrag som andel af efterlønsbidrag.
+rFFLoenAlternativ,RFFLOENALTERNATIV,,1,0,RFFLOENALTERNATIV,,Forhandlingsalternativ (outside option) for fagforening i lønforhandling.
+rFinAccel,RFINACCEL,sp,8,0,RFINACCEL__BOL,,Straf-rente fra finansielle friktioner på overskydende (manglende) fri pengestrømme.
+rFinAccelPrem,RFINACCELPREM,"s_,t",9,9,RFINACCELPREM__BOL,,Ændring i risikopræmie fra finansiel friktion.
+rFinAccelTraeghed,RFINACCELTRAEGHED,,1,0,RFINACCELTRAEGHED,,Træghed i opdatering af reference-profit for finansiel friktion. Styrer persistens i finansiel friktion.
+rGLukning,RGLUKNING,t,1,0,RGLUKNING,,Beregningsteknisk stigning i offentligt forbrug til lukning af offentlig budgetrestriktion.
+rHBI,RHBI,t,1,1,RHBI,,"Holdbarhedsindikator før korrektion ved beregningsmæssig skat til lukning, korrigeret HBI."
+rHBIxMerafkast,RHBIXMERAFKAST,t,1,1,RHBIXMERAFKAST,,Holdbarhedsindikator eksklusiv merafkast.
+rHhAktAfk,RHHAKTAFK,"portf_,t",7,7,RHHAKTAFK__BANK,,Husholdningens samlede afkastrate for aktiv/passiv typen.
+rHhAktOmk,RHHAKTOMK,"portf_,t",7,0,RHHAKTOMK__BANK,,Administrations- og investeringsomkostningsrate knyttet til finansielle aktiver
+rHhFraVirkKap,RHHFRAVIRKKAP,t,1,0,RHHFRAVIRKKAP,,Nettokapitaloverførsler fra virksomhederne til husholdningerne ift. BNP.
+rHhFraVirkOev,RHHFRAVIRKOEV,t,1,0,RHHFRAVIRKOEV,,Andre nettooverførsler fra virksomhederne til husholdningerne ift. BNP.
+rHhInvestx,RHHINVESTX,t,1,0,RHHINVESTX,,Husholdningernes direkte investeringer ekskl. bolig ift. direkte og indirekte beholdning af indl. aktier - imputeret.
+rHhPasAfk,RHHPASAFK,"portf_,t",7,7,RHHPASAFK__BANK,,Husholdningens samlede afkastrate for aktiv/passiv typen.
+rHhPasOmk,RHHPASOMK,"portf_,t",7,1,RHHPASOMK__BANK,,Administrations- og investeringsomkostningsrate knyttet til finansielle passiver
+rHhTilUdlRest,RHHTILUDLREST,t,1,0,RHHTILUDLREST,,Andre nettooverførsler fra virksomhederne til udlandet ift. BNP.
+rHICP,RHICP,"c,t",5,0,RHICP__CBIL,,"Vægte i harmoniseret forbrugerprisindeks (HICP), Kilde: FMBANK[v<i>hicp]."
+rhL2nFuldtid,RHL2NFULDTID,t,1,0,RHL2NFULDTID,,Aftalt arbejdstid pr. fuldtidsperson.
+rIL2Y,RIL2Y,"s_,t",1,0,RIL2Y__FRE,,Lagerinvesteringer ift. samlet produktion.
+rJobFinding,RJOBFINDING,"a_,t",87,87,RJOBFINDING__100,,Andel af jobsøgende som får et job.
+rK2KELBR,RK2KELBR,"s_,t",9,9,RK2KELBR__BOL,,K-andel i KELBR-nest.
+rKInstOmk,RKINSTOMK,"k,s_,t",15,15,RKINSTOMK__IB__BOL,,Hjælpevariabel til installationsomkostninger.
+rKLeje2Bolig,RKLEJE2BOLIG,"a_,t",84,84,RKLEJE2BOLIG__100,,Forholdet mellem qKbolig og qKlejebolig.
+rKLeje2Bolig_a,RKLEJE2BOLIG_A,"a,t",83,83,RKLEJE2BOLIG_A__100,,Aldersfordelt led i rKLeje2Bolig
+rKolPensIndb,RKOLPENSINDB,t,1,1,RKOLPENSINDB,,Kolletiv pensionsindbetalingsrate
+rKolPensIndb2ATPIndb,RKOLPENSINDB2ATPINDB,t,1,0,RKOLPENSINDB2ATPINDB,,Indbetalingsrate for kollektiv pension ift. indbetalingsrate for ATP-pension
+rKolPensUdb,RKOLPENSUDB,t,1,1,RKOLPENSUDB,,Kolletiv pensionsudbetalingsrate
+rKolPensUdb2ATPUdb,RKOLPENSUDB2ATPUDB,t,1,0,RKOLPENSUDB2ATPUDB,,Udbetalingsrate for kollektiv pension ift. udbetalingsrate for ATP-pension
+rKskat,RKSKAT,"k,t",2,0,RKSKAT__IB,,Andel af investering er fradragsberettiget.
+rKUdn,RKUDN,"i_,s_,t",23,5,RKUDN__IB__BOL,,Kapacitetsudnyttelse af sidste periodes qK.
+rL2KEL,RL2KEL,"sp,t",8,0,RL2KEL__BOL,,L-andel i KEL-nest.
+rL2KELBR,RL2KELBR,"s_,t",9,9,RL2KELBR__BOL,,L-andel i KELBR-nest.
+rLand2YBolig,RLAND2YBOLIG,t,1,0,RLAND2YBOLIG,,Skalaparameter i CES efterspørgsel efter land.
+rLoenkvote,RLOENKVOTE,"s_,t",12,12,RLOENKVOTE__BOL,,Sektorfordelt lønkvote
+rLoenNash,RLOENNASH,t,1,0,RLOENNASH,,Nash-forhandlingsvægt (arbejdsgiveres forhandlingsstyrke).
+rLUdn,RLUDN,"s_,t",19,18,RLUDN__BOL,,Kapacitetsudnyttelse af arbejdskraft.
+rMarkup,RMARKUP,"s_,t",7,7,RMARKUP__BYG,,Gennemsnitlig markup.
+rMatch,RMATCH,t,1,1,RMATCH,,"Andel af jobopslag, som resulterer i et match."
+rMellemSkatInd,RMELLEMSKATIND,"a_,t",87,87,RMELLEMSKATIND__100,,Imputeret gennemsnitlig del af indkomsten over mellemskattegrænsen.
+rMellemSkatInd_a,RMELLEMSKATIND_A,"a,t",86,0,RMELLEMSKATIND_A__100,,Alders-specifikt led i rMellemSkatInd.
+rMellemSkatInd_t,RMELLEMSKATIND_T,t,1,0,RMELLEMSKATIND_T,,Tids-afhængigt led i rTopSkatInd.
+rnCPI,RNCPI,"c,t",5,0,RNCPI__CBIL,,"Vægte i nettoforbrugerprisindeks (nCPI), Kilde: FMBANK[pn<i>vgt]."
+rNet2KapIndPos,RNET2KAPINDPOS,"a_,t",87,87,RNET2KAPINDPOS__100,,Positiv nettokapitalindkomst ift. positiv kapitalindkomst.
+rNet2KapIndPos_a,RNET2KAPINDPOS_A,"a,t",86,0,RNET2KAPINDPOS_A__100,,Alders-specifikt led i rNet2KapIndPos.
+rNettoArbstyGab,RNETTOARBSTYGAB,t,1,1,RNETTOARBSTYGAB,,Arbejdsstyrkegab.
+rNettoLedig,RNETTOLEDIG,t,1,1,RNETTOLEDIG,,Nettoledighedsrate.
+rNettoLedigGab,RNETTOLEDIGGAB,t,1,1,RNETTOLEDIGGAB,,Gab i nettoledighedsrate.
+rOblOpsp2Ovf,ROBLOPSP2OVF,t,1,0,ROBLOPSP2OVF,ADAM[btpatpo],"Bidragssats, obligatorisk opsparing for modtagere af indkostoverførsler, 0 før 2020, Kilde: ADAM[btpatpo]"
+rOblPrem,ROBLPREM,t,1,0,ROBLPREM,,Risikopræmie på obligationer ift. pengemarkedsrente.
+rOEMUgaeldRest2BNP,ROEMUGAELDREST2BNP,t,1,1,ROEMUGAELDREST2BNP,,Forskel på ØMU-gæld og statsgæld ift. BNP
+rOffAkt2BNP,ROFFAKT2BNP,"portf_,t",2,2,ROFFAKT2BNP__BANK,,Offentlig sektors aktiver ift. BNP.
+rOffDirInv,ROFFDIRINV,t,1,0,ROFFDIRINV,,"Andel af offentlig produktion til maskininvesteringer, der går direkte til offentlige investeringer."
+rOffDividender,ROFFDIVIDENDER,t,1,1,ROFFDIVIDENDER,,Implicit dividendesats på offentligt ejede aktier baseret på OFF13
+rOffFraHh2BNP,ROFFFRAHH2BNP,t,1,1,ROFFFRAHH2BNP,,Overførsler fra husholdningerne til den offentlige sektor relativt til BNP.
+rOffFraUdlEU2BNP,ROFFFRAUDLEU2BNP,t,1,1,ROFFFRAUDLEU2BNP,,Residuale overførsler fra EU til den offentlige sektor relativt til BNP.
+rOffFraUdlKap2BNP,ROFFFRAUDLKAP2BNP,t,1,1,ROFFFRAUDLKAP2BNP,,Kapitaloverførsler fra udlandet til den offentlige sektor relativt til BNP.
+rOffFraUdlRest2BNP,ROFFFRAUDLREST2BNP,t,1,1,ROFFFRAUDLREST2BNP,,Residuale overførsler fra udlandet eksl. EU til den offentlige sektor relativt til BNP.
+rOffFraVirk2BNP,ROFFFRAVIRK2BNP,t,1,1,ROFFFRAVIRK2BNP,,Overførsler fra virksomhederne til den offentlige sektor relativt til BNP.
+rOffIB2NyInvx,ROFFIB2NYINVX,t,1,1,ROFFIB2NYINVX,,"Andel af offentlige nyinvesteringer ekskl. direkte inv., som er bygninger."
+rOffK2Y,ROFFK2Y,"k,t",2,2,ROFFK2Y__IB,,Offentlig kapital relativt til vægtet gennemsnit af offentlig og privat produktion.
+rOffLandKoeb2BNP,ROFFLANDKOEB2BNP,t,1,1,ROFFLANDKOEB2BNP,,Nettoopkob af jord og rettigheder relativt til BNP.
+rOffLoensum2E,ROFFLOENSUM2E,t,1,1,ROFFLOENSUM2E,,Offentlige lønsum som andel af offentlige Energikøb (i løbende priser).
+rOffLoensum2R,ROFFLOENSUM2R,t,1,1,ROFFLOENSUM2R,,Offentlige lønsum som andel af offentlige materialekøb (i løbende priser).
+rOffPas2Tot,ROFFPAS2TOT,"portf_,t",7,0,ROFFPAS2TOT__BANK,,Offentlig sektors fordeling af passiver.
+rOffPasRest2BNP,ROFFPASREST2BNP,t,1,1,ROFFPASREST2BNP,,Forskel på offentlig finansielle passiver fra FM og OEMUgaeld ift. BNP.
+rOffRenterxInd,ROFFRENTERXIND,t,1,1,ROFFRENTERXIND,,Implicit rente på offentlige rentebærende aktiver (dvs. ekskl. aktier) baseret på OFF13
+rOffRenteUd,ROFFRENTEUD,t,1,1,ROFFRENTEUD,,Implicit rente på offentlige passiver baseret på OFF13
+rOffTilHhKap2BNP,ROFFTILHHKAP2BNP,t,1,1,ROFFTILHHKAP2BNP,,Offentlige kapitaloverførsler til husholdninger relativt til BNP.
+rOffTilHhKapPraemie2BNP,ROFFTILHHKAPPRAEMIE2BNP,t,1,1,ROFFTILHHKAPPRAEMIE2BNP,,Skattefriefterlønspræmie relativt til BNP
+rOffTilHhNPISH2BNP,ROFFTILHHNPISH2BNP,t,1,1,ROFFTILHHNPISH2BNP,,Offentlige overførsler til NPISH relativt til BNP.
+rOffTilHhTillaeg2BNP,ROFFTILHHTILLAEG2BNP,t,1,1,ROFFTILHHTILLAEG2BNP,,Indekstillæg relativt til BNP.
+rOffTilUdlBistand2BNI,ROFFTILUDLBISTAND2BNI,t,1,1,ROFFTILUDLBISTAND2BNI,,Offentlige overførsler til udlandet relativt til BNI.
+rOffTilUdlBNI2BNI,ROFFTILUDLBNI2BNI,t,1,1,ROFFTILUDLBNI2BNI,,BNI-bidrag fra offentlig sektor til EU relativt til BNI.
+rOffTilUdlEU2BNP,ROFFTILUDLEU2BNP,t,1,1,ROFFTILUDLEU2BNP,,Øvrige overførsler fra offentlig sektor til EU relativt til BNP.
+rOffTilUdlFO2BNP,ROFFTILUDLFO2BNP,t,1,1,ROFFTILUDLFO2BNP,,Residuale overførsler fra offentlig sektor til Færøerne relativt til BNP.
+rOffTilUdlGL2BNP,ROFFTILUDLGL2BNP,t,1,1,ROFFTILUDLGL2BNP,,Residuale overførsler fra offentlig sektor til Grønland relativt til BNP.
+rOffTilUdlKap2BNP,ROFFTILUDLKAP2BNP,t,1,1,ROFFTILUDLKAP2BNP,,Kapitaloverførsler fra offentlige sektor til udlandet relativt til BNP.
+rOffTilUdlMoms2Moms,ROFFTILUDLMOMS2MOMS,t,1,1,ROFFTILUDLMOMS2MOMS,,Moms bidrag fra offentlig sektor til EU relativt til moms.
+rOffTilVirk2BNP,ROFFTILVIRK2BNP,t,1,1,ROFFTILVIRK2BNP,,Offentlige overførsler til selskaber relativt til BNP.
+rOffTilVirkInvesttilskud2BNP,ROFFTILVIRKINVESTTILSKUD2BNP,t,1,1,ROFFTILVIRKINVESTTILSKUD2BNP,,Kapitaloverførsler til selskaber (investeringstilskud) relativt til BNP.
+rOffVirk2BNP,ROFFVIRK2BNP,t,1,1,ROFFVIRK2BNP,,Overskud fra offentlige virksomheder relativt til BNP.
+rOmv,ROMV,"portf_,t",7,2,ROMV__BANK,,Omvurderinger på finansiel portefølje.
+rOpslagOmk,ROPSLAGOMK,"s_,t",12,12,ROPSLAGOMK__BOL,,Andel af arbejdskraft som anvendes til hyrings-omkostninger.
+rOpslagOmkSqr,ROPSLAGOMKSQR,"s_,t",9,9,ROPSLAGOMKSQR__BOL,,Hjælpevariabel til beregning af kvadratiske omkostninger ved jobopslag.
+rOverlev,ROVERLEV,"a_,t",103,0,ROVERLEV__0,,Overlevelsesrate.
+rpBNP,RPBNP,t,1,1,RPBNP,,Relative laggede priser i BNP vægtet med nutidige mængder.
+rpBruttoHandel,RPBRUTTOHANDEL,t,1,1,RPBRUTTOHANDEL,,Relative laggede priser i sum af eksport og import vægtet med nutidige mængder.
+rpBVT,RPBVT,"s_,t",12,12,RPBVT__BOL,,Relative laggede priser i BVT vægtet med nutidige mængder.
+rpBVTspxudv,RPBVTSPXUDV,t,1,1,RPBVTSPXUDV,,Relative laggede priser i privat BVT ekskl. udvinding vægtet med nutidige mængder.
+rpBVTxudv,RPBVTXUDV,t,1,1,RPBVTXUDV,,Relative laggede priser i BVT ekskl. udvinding vægtet med nutidige mængder.
+rpC,RPC,t,1,1,RPC,,Relative laggede priser i privat forbrug vægtet med nutidige mængder.
+rpCDK,RPCDK,"c_,t",7,7,RPCDK__CBIL,,Relative laggede priser i forbrug inkl. turisters vægtet med nutidige mængder.
+rpCGI,RPCGI,t,1,1,RPCGI,,Relative laggede priser på indenlandsk efterspørgsel vægtet med nutidige mængder.
+rpCGIX,RPCGIX,t,1,1,RPCGIX,,Relative laggede priser på samlet efterspørgsel vægtet med nutidige mængder.
+rpCGIxLager,RPCGIXLAGER,t,1,1,RPCGIXLAGER,,Relative laggede priser for indenlandsk efterspørgsel ekskl. lagerinvesteringer vægtet med nutidige mængder.
+rpCInflSnit,RPCINFLSNIT,t,1,1,RPCINFLSNIT,,Glidende gennemsnit af forbrugerprisstigninger
+rpE,RPE,"s_,t",3,3,RPE__SBYTOT,,Relative laggede energi-input-priser vægtet med nutidige mængder.
+rPensArv,RPENSARV,"pens,a_,t",352,4,RPENSARV__ALDER__100,,"Andel af pensionsformue, som udbetales i tilfælde af død."
+rPensIndb,RPENSINDB,"pens,a_,t",348,348,RPENSINDB__ALDER__100,,Pensionsindbetalingsrate.
+rPensIndb_a,RPENSINDB_A,"pens,a,t",344,0,RPENSINDB_A__ALDER__100,,Aldersspecifikt led i pensionsindbetalingsrate.
+rPensionAkt,RPENSIONAKT,"portf_,t",4,0,RPENSIONAKT__INDLAKTIER,,Andel af aktiver ud af samlede aktiver.
+rPensUdb,RPENSUDB,"pens,a_,t",348,348,RPENSUDB__ALDER__100,,Pensionsudbetalingsrate
+rPensUdb_a,RPENSUDB_A,"pens,a,t",344,0,RPENSUDB_A__ALDER__100,,Aldersspecifikt led i pensionsudbetalingsrate.
+rpGxAfskr,RPGXAFSKR,t,1,1,RPGXAFSKR,,Relative laggede priser i offentligt forbrug ekskl. afskrivninger vægtet med nutidige mængder.
+rpI,RPI,"i_,s_,t",17,17,RPI__IB__SBYTOT,,Relative laggede priser i investeringer vægtet med nutidige mængder.
+rpIbErhverv,RPIBERHVERV,t,1,1,RPIBERHVERV,,Relative laggede priser for bygningserhvervsinvesteringer vægtet med nutidige mængder.
+rpIErhverv,RPIERHVERV,t,1,1,RPIERHVERV,,Relative laggede priser for erhvervsinvesteringer vægtet med nutidige mængder.
+rpIOm2pIOy,RPIOM2PIOY,"d_,s,t",23,23,RPIOM2PIOY__BOL__FRE,,Relativ pris mellem import og egenproduktion.
+rpIVaerdi,RPIVAERDI,t,1,1,RPIVAERDI,,Relative laggede priser i værdigenstande vægtet med nutidige mængder.
+rpM,RPM,t,1,1,RPM,,Relative laggede import-priser vægtet med nutidige mængder.
+rpMenergi,RPMENERGI,t,1,1,RPMENERGI,,Relative laggede energiimport-priser vægtet med nutidige mængder.
+rpMtjenester,RPMTJENESTER,t,1,1,RPMTJENESTER,,Relative laggede tjenesteimport-priser vægtet med nutidige mængder.
+rpMvarer,RPMVARER,t,1,1,RPMVARER,,Relative laggede vareimport-priser vægtet med nutidige mængder.
+rpMx,RPMX,t,1,1,RPMX,,Relative laggede priser på import af fremstilling og tjenester ekskl. søfart vægtet med nutidige mængder.
+rpOffAfskr,RPOFFAFSKR,t,1,1,RPOFFAFSKR,,Relative laggede priser for offentlige afskrivninger vægtet med nutidige mængder.
+rpOffNyInv,RPOFFNYINV,t,1,1,RPOFFNYINV,,Relative laggede priser for nyinvesteringer vægtet med nutidige mængder.
+rpOffNyInvx,RPOFFNYINVX,t,1,1,RPOFFNYINVX,,Relative laggede priser for nyinvesteringer ekskl. direkte investeringer vægtet med nutidige mængder.
+rpR,RPR,"s_,t",3,3,RPR__SBYTOT,,Relative laggede materiale-input-priser vægtet med nutidige mængder.
+rpRE,RPRE,"r_,t",10,10,RPRE__BOL,,Relative laggede priser for aggregeret materiale- og energiinput vægtet med nutidige mængder.
+rPrisEffekt_B,RPRISEFFEKT_B,"s_,t",9,9,RPRISEFFEKT_B__BOL,,Substitutionseffekt ift. baseline for priser til B
+rPrisEffekt_E,RPRISEFFEKT_E,"s_,t",9,9,RPRISEFFEKT_E__BOL,,Substitutionseffekt ift. baseline for priser til E
+rPrisEffekt_K,RPRISEFFEKT_K,"s_,t",9,8,RPRISEFFEKT_K__BOL,,Substitutionseffekt ift. baseline for priser til K
+rPrisEffekt_L,RPRISEFFEKT_L,"s_,t",9,9,RPRISEFFEKT_L__BOL,,Substitutionseffekt ift. baseline for priser til L
+rPrisEffekt_R,RPRISEFFEKT_R,"s_,t",9,9,RPRISEFFEKT_R__BOL,,Substitutionseffekt ift. baseline for priser til R
+rProdVaekst,RPRODVAEKST,t,1,1,RPRODVAEKST,,Vækstrate for i qProd (Produktivitetsindeks for Harrod-neutral vækst på tværs af brancher)
+rpX,RPX,t,1,1,RPX,,Relative laggede priser i eksport vægtet med nutidige mængder.
+rpXm,RPXM,t,1,1,RPXM,,Relative laggede priser i import til reeksport vægtet med nutidige mængder.
+rpXtjenester,RPXTJENESTER,t,1,1,RPXTJENESTER,,Relative laggede priser for tjenesteeksport vægtet med nutidige mængder.
+rpXvarer,RPXVARER,t,1,1,RPXVARER,,Relative laggede priser for vareeksport vægtet med nutidige mængder.
+rpXy,RPXY,t,1,1,RPXY,,Relative laggede priser i direkte eksport vægtet med nutidige mængder.
+rpXy2pXUdl,RPXY2PXUDL,"x,t",5,4,RPXY2PXUDL__XENE,,Relative eksportpriser - dvs. eksportpriser over eksportkonkurrerende priser.
+rpY,RPY,"s_,t",4,4,RPY__OFF,,Relative laggede output-priser vægtet med nutidige mængder.
+rpYTraeghed,RPYTRAEGHED,"sp,t",8,8,RPYTRAEGHED__BOL,,Hjælpevariabel til beregning af effekt fra omstillingsomkostninger på markup.
+rqIOy2qYoff,RQIOY2QYOFF,"d_,t",11,0,RQIOY2QYOFF__BYG,,Offentlige leverancer til salg og til direkte investeringer som andel af samlet offentlig produktion.
+rR2KELBR,RR2KELBR,"s_,t",9,1,RR2KELBR__BOL,,R-andel i KELBR-nest.
+rRealiseringAktieOmv,RREALISERINGAKTIEOMV,t,1,0,RREALISERINGAKTIEOMV,,Andel af akkumulerede omvurderinger på aktier som realiseres hvert år.
+rRealKred2Bolig,RREALKRED2BOLIG,"a_,t",85,84,RREALKRED2BOLIG__100,,Husholdningernes realkreditgæld relativt til deres boligformue.
+rRealKred2Bolig_a,RREALKRED2BOLIG_A,"a,t",83,0,RREALKRED2BOLIG_A__100,,Aldersspecifikt led i husholdningernes langsigtede realkreditgæld relativt til deres boligformue.
+rRealKred2Bolig_t,RREALKRED2BOLIG_T,t,1,0,RREALKRED2BOLIG_T,,Tidsvariant led i husholdningernes langsigtede realkreditgæld relativt til deres boligformue.
+rRealKredLaan2Laan,RREALKREDLAAN2LAAN,"i_,s_,t",18,18,RREALKREDLAAN2LAAN__IB__BOL,,Realkreditfinansieringsandel af gældsfinansiering.
+rRealKredTraeg,RREALKREDTRAEG,,1,0,RREALKREDTRAEG,,Træghed i pBoligRigid.
+rRef,RREF,"a,t",82,0,RREF__18,,Reference-andel for ikke-bolig forbrug.
+rRefBolig,RREFBOLIG,"a,t",84,0,RREFBOLIG__100,,Vane-andel for forbrug for boliger.
+rRente,RRENTE,"portf_,t",7,4,RRENTE__BANK,,Renter og dividender på finansiel portefølje.
+rRenteBankGaeld,RRENTEBANKGAELD,t,1,1,RRENTEBANKGAELD,ADAM[iwlo],Pengeinstitutternes effektive udlånsrente. Kilde: ADAM[iwlo]
+rRenteBankIndskud,RRENTEBANKINDSKUD,t,1,1,RRENTEBANKINDSKUD,ADAM[iwde],Pengeinstitutternes effektive indskudsrente. Kilde: ADAM[iwde]
+rRenteECB,RRENTEECB,t,1,0,RRENTEECB,ADAM[iweu],ECB-renten. Kilde: ADAM[iweu]
+rRenteFast,RRENTEFAST,t,1,1,RRENTEFAST,ADAM[iwb30],30-årig byggeobligation. Kilde: ADAM[iwb30]
+rRenteFlex,RRENTEFLEX,t,1,1,RRENTEFLEX,ADAM[iwbflx],Flexlånerente. Kilde: ADAM[iwbflx]
+rRenteOblDK,RRENTEOBLDK,t,1,1,RRENTEOBLDK,ADAM[iwbos],"Effektiv rente på 10-årig statsobligation (stående lån), årsgennemsnit. Kilde: ADAM[iwbos]"
+rRenteOblEU,RRENTEOBLEU,t,1,1,RRENTEOBLEU,ADAM[iwbeu],EU effektive rente af langfristede obligationer. Kilde: ADAM[iwbeu]
+rRenteSpaend,RRENTESPAEND,t,1,0,RRENTESPAEND,,Forskel på renten på danske statsobligationer og obligationer ustedt af ECB
+rSelvstKapInd,RSELVSTKAPIND,t,1,0,RSELVSTKAPIND,,Selvstændiges kapitalindkomst ift. direkte og indirekte beholdning af indl. aktier - imputeret.
+rSeparation,RSEPARATION,"a_,t",88,2,RSEPARATION__100,,Job-separations-rate.
+rSkatAfskr,RSKATAFSKR,"k,t",2,0,RSKATAFSKR__IB,,Skattemæssig afskrivningsrate.
+rSkatAfskr0,RSKATAFSKR0,"k,t",2,0,RSKATAFSKR0__IB,,Skattemæssig straksafskrivningsrate.
+rSoeg2Opslag,RSOEG2OPSLAG,t,1,1,RSOEG2OPSLAG,,Labor market tightness (nSoeg / nOpslag).
+rSoegBaseHh,RSOEGBASEHH,"a_,t",86,86,RSOEGBASEHH__100,,Sum af jobsøgende og beskæftigede som andel af befolkning.
+rSplurge,RSPLURGE,"a_,t",84,84,RSPLURGE__100,,splurge factor
+rSplurge_a,RSPLURGE_A,"a,t",83,0,RSPLURGE_A__100,,Alders-specifikt led i rSplurge
+rSplurge_t,RSPLURGE_T,t,1,0,RSPLURGE_T,,Tids-specifikt led i rSplurge
+rSplurgeBolig,RSPLURGEBOLIG,"a_,t",84,1,RSPLURGEBOLIG__100,,splurge factor
+rSub_m,RSUB_M,"d_,s,t",54,3,RSUB_M__BOL__ENE,,Sats for produktsubsidier fra import-grupper.
+rSub_m_k,RSUB_M_K,"i_,r_,s_,t",27,0,RSUB_M_K__IB__BOL__TJE,,Sats for produktsubsidier fra import-grupper fordelt på kapitaltype og branche til at foretage investeringingen.
+rSub_y,RSUB_Y,"d_,s,t",113,8,RSUB_Y__BOL__BYG,,Sats for produktsubsidier fra indenlandske brancher.
+rSub_y_k,RSUB_Y_K,"i_,r_,s_,t",72,0,RSUB_Y_K__IB__BOL__BYG,,Sats for produktsubsidier fra indenlandske brancher fordelt på kapitaltype og branche til at foretage investeringingen.
+rSubEU2BNP,RSUBEU2BNP,t,1,1,RSUBEU2BNP,,Subsidier finansieret af EU relativt til BNP.
+rSubLoen,RSUBLOEN,"s_,t",10,1,RSUBLOEN__BOL,,Sats for løntilskud.
+rSubYRest,RSUBYREST,"s_,t",10,1,RSUBYREST__BOL,,Sats for produktionssubsidier ekskl. løntilskud.
+rTidligPensUdb,RTIDLIGPENSUDB,t,1,0,RTIDLIGPENSUDB,,"Andel af ATP, livrente og ratepension, der bliver hævet tidligt"
+rtKirke,RTKIRKE,t,1,0,RTKIRKE,ADAM[bks],"Andel af skatteydere som betaler kirkeskat, ADAM[bks]"
+rtMellemRenter,RTMELLEMRENTER,t,1,0,RTMELLEMRENTER,,"Andel af renteindtægter, der betales topskat af."
+rTopSkatInd,RTOPSKATIND,"a_,t",87,87,RTOPSKATIND__100,,Imputeret gennemsnitlig del af indkomsten over topskattegrænsen.
+rTopSkatInd_a,RTOPSKATIND_A,"a,t",86,0,RTOPSKATIND_A__100,,Alders-specifikt led i rTopSkatInd.
+rTopSkatInd_t,RTOPSKATIND_T,t,1,0,RTOPSKATIND_T,,Tids-afhængigt led i rTopSkatInd.
+rTopTopSkatInd,RTOPTOPSKATIND,"a_,t",87,87,RTOPTOPSKATIND__100,,Imputeret gennemsnitlig del af indkomsten over toptopskattegrænsen.
+rTopTopSkatInd_a,RTOPTOPSKATIND_A,"a,t",86,0,RTOPTOPSKATIND_A__100,,Alders-specifikt led i rTopTopSkatInd.
+rTopTopSkatInd_t,RTOPTOPSKATIND_T,t,1,0,RTOPTOPSKATIND_T,,Tids-afhængigt led i rTopSkatInd.
+rtTopRenter,RTTOPRENTER,t,1,0,RTTOPRENTER,,"Andel af renteindtægter, der betales topskat af."
+rtTopTopRenter,RTTOPTOPRENTER,t,1,0,RTTOPTOPRENTER,,"Andel af renteindtægter, der betales topskat af."
+rUdlAkt2IndlPas,RUDLAKT2INDLPAS,"portf_,t",2,0,RUDLAKT2INDLPAS__BANK,,Udenlandske aktiver ift. indenlandske passiver
+rUdlPensIndb,RUDLPENSINDB,t,1,0,RUDLPENSINDB,,Udenlandske pensionsindbetalinger ift. husholdningernes pensionsindbetalinger.
+rUdlPensUdb,RUDLPENSUDB,t,1,1,RUDLPENSUDB,,Udenlændinges pensionsudbetalingsrate.
+rUdlRealkred,RUDLREALKRED,t,1,0,RUDLREALKRED,,Udenlandsk realkreditgæld (i Danmark) ift. husholdningernes realkredit gæld.
+rUdlUdbytteDirekte,RUDLUDBYTTEDIREKTE,t,1,0,RUDLUDBYTTEDIREKTE,,"Udbytter af udlandets direkte investeringer, som andel af samlet udbytte til udland."
+rvILager2iL,RVILAGER2IL,t,1,0,RVILAGER2IL,,"Lagerinvesteringers andel af lagerinvesteringer, værdigenstande og stambesætninger."
+rVirkAkt,RVIRKAKT,"portf,t",7,2,RVIRKAKT__BANK,,"Virksomhedens finansielle aktiver, som andel af virksomhedens værdi ekskl. finansielle aktiver og residual."
+rVirkAktieFradrag,RVIRKAKTIEFRADRAG,t,1,0,RVIRKAKTIEFRADRAG,,Virksomheders aktie fradrag
+rVirkDisk,RVIRKDISK,"s_,t",9,9,RVIRKDISK__BOL,,Selskabernes diskonteringsrate.
+rVirkDiskPrem,RVIRKDISKPREM,"s_,t",9,1,RVIRKDISKPREM__BOL,,Risikopræmie i diskonteringsraten for virksomhedens beslutningstagere.
+rVirkIndRest,RVIRKINDREST,t,1,1,RVIRKINDREST,,Parameter for rest-led i virksomheden indtjening.
+rVirkOevrigPas,RVIRKOEVRIGPAS,"portf_,t",3,0,RVIRKOEVRIGPAS__BANK,,"Fast del af obligationsgæld ikke direkte knyttet til investeringer, som andel af virksomhedens værdi ekskl. finansielle aktiver og residual."
+rVirkOevrigRealiseringOmv,RVIRKOEVRIGREALISERINGOMV,t,1,0,RVIRKOEVRIGREALISERINGOMV,,Andel af omvurderinger på virksomheders aktier som realiseres hvert år.
+rvIstam2iL,RVISTAM2IL,t,1,0,RVISTAM2IL,,"Stambesætningers andel af lagerinvesteringer, værdigenstande og stambesætninger."
+rvOffIndirInv2vBVT,RVOFFINDIRINV2VBVT,t,1,0,RVOFFINDIRINV2VBVT,,Offentligt opkøb af eksisterende kapital relativt til BVT.
+rvSaldo_konjunkturrenset_alm_poster,RVSALDO_KONJUNKTURRENSET_ALM_POSTER,t,1,1,RVSALDO_KONJUNKTURRENSET_ALM_POSTER,,Offentlig saldo korrigeret for konjunkturpåvirkning på almindelige poster
+rvtAfgEU2vtAfg,RVTAFGEU2VTAFG,t,1,0,RVTAFGEU2VTAFG,,Andel af produktskatter som går til EU.
+rWACC,RWACC,"s_,t",8,8,RWACC__BOL,,Weighed average cost of capital.
+rWTraeghed,RWTRAEGHED,t,1,1,RWTRAEGHED,,Hjælpevariabel til beregning af løntræghed.
+rXSkalaTraeghed,RXSKALATRAEGHED,,1,0,RXSKALATRAEGHED,,Træghed i skalaeffekt på eksportefterspørgsel.
+rXTraeghed,RXTRAEGHED,,1,0,RXTRAEGHED,,Træghed i på gennemslag fra eksportmarkedsvækst.
+rYfixed,RYFIXED,"sp,t",8,8,RYFIXED__BOL,,Andelsparameter for fast del af pY.
+sdOpslagOmk2dnL,SDOPSLAGOMK2DNL,t,1,1,SDOPSLAGOMK2DNL,,srOpslagOmk * snL differentieret ift. snL.
+sdOpslagOmk2dnLlag,SDOPSLAGOMK2DNLLAG,t,1,1,SDOPSLAGOMK2DNLLAG,,"sqL[spTot,t+1] differentieret ift. snL[spTot,t]"
+sfVirkDisk,SFVIRKDISK,t,1,1,SFVIRKDISK,,Strukturel diskonteringsrate for selskaber.
+shL,SHL,"s_,t",3,3,SHL__OFF,,Strukturel arbejdstid (kun aggregater - ingen branchefordeling i private erhverv).
+shLHh,SHLHH,"a_,t",87,87,SHLHH__100,,Strukturel aldersfordelt arbejdstid.
+shLxDK,SHLXDK,t,1,1,SHLXDK,,Strukturelt erlagte timer for grænsearbejdere.
+smrMarkup,SMRMARKUP,"s_,t",7,2,SMRMARKUP__BYG,,"Strukturel, marginal markup."
+snBruttoArbsty,SNBRUTTOARBSTY,t,1,1,SNBRUTTOARBSTY,,Strukturel brutto-arbejdsstyrke. Antal 1.000 personer. Kilde: BFR
+snBruttoLedig,SNBRUTTOLEDIG,t,1,1,SNBRUTTOLEDIG,,Strukturelt bruttoledige. Antal 1.000 personer. Kilde: BFR
+snL,SNL,"s_,t",3,3,SNL__OFF,,Strukturel beskæftigede inklusiv grænsearbejdere.
+snLHh,SNLHH,"a_,t",103,87,SNLHH__0,,Strukturel beskæftigelse.
+snLHh_vaekst,SNLHH_VAEKST,"a_,t",87,87,SNLHH_VAEKST__100,,Vækstfaktor for strukturel beskæftigelse. Kilde:socioøkonomisk fremskrivning (befolkningsregnskab).
+snLxDK,SNLXDK,t,2,2,SNLXDK,,Strukturelle grænsearbejdere i antal hoveder - inkluderer pt. sort arbejde.
+snNettoArbsty,SNNETTOARBSTY,t,1,1,SNNETTOARBSTY,,Strukturel netto-arbejdsstyrke. Antal 1.000 personer. Kilde: BFR
+snNettoLedig,SNNETTOLEDIG,t,1,1,SNNETTOLEDIG,,Strukturelt nettoledige. Antal 1.000 personer. Kilde: BFR
+snOpslag,SNOPSLAG,t,1,1,SNOPSLAG,,Strukturelt antal jobopslag.
+snSoc,SNSOC,"soc,t",49,0,SNSOC__AKTDAG,,"Strukturelle værdier for socio-grupper og aggregater, antal 1.000 personer, Kilde: BFR."
+snSoc_vaekst,SNSOC_VAEKST,"soc,t",20,20,SNSOC_VAEKST__AKTDAG,,Vækstfaktor for strukturelle socio-grupper. Kilde:socioøkonomisk fremskrivning (befolkningsregnskab).
+snSoegBaseHh,SNSOEGBASEHH,"a_,t",103,87,SNSOEGBASEHH__0,,Strukturel arbejdsstyrke.
+snSoegHh,SNSOEGHH,"a_,t",87,87,SNSOEGHH__100,,Strukturel jobsøgende.
+snSoegxDK,SNSOEGXDK,t,1,1,SNSOEGXDK,,Strukturel jobsøgende potentielle grænsearbejdere.
+spBVT,SPBVT,"s_,t",1,1,SPBVT__TOT,,Deflator for strukturel BVT.
+spBVTxudv,SPBVTXUDV,t,1,1,SPBVTXUDV,,Deflator for strukturel BVT ekskl. udvinding.
+spL2pW,SPL2PW,t,1,1,SPL2PW,,Strukturelt forhold mellem user cost på arbejdskraft og lønnen for det private erhverv samlet.
+sqBVT,SQBVT,"s_,t",2,2,SQBVT__SPTOT,,Strukturel BVT.
+sqBVTxudv,SQBVTXUDV,t,1,1,SQBVTXUDV,,Strukturel BVT ekskl. udvinding.
+sqL,SQL,"s_,t",3,3,SQL__OFF,,Strukturel arbejdskraft i effektive enheder.
+sqProd,SQPROD,"s_,t",3,3,SQPROD__OFF,,Strukturelt produktivitetsindeks for arbejdskraft (kun aggregater - ingen branchefordeling).
+sqXSkala,SQXSKALA,t,1,1,SQXSKALA,,Hjælpevariabel - skaleeffekt i fravær af træghed.
+srBruttoLedig,SRBRUTTOLEDIG,t,1,1,SRBRUTTOLEDIG,,Strukturel bruttoledighedsrate.
+srJobFinding,SRJOBFINDING,"a_,t",87,87,SRJOBFINDING__100,,Strukturel andel af jobsøgende som får et job.
+srMatch,SRMATCH,t,1,1,SRMATCH,,"Strukturel andel af jobopslag, som resulterer i et match."
+srNettoLedig,SRNETTOLEDIG,t,1,1,SRNETTOLEDIG,,Strukturel nettoledighedsrate.
+srOpslagOmk,SROPSLAGOMK,t,1,1,SROPSLAGOMK,,Andel af arbejdskraft som går til hyrings-omkostninger strukturelt.
+srSeparation,SRSEPARATION,"a_,t",87,1,SRSEPARATION__100,,Strukturel aggregeret separationsrate.
+srSoeg2Opslag,SRSOEG2OPSLAG,t,1,1,SRSOEG2OPSLAG,,Strukturel labor market tightness (snSoeg / snOpslag).
+srSoegBaseHh,SRSOEGBASEHH,"a_,t",86,86,SRSOEGBASEHH__100,,Strukturel arbejdsstyrke som andel af befolkning.
+tAfg_m,TAFG_M,"d_,s,t",54,3,TAFG_M__BOL__ENE,,Punktafgiftssats ekskl. subsidier og registreringsafgift fra import-grupper
+tAfg_m_k,TAFG_M_K,"i_,r_,s_,t",27,0,TAFG_M_K__IB__BOL__TJE,,Punktafgiftssats ekskl. subsidier og registreringsafgift fra import-grupper fordelt på kapitaltype og branche til at foretage investeringingen
+tAfg_y,TAFG_Y,"d_,s,t",113,8,TAFG_Y__BOL__BYG,,Punktafgiftssats ekskl. subsidier og registreringsafgift fra indenlandske brancher
+tAfg_y_k,TAFG_Y_K,"i_,r_,s_,t",72,0,TAFG_Y_K__IB__BOL__BYG,,Punktafgiftssats ekskl. subsidier og registreringsafgift fra indenlandske brancher fordelt på kapitaltype og branche til at foretage investeringingen
+tAktieTop,TAKTIETOP,t,1,0,TAKTIETOP,,Højeste skattesats på aktieafkast.
+tAMbidrag,TAMBIDRAG,t,1,0,TAMBIDRAG,,Procentsats for arbejdsmarkedsbidrag.
+tArv,TARV,t,1,0,TARV,,"Arveafgift (implicit, gennemsnit)"
+tAUB,TAUB,"s_,t",10,1,TAUB__BOL,,Afgiftssats for AUB-bidrag betalt af virksomheder.
+tBeskFradrag,TBESKFRADRAG,t,1,0,TBESKFRADRAG,,Imputeret gennemsnitlig beskæftigelsesfradrag ift. lønindkomst.
+tBund,TBUND,t,1,0,TBUND,ADAM[tsysp1],"Bundskattesats, Kilde: ADAM[tsysp1]"
+tDoedsbo,TDOEDSBO,t,1,0,TDOEDSBO,,Implicit skattesats.
+tE,TE,"s_,t",10,1,TE__BOL,,Energiafgiftssats - grøn afgift og bortauktionering af CO2 kvoter
+tEjd,TEJD,t,1,0,TEJD,,Implicit skattesats.
+tGrund,TGRUND,"s,t",9,0,TGRUND__BOL,,Implicit sats for ejendomsskatter
+tIOm,TIOM,"d_,s,t",216,54,TIOM__BOL__BOL,,Samlet afgiftssats for moms og punktafgifter inkl. subsidier og registreringsafgift fordelt på efterspørgselskomponenter og import-grupper.
+tIOy,TIOY,"d_,s,t",216,113,TIOY__BOL__BOL,,Samlet afgiftssats for moms og punktafgifter inkl. subsidier og registreringsafgift fordelt på efterspørgselskomponenter og indenlandske brancher.
+tJordrenteRest,TJORDRENTEREST,t,1,0,TJORDRENTEREST,,Implicit skattesats.
+tK,TK,"k,s_,t",22,21,TK__IB__BOL,,Kapitalafgiftssats (hhv. ejendomsskatter og vægtafgift)
+tKapPens,TKAPPENS,t,1,0,TKAPPENS,ADAM[tsyp],"Skatterate hvormed kapitalpensioner bliver beskattet ved udbetaling, Kilde: ADAM[tsyp]"
+tKildeRest,TKILDEREST,t,1,0,TKILDEREST,,"Implicit skattesats for øvrige kildeskatter, herunder forskerskat, begrænset skattepligtige, kontrollovstillæg og arbejdsudleje."
+tKirke,TKIRKE,t,1,0,TKIRKE,ADAM[tks],"Kirkeskattesats, Kilde: ADAM[tks]"
+tKommune,TKOMMUNE,t,1,0,TKOMMUNE,ADAM[tsys1]; ADAM[tsys2],"Gennemsnitlig kommunal skattesats, Kilde: ADAM[tsys1]+ADAM[tsys2]"
+tKulbrinte,TKULBRINTE,t,1,0,TKULBRINTE,,Implicit skattesats.
+tL,TL,"s_,t",10,10,TL__BOL,,Nettosats for afgifter og subsidier på arbejdskraft inklusiv selvstændige (betalt af arbejdsgiver)
+tLukning,TLUKNING,t,1,1,TLUKNING,,Beregningsteknisk skatteskat til lukning af offentlig budgetrestriktion på lang sigt (HBI=0).
+tMellem,TMELLEM,t,1,0,TMELLEM,ADAM[tsyt1],"Mellemskattesats, Kilde: ADAM[tsyt1]"
+tMoms,TMOMS,"d_,t",19,19,TMOMS__BOL,,Implicit aggregeret momssats fordelt på efterspørgselskomponenter.
+tMoms_m,TMOMS_M,"d_,s,t",54,3,TMOMS_M__BOL__ENE,,Momssats fordelt på efterspørgselskomponenter og input fra indenlandske brancher.
+tMoms_m_k,TMOMS_M_K,"i_,r,s,t",27,0,TMOMS_M_K__IB__BOL__TJE,,"Momssats fordelt på kapitaltype, branche til at foretage investeringingen og input fra indenlandske brancher."
+tMoms_y,TMOMS_Y,"d_,s,t",113,8,TMOMS_Y__BOL__BYG,,Momssats fordelt på efterspørgselskomponenter og input fra indenlandske brancher.
+tMoms_y_k,TMOMS_Y_K,"i_,r,s,t",72,0,TMOMS_Y_K__IB__BOL__BYG,,"Momssats fordelt på kapitaltype, branche til at foretage investeringingen og input fra indenlandske brancher."
+tPAL,TPAL,t,1,0,TPAL,ADAM[tsywp],"PAL-skattesats, Kilde: ADAM[tsywp]"
+tPensKor,TPENSKOR,t,1,0,TPENSKOR,,Ca. skattesats på ubeskattet pensionsformue til beregning af vHhFormue.
+tPersRestx,TPERSRESTX,t,1,0,TPERSRESTX,,Implicit skattesats.
+tReg_m,TREG_M,"d_,s,t",54,0,TREG_M__BOL__ENE,,Registreringsafgiftssats for biler.
+tReg_y,TREG_Y,"d_,s,t",113,0,TREG_Y__BOL__BYG,,Registreringsafgiftssats for biler.
+tSelskab,TSELSKAB,t,1,0,TSELSKAB,ADAM[tsyc],"Selskabsskattesats, Kilde: ADAM[tsyc]"
+tTidligPensUdb,TTIDLIGPENSUDB,t,1,0,TTIDLIGPENSUDB,,"Skattesats på tidligt hævet ATP, livrente og ratepension"
+tTold,TTOLD,"d_,s,t",54,0,TTOLD__BOL__ENE,,Toldsats fordelt på efterspørgselskomponenter og input fra import-grupper.
+tTop,TTOP,t,1,0,TTOP,ADAM[tsysp2]; ADAM[tsysp3],"Topskattesats, Kilde: ADAM[tsysp2]+ADAM[tsysp3]"
+tTopTop,TTOPTOP,t,1,0,TTOPTOP,ADAM[tsyt3],"Toptopskattesats, Kilde: ADAM[tsyt3]"
+tVirkAM,TVIRKAM,"s_,t",10,1,TVIRKAM__BOL,,Afgiftssats for AM-bidrag betalt af virksomheder
+tVirkVaegt,TVIRKVAEGT,"s_,t",8,0,TVIRKVAEGT__BYG,,Implicit sats for vægtafgift.
+tXm,TXM,"x,t",4,4,TXM__XENE,,Aggregeret afgift på import til reeksport fordelt på eksportgrupper.
+tYRest,TYREST,"s_,t",10,1,TYREST__BOL,,Øvrige produktionsskatter.
+uArv,UARV,t,1,0,UARV,,Arve-nytteparameter 0.
+uBidragAK,UBIDRAGAK,t,1,0,UBIDRAGAK,,Sats-parameter for A-kassebidrag.
+uBidragATP,UBIDRAGATP,t,1,0,UBIDRAGATP,,"Sats-parameter for sociale bidrag til ATP, særlig ATP ordning og lønmodtagernes garantifond pr. person i arbejdsstyrken."
+uBidragEL,UBIDRAGEL,t,1,0,UBIDRAGEL,,Sats-parameter for efterlønsbidrag pr. person i arbejdsstyrken.
+uBidragFri,UBIDRAGFRI,t,1,0,UBIDRAGFRI,,Sats-parameter for øvrige frivillige bidrag pr. person i arbejdsstyrken.
+uBidragOblRest,UBIDRAGOBLREST,t,1,0,UBIDRAGOBLREST,,Sats-parameter for øvrige bidrag til sociale ordninger pr. person i arbejdsstyrken.
+uBidragOblTjm,UBIDRAGOBLTJM,t,1,0,UBIDRAGOBLTJM,,Sats-parameter for obligatoriske sociale bidrag til tjenestemandspension pr. person i arbejdsstyrken.
+uBidragTjmp,UBIDRAGTJMP,t,1,0,UBIDRAGTJMP,,Sats-parameter for bidrag til Tjenestemandspension.
+uBoernFraHh,UBOERNFRAHH,"a,t",18,18,UBOERNFRAHH__0,,Parameter for børns formue relativ til en gennemsnitsperson. Bestemmer vBoernFraHh.
+uBoernFraHh_a,UBOERNFRAHH_A,"a,t",18,0,UBOERNFRAHH_A__0,,Alders-specifikt led i uBoernFraHh.
+uBoernFraHh_t,UBOERNFRAHH_T,t,1,0,UBOERNFRAHH_T,,Tids-afhængigt led i uBoernFraHh.
+uBolig,UBOLIG,"a,t",83,83,UBOLIG__100,,Nytteparameter som styrer forbrugernes bolig-efterspørgsel.
+uBolig_a,UBOLIG_A,"a,t",83,0,UBOLIG_A__100,,Alders-specifikt led i uBolig.
+uBVT,UBVT,"s_,t",1,1,UBVT__SPTOT,,"Totalfaktor-produktivitet på BVT udover Harrod-neutral vækst, kapacitetsudnyttelse, og omstillingsomkostninger."
+uC,UC,"c_,t",4,0,UC__CBIL,,Justeringsled til CES-skalaparameter i private forbrugs-nests.
+uCturisme,UCTURISME,"c,t",3,3,UCTURISME__CENE,,Skalaparameter til fordeling af udenlandske turisters forbrug i Danmark på forbrugsgrupper.
+uCturisme0,UCTURISME0,"c,t",3,0,UCTURISME0__CENE,,Skalaparameter til fordeling af udenlandske turisters forbrug i Danmark på forbrugsgrupper før endelig skalering.
+uCx,UCX,"a,t",83,83,UCX__100,,Nytteparameter som styrer forbrugernes efterspørgsel efter ikke-bolig og ikke-finansielle omkostninger (ydelser).
+uDeltag,UDELTAG,"a,t",86,0,UDELTAG__100,,Præferenceparameter for arbejdsstyrke-deltagelse.
+uFinAccel,UFINACCEL,"sp,t",8,0,UFINACCEL__BOL,,Hældning af den approksimerede afledte af omkostnings-funktionen fra finansielle friktioner i steady state.
+uFormue,UFORMUE,t,1,0,UFORMUE,,Nytte af formue parameter 0.
+uG,UG,"g_,t",1,0,UG__G,,Skalaparameter i det offentlige forbrugsnest.
+uh,UH,"a,t",86,0,UH__100,,Præferenceparameter for timer.
+uHhOvfPop,UHHOVFPOP,"a,t",86,0,UHHOVFPOP__100,,Aldersmæssig fordelingsnøgle knyttet til dvOvf2dnPop.
+uHhOvfRest,UHHOVFREST,"a,t",86,0,UHHOVFREST__100,,Residual som sikrer at samlede overførselsindkomster til en aldersgruppe passer til aldersprofil.
+uhLxDK,UHLXDK,t,1,0,UHLXDK,,Faktor som korrigerer for forskel i gennemsnitlig arbejdstid mellem grænsearbejdere og danskboende beskæftigede.
+uhW_DA,UHW_DA,t,1,0,UHW_DA,,Skalaparameter som styrer forhold mellem DA-løn og gennemsnitlig løn.
+uhWIndustri,UHWINDUSTRI,t,1,0,UHWINDUSTRI,,Skalaparameter som styrer forhold mellem industriløn og løn i fremstillingsbranchen.
+uIBoligInstOmk,UIBOLIGINSTOMK,,1,0,UIBOLIGINSTOMK,,Parameter for installationsomkostninger for boligkapital i nybyggeri.
+uIO,UIO,"d_,s,t",97,97,UIO__BOL__BYG,,Skalaparameter for efterspørgselskomponents vægt på diverse input.
+uIO0,UIO0,"d_,s_,t",181,20,UIO0__BOL__BOL,,Skalaparameter for efterspørgselskomponents vægt på diverse input før endelig skalering.
+uIOm,UIOM,"dux,s,t",49,49,UIOM__BOL__ENE,,Skalaparameter for efterspørgselskomponents vægt på diverse importerede input.
+uIOm0,UIOM0,"dux,s,t",48,0,UIOM0__BOL__ENE,,Importandel i efterspørgselskomponent.
+uIOXm,UIOXM,"x,s,t",5,5,UIOXM__XENE__ENE,,Skalaparameter for eksportkomponents vægt på diverse importerede input.
+uIOXm0,UIOXM0,"x,s,t",5,0,UIOXM0__XENE__ENE,,Skalaparameter for eksportkomponents vægt på diverse importerede input før endelig skalering.
+uIOXy,UIOXY,"x,s,t",17,17,UIOXY__XENE__ENE,,Skalaparameter for eksportkomponents vægt på diverse indenlandske input.
+uIOXy0,UIOXY0,"x,s,t",18,2,UIOXY0__XENE__ENE,,Skalaparameter for eksportkomponents vægt på diverse indenlandske input før endelig skalering.
+uIOy,UIOY,"dux,s,t",96,96,UIOY__BOL__BYG,,Skalaparameter for efterspørgselskomponents vægt på diverse indenlandske input.
+uK,UK,"k,s_,t",15,0,UK__IB__BOL,,Kapital-besparende produktivitet.
+uKE,UKE,"sp,t",7,7,UKE__BYG,,Parameter i produktionsnest for KE - konstantled i Cobb-Douglas limit af CES-produktions-nest.
+uKEL,UKEL,"sp,t",8,8,UKEL__BOL,,Parameter i produktionsnest for KEL - konstantled i Cobb-Douglas limit af CES-produktions-nest.
+uKELB,UKELB,"sp,t",8,8,UKELB__BOL,,Parameter i produktionsnest for KELB - konstantled i Cobb-Douglas limit af CES-produktions-nest.
+uKELBR,UKELBR,"sp,t",8,8,UKELBR__BOL,,Parameter i produktionsnest for KELBR - konstantled i Cobb-Douglas limit af CES-produktions-nest.
+uKInstOmk,UKINSTOMK,"k,s_,t",15,0,UKINSTOMK__IB__BOL,,Parameter for installationsomkostninger.
+uL,UL,"s_,t",9,0,UL__BOL,,Arbejdskraft-besparende produktivitet.
+uMatchOmk,UMATCHOMK,,1,0,UMATCHOMK,,Lineær omkostning pr. jobmatch.
+uMatchOmkSqr,UMATCHOMKSQR,,1,0,UMATCHOMKSQR,,Kvadratisk omkostning ved jobopslag.
+uOffTilHhRest,UOFFTILHHREST,t,1,1,UOFFTILHHREST,,Skalaparameter for øvrige offentlige overførsler til husholdninger.
+uOffUdbytteNordsoe,UOFFUDBYTTENORDSOE,t,1,0,UOFFUDBYTTENORDSOE,,"Andel af statslige udbytter, der kommer fra Nordsøfonden"
+uOpslagOmk,UOPSLAGOMK,t,1,0,UOPSLAGOMK,,Lineær omkostning pr. jobopslag.
+uOvfUbeskat,UOVFUBESKAT,"a,t",101,0,UOVFUBESKAT__0,,Aldersmæssig fordelingsnøgle knyttet til vOvfUbeskat.
+upBoligTraeghed,UPBOLIGTRAEGHED,,1,0,UPBOLIGTRAEGHED,,Parameter for Rotemberg omkostning i bolig-prisdannelse.
+uPensIndbOP,UPENSINDBOP,"a,t",86,0,UPENSINDBOP__100,,Skalaparameter for obligatorisk opsparing.
+uPersIndRest_a,UPERSINDREST_A,"a_,t",86,0,UPERSINDREST_A__100,,Aldersfordelt restled til personindkomst.
+uPersIndRest_t,UPERSINDREST_T,t,1,0,UPERSINDREST_T,,"Restled til personindkomst, uafhængigt af alder."
+upI_s,UPI_S,"i,s,t",18,0,UPI_S__IB__BOL,,Skalaparameter som fanger forskelle i branchernes investerings-deflatorer for samme investeringstype.
+upM2YTraeghed,UPM2YTRAEGHED,"dux,s",23,0,UPM2YTRAEGHED__BOL__FRE,,Parameter til at styre kortsigtet import-priselasticitet.
+uPrisIndeks,UPRISINDEKS,t,1,0,UPRISINDEKS,,Multiplikativ justeringsfaktor for pristalsregulering.
+uProgIndeks,UPROGINDEKS,t,1,0,UPROGINDEKS,,Multiplikativ justeringsfaktor for progressionsgrænser.
+upXyTraeghed,UPXYTRAEGHED,,1,0,UPXYTRAEGHED,,Træghed i pris-effekt på eksportefterspørgsel.
+upYTraeghed,UPYTRAEGHED,sp,8,0,UPYTRAEGHED__BOL,,Parameter for Rotemberg omkostning.
+upYUdv,UPYUDV,t,1,0,UPYUDV,,Skalaparameter for eksogen pris på udvinding.
+uRestFradrag,URESTFRADRAG,t,1,1,URESTFRADRAG,,Restfradragssats relativ til sats-reguleringen.
+uSatsIndeks,USATSINDEKS,t,1,0,USATSINDEKS,,Multiplikativ justeringsfaktor for satsregulering.
+uSatsIndeksx,USATSINDEKSX,t,1,0,USATSINDEKSX,,Multiplikativ justeringsfaktor for satsregulering ekskl. bidrag til obligatorisk opsparing.
+utHhVaegt,UTHHVAEGT,t,1,0,UTHHVAEGT,,Sats-parameter for vægtafgift pr. bil.
+utMedie,UTMEDIE,t,1,0,UTMEDIE,,Sats-parameter for medielicens pr. person.
+uvGInd,UVGIND,t,1,1,UVGIND,,Skala-parameter som bestemmer niveau for individuelt offentligt service før korrektion for demografisk træk og løn-niveau.
+uvGKol,UVGKOL,t,1,0,UVGKOL,,Skalaparameter for kollektivt offentligt forbrug.
+uvGxAfskr,UVGXAFSKR,t,1,1,UVGXAFSKR,,Niveauparameter for vGxAfskr
+uvOvfSats,UVOVFSATS,"ovf,t",38,0,UVOVFSATS__AKTDAG,,Skalaparameter for overførselssatser.
+uvPersFradrag_a,UVPERSFRADRAG_A,"a_,t",87,1,UVPERSFRADRAG_A__100,,Aldersfordelt imputeret personfradrag ekskl. regulering
+uvPersFradrag_t,UVPERSFRADRAG_T,t,1,0,UVPERSFRADRAG_T,,Ikke-aldersfordelt imputeret personfradrag ekskl. regulering
+uWTraeghed,UWTRAEGHED,,1,0,UWTRAEGHED,,Parameter for Rotemberg-træghed i lønforhandling.
+uXm,UXM,"x_,t",5,1,UXM__XENE,,Skalaparameter for import til re-eksport.
+uXMarked,UXMARKED,t,1,0,UXMARKED,,Parameter som knytter udenlandsk BVT og import
+uXy,UXY,"x_,t",6,1,UXY__XENE,,Skalaparameter for direkte eksport.
+uYBolig,UYBOLIG,t,1,0,UYBOLIG,,Skalaparameter i CES efterspørgsel efter boligkapital.
+vAfskrFradrag,VAFSKRFRADRAG,"i_,s_,t",27,26,VAFSKRFRADRAG__IB__BOL,,Skatte-fradrag for kapitalafskrivninger.
+vAKFradrag,VAKFRADRAG,"a_,t",87,87,VAKFRADRAG__100,,Imputeret fradrag for A-kassebidrag.
+vAktie,VAKTIE,t,1,1,VAKTIE,ADAM[Ws_cf_z]; ADAM[Ws_cr_z],"Aktier og andre ejerandelsbeviser, kursværdi, Kilde: ADAM[Ws_cr_z]+ADAM[Ws_cf_z]"
+vAktieDrift,VAKTIEDRIFT,t,2,2,VAKTIEDRIFT,,"Nutidsværdi af frie pengestrømme til egenkapital ekskl. finansielle aktiver og passiver, diskonteret med rAktieDrift."
+vAktieOevrig,VAKTIEOEVRIG,t,1,1,VAKTIEOEVRIG,,Samlet værdi af virksomhedernes finansielle nettoaktiver ikke knyttet til investeringer og virksomhedsdrift
+vAktieOevrigOmv,VAKTIEOEVRIGOMV,t,1,1,VAKTIEOEVRIGOMV,,Omvurderinger af virksomhedernes finansielle nettoaktiver ikke knyttet til investeringer og virksomhedsdrift
+vAktieOevrigRenter,VAKTIEOEVRIGRENTER,t,1,1,VAKTIEOEVRIGRENTER,,Formueindkomst fra virksomhedernes finansielle nettoaktiver ikke knyttet til investeringer og virksomhedsdrift
+vArv,VARV,"a_,t",103,103,VARV__0,,Arv modtaget af en person med alderen a.
+vArvBolig,VARVBOLIG,"a_,t",103,103,VARVBOLIG__0,,Værdi af ejerbolig til arv efter udgifter - dvs. inkl. afbetaling på gæld og inkl. øvrige omkostninger fx renter og bidragssats på realkreditlån.
+vArvGivet,VARVGIVET,"a,t",102,102,VARVGIVET__0,,Arv givet af hele kohorten med alder a.
+vArvKorrektion,VARVKORREKTION,"a_,t",102,84,VARVKORREKTION__0,,Arv som tildeles afdødes kohorte for at korregerer for selektionseffekt (formue og døds-sandsynlighed er mod-korreleret).
+vBeskFradrag,VBESKFRADRAG,"a_,t",87,87,VBESKFRADRAG__100,,Imputeret beskæftigelsesfradrag.
+vBetalingsbalance,VBETALINGSBALANCE,t,1,1,VBETALINGSBALANCE,ADAM[Enl],Saldo på den officelle betalingsbalances løbende poster. Kilde: ADAM[Enl].
+vBetalingsbalanceRest,VBETALINGSBALANCEREST,t,1,0,VBETALINGSBALANCEREST,,"Restpost indeholder bl.a. anskaffelse af værdigenstande og ikke-finansielle, ikke-producerede aktier"
+vBidrag,VBIDRAG,"a_,t",102,87,VBIDRAG__0,ADAM[Tp_h_o],"Bidrag til sociale ordninger, Kilde: ADAM[Tp_h_o]"
+vBidragAK,VBIDRAGAK,t,1,1,VBIDRAGAK,ADAM[Tpaf],"A-kassebidrag, Kilde: ADAM[Tpaf]"
+vBidragATP,VBIDRAGATP,t,1,1,VBIDRAGATP,ADAM[Saqw],"Sociale bidrag til ATP, særlig ATP ordning og lønmodtagernes garantifond, Kilde: ADAM[Saqw]"
+vBidragEL,VBIDRAGEL,t,1,1,VBIDRAGEL,ADAM[Tpef],"Efterlønsbidrag, Kilde: ADAM[Tpef]"
+vBidragFri,VBIDRAGFRI,t,1,1,VBIDRAGFRI,ADAM[Tpr],"Øvrige frivillige bidrag, Kilde: ADAM[Tpr]"
+vBidragObl,VBIDRAGOBL,t,1,1,VBIDRAGOBL,ADAM[Stp_o],"Obligatoriske bidrag, Kilde: ADAM[Stp_o]"
+vBidragOblRest,VBIDRAGOBLREST,t,1,1,VBIDRAGOBLREST,ADAM[Sasr],"Øvrige obligatoriske bidrag til sociale ordninger, Kilde: ADAM[Sasr]"
+vBidragOblTjm,VBIDRAGOBLTJM,t,1,1,VBIDRAGOBLTJM,ADAM[Stpt],"Obligatoriske sociale bidrag vedr. tjenestemænd, Kilde: ADAM[Stpt]"
+vBidragTjmp,VBIDRAGTJMP,t,1,1,VBIDRAGTJMP,ADAM[Tpt_o],"Bidrag til Tjenestemandspension, Kilde: ADAM[Tpt_o]"
+vBNI,VBNI,t,1,1,VBNI,ADAM[Yi],"Bruttonationalindkomst, Kilde: ADAM[Yi]"
+vBNP,VBNP,t,1,1,VBNP,ADAM[Y],"BNP, Kilde: ADAM[Y]"
+vBoernFraHh,VBOERNFRAHH,"a,t",36,36,VBOERNFRAHH__0,,Finansielle nettooverførsler fra forældre modtaget af børn i alder a.
+vBolig,VBOLIG,"a_,t",103,84,VBOLIG__0,,Husholdningernes boligformue.
+vBoligUdgift,VBOLIGUDGIFT,"a_,t",103,103,VBOLIGUDGIFT__0,,Cash-flow-udgift til ejerbolig - dvs. inkl. afbetaling på gæld og inkl. øvrige omkostninger fx renter og bidragssats på realkreditlån.
+vBVT,VBVT,"s_,t",12,12,VBVT__BOL,ADAM[Yf<i>]; ADAM[Yf],"BVT, Kilde: ADAM[Yf] eller ADAM[Yf<i>]"
+vBVT2hL,VBVT2HL,"s_,t",10,10,VBVT2HL__BOL,,BVT pr. arbejdstime i værdi.
+vBVT2hLsnit,VBVT2HLSNIT,t,1,1,VBVT2HLSNIT,,Glidende gennemsnit af BVT pr. arbejdstime i værdi.
+vBVTspxudv,VBVTSPXUDV,t,1,1,VBVTSPXUDV,,BVT i private brancher ekskl. udvinding
+vBVTxudv,VBVTXUDV,t,1,1,VBVTXUDV,,BVT ekskl. udvinding
+vC,VC,"c_,t",7,7,VC__CBIL,ADAM[Cp],Husholdningernes samlede forbrug fordelt på forbrugsgrupper og aggregater inkl. lejebolig og imputeret ejerbolig. Kilde: ADAM[Cp]
+vC_NR,VC_NR,"a_,t",102,102,VC_NR__0,,"Gns. husholdningers forbrug som defineret i Nationalregnskabet - dvs. ud fra qC[cTot,t]"
+vCDK,VCDK,"c_,t",7,7,VCDK__CBIL,ADAM[C<i>]; ADAM[Cp]; ADAM[Et],"Det private forbrug inkl. turisters fordelt på forbrugsgrupper, Kilde: ADAM[Cp] + ADAM[Et] og ADAM[C<i>]"
+vCGI,VCGI,t,1,1,VCGI,,Indenlandsk efterspørgsel
+vCGIX,VCGIX,t,1,1,VCGIX,,Samlet efterspørgsel
+vCGIxLager,VCGIXLAGER,t,1,1,VCGIXLAGER,,Indenlandsk efterspørgsel ekskl. lagerinvesteringer
+vCLejeBolig,VCLEJEBOLIG,"a_,t",102,84,VCLEJEBOLIG__0,,Forbrug af lejeboliger.
+vCTurist,VCTURIST,"c,t",6,3,VCTURIST__CBIL,,Turisters forbrug i Danmark fordelt på forbrugsgrupper.
+vCx,VCX,"a_,t",102,84,VCX__0,,Individuelt forbrug ekskl. bolig og finansielle omkostninger.
+vDispInd,VDISPIND,t,1,1,VDISPIND,ADAM[Yd_h],"Disponibel bruttoindkomst i husholdninger og organisationer, Kilde: ADAM[Yd_h]"
+vDividender,VDIVIDENDER,t,1,1,VDIVIDENDER,ADAM[Tiu_cf_z]; ADAM[Tiu_cr_z],"Samlede udbytter af aktier og ejerandelsbeviser udbetalt af indenlandske selskaber, Kilde: ADAM[Tiu_cr_z]+ADAM[Tiu_cf_z]"
+vE,VE,"r_,t",12,12,VE__BOL,ADAM[Ve<i>]; ADAM[Ve],"Energiinput fordelt på aftager-brancher, Kilde: ADAM[Ve] eller ADAM[Ve<i>]"
+vEBITDA,VEBITDA,"s_,t",9,9,VEBITDA__BOL,,"Earnings before interests, taxes, depreciation, and amortization - fortjeneste før renter, skatter og afskrivninger."
+vEBT,VEBT,"s_,t",9,9,VEBT__BOL,,Earnings before taxes - fortjeneste før beskatning.
+vEBTDrift,VEBTDRIFT,"s_,t",9,9,VEBTDRIFT__BOL,,Earnings before taxes - fortjeneste før beskatning - alene den del der hører til driften uden afkast.
+vELFradrag,VELFRADRAG,"a_,t",87,87,VELFRADRAG__100,,Imputeret fradrag for efterlønsbidrag.
+vFCFE,VFCFE,"s_,t",9,9,VFCFE__BOL,,Frie pengestrømme til egenkapital (Free cash flow to equity) ekskl. fra finansiel portefølje.
+vFCFExRef,VFCFEXREF,"sp,t",8,8,VFCFEXREF__BOL,,vFCFE eksklusiv reference-pengestrøm.
+vFCFExRefRest,VFCFEXREFREST,"sp,t",8,0,VFCFEXREFREST__BOL,,Restled i vFCFExRef - kalibreres til at slå finansiel friktion fra i grundforløb.
+vFCFF,VFCFF,"s_,t",9,9,VFCFF__BOL,,Frie pengestrømme til virksomhed (Free cash flow to Firm) ekskl. fra finansiel portefølje.
+vFFOutsideOption,VFFOUTSIDEOPTION,t,1,1,VFFOUTSIDEOPTION,,Fagforenings forhandlingsalterntiv i lønforhandling.
+vfYOffInput,VFYOFFINPUT,t,1,1,VFYOFFINPUT,ADAM[fXo1gl]; ADAM[pXo1gl],"Offentlig produktion i foregående års priser ved input-metoden, Kilde: ADAM[pXo1gl][-1]*ADAM[fXo1gl]"
+vG,VG,"g_,t",2,2,VG__G,ADAM[Co],"Offentligt forbrug, Kilde: ADAM[Co]"
+vGInd,VGIND,t,1,1,VGIND,ADAM[coi],Individuelt offentligt forbrug. Kilde: ADAM[coi]
+vGIndMarked,VGINDMARKED,t,1,1,VGINDMARKED,ADAM[coim)],"Nominel offentlig individuel konsumudgift (sociale ydelser i naturalier), markedsmæssig, Kilde: ADAM[coim)]"
+vGKol,VGKOL,t,1,1,VGKOL,ADAM[co]; ADAM[coi],Kollektivt offentligt forbrug. Kilde: ADAM[co]-ADAM[coi]
+vGLukning,VGLUKNING,t,1,1,VGLUKNING,,Udgift til beregningsteknisk stigning i offentligt forbrug til lukning af offentlig budgetrestriktion. Indgår IKKE i offentlig saldo.
+vGxAfskr,VGXAFSKR,t,1,1,VGXAFSKR,ADAM[Coz],"Offentligt forbrug fratrukket offentlige afskrivninger, Kilde: ADAM[Coz]"
+vHandelsbalance,VHANDELSBALANCE,t,1,1,VHANDELSBALANCE,,Nominel handelsbalance (nettoeksport)
+vHhAkt,VHHAKT,"portf_,a_,t",826,602,VHHAKT__BANK__0,,"Husholdningernes finansielle aktiver, Kilde: jf. se for portefølje."
+vHhAktieInd,VHHAKTIEIND,"a_,t",103,87,VHHAKTIEIND__0,,Aktieindkomst: dividender plus realiserede omvurderinger. Aggregat fra PSKAT2.
+vHhAktOmk,VHHAKTOMK,"portf_,t",8,3,VHHAKTOMK__BANK,,Administrations- og investeringsomkostninger knyttet til finansielle aktiver
+vHhAktOmv,VHHAKTOMV,"portf_,t",7,5,VHHAKTOMV__BANK,,Omvurderinger på husholdningernes finansielle aktiver
+vHhAktRenter,VHHAKTRENTER,"portf_,t",6,5,VHHAKTRENTER__BANK,,Husholdningernes formueindkomst fra aktiver
+vHhFormue,VHHFORMUE,"a_,t",102,102,VHHFORMUE__0,,Samlet formue inklusiv bolig.
+vHhFraMigration,VHHFRAMIGRATION,"a_,t",103,102,VHHFRAMIGRATION__0,,Nettoformue medbragt af netto-indvandrere.
+vHhFraVirk,VHHFRAVIRK,t,1,1,VHHFRAVIRK,ADAM[Tknr_h]; ADAM[Tr_o_h]; ADAM[Trks]; ADAM[Trn_h]; ADAM[Trr_hc_o],"Andre nettooverførsler fra virksomhederne til husholdningerne, Kilde: ADAM[Tknr_h] + ADAM[Trn_h] - ADAM[Tr_o_h] + ADAM[Trks] + ADAM[Trr_hc_o]"
+vHhFraVirkKap,VHHFRAVIRKKAP,t,1,1,VHHFRAVIRKKAP,ADAM[Tknr_h],"Nettokapitaloverførsler fra virksomhederne til husholdningerne, Kilde: ADAM[Tknr_h]"
+vHhFraVirkOev,VHHFRAVIRKOEV,t,1,1,VHHFRAVIRKOEV,ADAM[Tr_o_h]; ADAM[Trks]; ADAM[Trn_h]; ADAM[Trr_hc_o],"Øvrige nettooverførsler fra virksomhederne til husholdningerne, Kilde: ADAM[Trn_h] - ADAM[Tr_o_h] + ADAM[Trks] + ADAM[Trr_hc_o]"
+vHhInd,VHHIND,"a_,t",102,102,VHHIND__0,,Husholdningernes løbende indkomst efter skat (ekslusiv kapitalindkomst).
+vHhIndMv,VHHINDMV,"a_,t",84,84,VHHINDMV__100,,Husholdningers indkomst og lån i friværdi.
+vHhInvestx,VHHINVESTX,"a_,t",1,1,VHHINVESTX__TOT,,Husholdningernes direkte investeringer ekskl. bolig - imputeret.
+vHhNet,VHHNET,t,1,1,VHHNET,,"Husholdningernes finansielle portefølje, Kilde: jf. se for portefølje."
+vHhNetRenter,VHHNETRENTER,t,1,1,VHHNETRENTER,ADAM[Tin_h],"Husholdningernes nettoformueindkomst, Kilde: ADAM[Tin_h]"
+vHhNFE,VHHNFE,t,1,1,VHHNFE,ADAM[Tfn_h],"Nettofordringserhvervelse for husholdningerne, Kilde: ADAM[Tfn_h]"
+vHhNFErest,VHHNFEREST,"a_,t",102,102,VHHNFEREST__0,,"Kapitaloverførsler, direkte investeringer mv.."
+vHhOmv,VHHOMV,"portf_,t",1,1,VHHOMV__TOT,ADAM[Tfn_h]; ADAM[Wn_h],"Omvurderinger på husholdningernes finansielle nettoformue, Kilde: ADAM[Wn_h]-ADAM[Wn_h][-1]-ADAM[Tfn_h]"
+vHhOvf,VHHOVF,"a,t",102,86,VHHOVF__0,,Indkomstoverførsler til indl. hush. pr. person (i befolkningen) fordelt på alder.
+vHhPas,VHHPAS,"portf_,a_,t",825,290,VHHPAS__BANK__0,,"Husholdningernes finansielle passiver, Kilde: jf. se for portefølje."
+vHhPasOmk,VHHPASOMK,"portf_,t",8,3,VHHPASOMK__BANK,,Administrations- og investeringsomkostninger knyttet til finansielle passiver
+vHhPasOmv,VHHPASOMV,"portf_,t",7,2,VHHPASOMV__BANK,,Omvurderinger på husholdningernes finansielle passiver
+vHhPasRenter,VHHPASRENTER,"portf_,t",5,2,VHHPASRENTER__BANK,,Husholdningernes renteudgifter
+vHhPens,VHHPENS,"pens_,a_,t",394,348,VHHPENS__ALDER__100,,Husholdningernes pensionsformue.
+vHhPensAfk,VHHPENSAFK,"pens_,a_,t",500,440,VHHPENSAFK__ALDER__0,,Afkast fra pensionsformue EFTER SKAT.
+vHhPensEfterSkat,VHHPENSEFTERSKAT,"a_,t",103,102,VHHPENSEFTERSKAT__0,,Pensionsformue EFTER SKAT
+vHhPensIndb,VHHPENSINDB,"pens_,a_,t",514,435,VHHPENSINDB__ALDER__0,,Pensionsindbetalinger fra husholdningerne.
+vHhPensUdb,VHHPENSUDB,"pens_,a_,t",514,435,VHHPENSUDB__ALDER__0,,Pensionsudbetalinger til husholdningerne.
+vHhTilBoern,VHHTILBOERN,"a_,t",84,84,VHHTILBOERN__100,,Finansielle nettooverførsler til børn givet af forældre i alder a.
+vHhTilUdl,VHHTILUDL,t,1,1,VHHTILUDL,ADAM[Syn_e]; ADAM[Tpc_e_z]; ADAM[Tpc_h_e]; ADAM[Typc_cf_e]; ADAM[Typc_e_h],"Skat til udlandet og nettopensionsbetalinger til udlandet, Kilde: ADAM[Syn_e] + (ADAM[Typc_cf_e] - ADAM[Tpc_e_z]) - ADAM[Typc_e_h] - ADAM[Tpc_h_e] + vtPALudl"
+vHhx,VHHX,"a_,t",103,102,VHHX__0,,"Husholdningernes formue ekskl. pension, bolig og realkreditgæld"
+vHhxAfk,VHHXAFK,"a_,t",102,102,VHHXAFK__1,,Imputeret afkast på husholdningernes formue ekskl. bolig og pension.
+vhW,VHW,t,1,1,VHW,,Gennemsnitlig timeløn.
+vhW_DA,VHW_DA,t,1,1,VHW_DA,ADAM[lnda],"Gennemsnitlig timeløn for lønmodtagere ekskl. genetillæg, DA-området. Kilde: ADAM[lnda]"
+vhWIndustri,VHWINDUSTRI,t,1,1,VHWINDUSTRI,ADAM[lna],Gennemsnitlig timeløn i industrien. Kilde: ADAM[lna]
+vI,VI,"i_,t",4,4,VI__IB,ADAM[I]; ADAM[iB]; ADAM[iM],"Investeringer fordelt på investeringstype, Kilde: ADAM[I] eller ADAM[iM] eller ADAM[iB]"
+vI_s,VI_S,"i_,s_,t",41,32,VI_S__IB__BOL,ADAM[I<i>]; ADAM[iB<i>]; ADAM[iM<i>],"Investeringer fordelt på brancher, Kilde: ADAM[I<i>] eller ADAM[iM<i>] eller ADAM[iB<i>]"
+vIbErhverv,VIBERHVERV,t,1,1,VIBERHVERV,,Erhvervsinvesteringer i bygninger: Private bygningsinvesteringer ekskl. boliginvesteringer
+vIbm,VIBM,t,1,1,VIBM,,Investeringer ekskl. lagerinvesteringer
+vIBolig,VIBOLIG,t,1,1,VIBOLIG,,Værdi af ejerbolig-investeringer.
+vIErhverv,VIERHVERV,t,1,1,VIERHVERV,,"Erhvervsinvesteringer: Private investeringer ekskl. boliginvesteringer, lagerinv. og værdigenstande, men inkl. stambesætninger"
+vILager,VILAGER,t,1,1,VILAGER,,Lagerinvesteringer alene dvs. ekskl. stambesætninger og værdigenstande
+vIO,VIO,"d_,s_,t",188,114,VIO__BOL__BOL,,Imputeret branchefordelte leverancer fra både import og indenlandsk produktion fordelt på efterspørgselskomponenter.
+vIOm,VIOM,"d_,s_,t",262,100,VIOM__BOL__BOL,,Imputeret branchefordelte leverancer fra import fordelt på efterspørgselskomponenter.
+vIOy,VIOY,"d_,s_,t",281,178,VIOY__BOL__BOL,,Imputeret branchefordelte leverancer fra indenlandsk produktion fordelt på efterspørgselskomponenter.
+vIStam,VISTAM,t,1,1,VISTAM,,Stambesætninger
+vIVaerdi,VIVAERDI,t,1,1,VIVAERDI,,Værdigenstande
+vJordrente,VJORDRENTE,t,1,1,VJORDRENTE,ADAM[Tirn_o],"Off. indtægter af jord og rettigheder, Kilde: ADAM[Tirn_o]"
+vJordrenteRest,VJORDRENTEREST,t,1,1,VJORDRENTEREST,,Off. indtægter af jord og rettigheder ekskl. kulbrinteskat
+vKapIndNeg,VKAPINDNEG,"a_,t",103,87,VKAPINDNEG__0,,"Imputeret negativ kapitalinkomst, Kilde: Aggregat fra renteudgifter fra PSKAT2."
+vKapIndPos,VKAPINDPOS,"a_,t",103,87,VKAPINDPOS__0,,Imputeret positiv kapitalindkomst.
+vKBolig,VKBOLIG,t,1,1,VKBOLIG,,Værdi af kapitalmængde af ejerboliger.
+vKolPens,VKOLPENS,t,1,1,VKOLPENS,,Kolletiv pensionsformue
+vKolPensAfk,VKOLPENSAFK,t,1,1,VKOLPENSAFK,,Pensionsafkast fra kollektive pensionsordninger
+vKolPensIndb,VKOLPENSINDB,t,1,1,VKOLPENSINDB,,Kolletive pensionsindbetalinger
+vKolPensKor,VKOLPENSKOR,t,1,1,VKOLPENSKOR,,"Korrektion til disponibel indkomst, da nettoudbetalinger til kolletiv pension og ikke afkast fra denne indgår"
+vKolPensOmv,VKOLPENSOMV,t,1,1,VKOLPENSOMV,,Pensionsomvurderinger på kollektive pensionsordninger
+vKolPensUdb,VKOLPENSUDB,t,1,1,VKOLPENSUDB,,Kolletive pensionsudbetalinger
+vKskat,VKSKAT,"i_,s_,t",27,26,VKSKAT__IB__BOL,,Bogført værdi af kapitalapparat fordelt på brancher.
+vLand,VLAND,t,1,1,VLAND,,Værdi af land til ejerboligbenyttelse
+vLejeAfEjerBolig,VLEJEAFEJERBOLIG,t,1,1,VLEJEAFEJERBOLIG,ADAM[Yrh]; ADAM[byrhh],"Imputeret værdi af lejeværdi af egen bolig, Kilde: ADAM[byrhh] * ADAM[Yrh]"
+vLoenIndeks,VLOENINDEKS,t,1,1,VLOENINDEKS,,DA lønudvikling lagget 2 år
+vLoensum,VLOENSUM,"s_,t",12,12,VLOENSUM__BOL,ADAM[Yw],"Lønsum, Kilde: ADAM[Yw]"
+vM,VM,"s_,t",10,10,VM__BOL,ADAM[M<i>]; ADAM[M],"Import fordelt på importgrupper, Kilde: ADAM[M] eller ADAM[M<i>]"
+vMenergi,VMENERGI,t,1,1,VMENERGI,,Samlet import af energi
+vMtjenester,VMTJENESTER,t,1,1,VMTJENESTER,,Samlet vareimport
+vMvarer,VMVARER,t,1,1,VMVARER,,Samlet vareimport
+vMx,VMX,t,1,1,VMX,,Nominel import af tjenester (ekslusiv søtransport) og fremstilling.
+vNetKapInd,VNETKAPIND,"a_,t",87,87,VNETKAPIND__100,,"Nettokapitalindkomst, Kilde: Aggregat fra kapitalindkomst fra PSKAT2"
+vNetKapIndNeg,VNETKAPINDNEG,"a_,t",87,87,VNETKAPINDNEG__100,,Negativ nettokapitalindkomst.
+vNetKapIndPos,VNETKAPINDPOS,"a_,t",87,87,VNETKAPINDPOS__100,,Positiv nettokapitalindkomst.
+vNulvaekstIndeks,VNULVAEKSTINDEKS,t,1,0,VNULVAEKSTINDEKS,,Nulvækstindeks er 1 i en ikke-vækst- og inflationskorrigeret bank - og modsvarer ellers korrektion
+vOEMUgaeld,VOEMUGAELD,t,1,1,VOEMUGAELD,ADAM[Wzzomuxa],"ØMU-gæld (eksklusive ATP og eksklusive genudlån), Kilde: ADAM[Wzzomuxa]"
+vOEMUgaeldRest,VOEMUGAELDREST,t,1,0,VOEMUGAELDREST,,Forskel på ØMU-gæld og statsgæld
+vOff13Aktier,VOFF13AKTIER,t,1,1,VOFF13AKTIER,,Den offentlige sektors aktiebeholdning baseret på OFF13.
+vOff13AktierRest,VOFF13AKTIERREST,t,1,0,VOFF13AKTIERREST,,Forskel mellem offentlig aktieformue baseret på OFF13 og NASFK
+vOff13Aktx,VOFF13AKTX,t,1,1,VOFF13AKTX,,Den offentlige sektors finansielle rentebærende aktiver (dvs. ekskl. aktier) baseret på OFF13.
+vOff13AktxRest,VOFF13AKTXREST,t,1,0,VOFF13AKTXREST,,Forskel mellem offentlig rentebærende nettoformue (dvs. ekskl. aktier) baseret på OFF13 og NASFK
+vOff13Net,VOFF13NET,t,1,1,VOFF13NET,,Nettoværdien af den offentlige sektors finansielle portefølje baseret på OFF13.
+vOff13Pas,VOFF13PAS,t,1,1,VOFF13PAS,,Den offentlige sektors finansielle passiver baseret på OFF13.
+vOffAfskr,VOFFAFSKR,"i_,t",3,3,VOFFAFSKR__IB,ADAM[Invbo1]; ADAM[Invmo1]; ADAM[Invo1],"Offentlige afskrivninger, Kilde: ADAM[Invo1], ADAM[Invmo1] eller ADAM[Invbo1]"
+vOffAkt,VOFFAKT,"portf_,t",8,3,VOFFAKT__BANK,,Den offentlige sektors finansielle aktiver
+vOffAktOmv,VOFFAKTOMV,"portf_,t",7,4,VOFFAKTOMV__BANK,,Omvurderinger af den offentlige sektors aktiver
+vOffAktRenter,VOFFAKTRENTER,"portf_,t",7,4,VOFFAKTRENTER__BANK,,Samlet formueindkomst fra aktiver for den offentlige sektor
+vOffDirInv,VOFFDIRINV,t,1,1,VOFFDIRINV,ADAM[Xo1i],"Direkte offentlige investeringer i forskning og udvikling, værdi, Kilde: ADAM[Xo1i]"
+vOffDirInv2vBNP,VOFFDIRINV2VBNP,t,1,1,VOFFDIRINV2VBNP,,Direkte offentlige investeringer relativt til BNP.
+vOffDividender,VOFFDIVIDENDER,t,1,1,VOFFDIVIDENDER,,Den offentlige sektors dividendeindtægter
+vOffFraHh,VOFFFRAHH,t,1,0,VOFFFRAHH,ADAM[Trr_hc_o],"Residuale overførsler fra den private sektor, Kilde: ADAM[Trr_hc_o]"
+vOffFraUdlEU,VOFFFRAUDLEU,t,1,0,VOFFFRAUDLEU,ADAM[Tr_eu_o],"Residuale overførsler fra EU, Kilde: ADAM[Tr_eu_o]"
+vOffFraUdlKap,VOFFFRAUDLKAP,t,1,0,VOFFFRAUDLKAP,ADAM[tK_e_o],"Kapitaloverførsler fra udlandet, Kilde: ADAM[tK_e_o]"
+vOffFraUdlRest,VOFFFRAUDLREST,t,1,0,VOFFFRAUDLREST,ADAM[Tr_er_o],"Residuale overførsler fra udlandet ekskl. EU, Kilde: ADAM[Tr_er_o]"
+vOffFraVirk,VOFFFRAVIRK,t,1,0,VOFFFRAVIRK,ADAM[tK_hc_o],"Kapitaloverførsler fra den private sektor, Kilde: ADAM[tK_hc_o]"
+vOffInd,VOFFIND,t,1,1,VOFFIND,,Offentlige indtægter (renter + primære)
+vOffIndirInv,VOFFINDIRINV,t,1,1,VOFFINDIRINV,ADAM[Io1a],"Den offentlige sektor nettokøb af bygninger o.a. eksisterende investeringsgoder, Kilde: ADAM[Io1a]"
+vOffIndNyDef,VOFFINDNYDEF,t,1,1,VOFFINDNYDEF,,Offentlige indtægter (ny definition fra 2005)
+vOffIndRest,VOFFINDREST,t,1,1,VOFFINDREST,,Andre offentlige indtægter.
+vOffInv,VOFFINV,t,1,1,VOFFINV,ADAM[Io1],"Offentlige investeringer, Kilde: ADAM[Io1]"
+vOffLandKoeb,VOFFLANDKOEB,t,1,0,VOFFLANDKOEB,ADAM[Izn_o],"Den offentlige sektors nettoopkøb af jord og rettigheder, Kilde: ADAM[Izn_o]"
+vOffNet,VOFFNET,t,1,1,VOFFNET,,Nettoværdien af den offentlige sektors finansielle portefølje.
+vOffNetRenter,VOFFNETRENTER,t,1,1,VOFFNETRENTER,ADAM[Tin_o],"Den offentlige sektors nettoformueindkomst inkl. jordrente og overskud af off. virksomhed, ADAM[Tin_o]"
+vOffNetRenterx,VOFFNETRENTERX,t,1,1,VOFFNETRENTERX,ADAM[Tion2],"Den offentlige sektors nettoformueindkomst ekskl. jordrente og overskud af off. virksomhed, Kilde: ADAM[Tion2]"
+vOffNyInv,VOFFNYINV,t,1,1,VOFFNYINV,ADAM[Ifo1ny],"Offentlige nyinvesteringer inkl. direkte investeringer, Kilde: ADAM[Ifo1ny]"
+vOffNyInvx,VOFFNYINVX,t,1,1,VOFFNYINVX,ADAM[Ifro1ny],"Faste nyinvesteringer i off. sektor, ekskl. investeringer i forskning og udvikling, Kilde: ADAM[Ifro1ny]"
+vOffOmv,VOFFOMV,t,1,1,VOFFOMV,ADAM[Own_o],"Samlede omvurderinger af den offentlige sektors nettoformue, Kilde: ADAM[Own_o]"
+vOffPas,VOFFPAS,"portf_,t",8,8,VOFFPAS__BANK,,Den offentlige sektors finansielle passiver.
+vOffPasOmv,VOFFPASOMV,"portf_,t",7,3,VOFFPASOMV__BANK,,Omvurderinger af den offentlige sektors passiver
+vOffPasRenter,VOFFPASRENTER,"portf_,t",7,3,VOFFPASRENTER__BANK,,Samlet rente- og dividendeudskrivninger for den offentlige sektor
+vOffPasRest,VOFFPASREST,t,1,0,VOFFPASREST,,Forskel på offentlig finansielle passiver fra FM og OEMUgaeld
+vOffPrimInd,VOFFPRIMIND,t,1,1,VOFFPRIMIND,ADAM[Tf_z_o]; ADAM[Tioii],"Primære offentlige indtægter, Kilde: ADAM[Tf_z_o]-ADAM[Tioii]"
+vOffPrimUd,VOFFPRIMUD,t,1,1,VOFFPRIMUD,ADAM[Tf_o_z]; ADAM[Ti_o_z],"Primære offentlige udgifter, Kilde: ADAM[Tf_o_z]-ADAM[Ti_o_z]"
+vOffRenteInd,VOFFRENTEIND,t,1,1,VOFFRENTEIND,ADAM[Tioii],"Den offentlige sektors indtægter af formueindkomst på aktivsiden, Kilde: ADAM[Tioii]"
+vOffRenterxInd,VOFFRENTERXIND,t,1,1,VOFFRENTERXIND,,Den offentlige sektors renteindtægter ekskl. dividender
+vOffRenteUd,VOFFRENTEUD,t,1,1,VOFFRENTEUD,ADAM[Ti_o_z],"Den offentlige sektors udgifter til formueindkomst på passivsiden, Kilde: ADAM[Ti_o_z]"
+vOffSalg,VOFFSALG,t,1,1,VOFFSALG,ADAM[xo1_p)],"Offentlig sektors salg af varer og tjenester, værdi, Kilde: ADAM[xo1_p)]"
+vOffSub,VOFFSUB,t,1,1,VOFFSUB,ADAM[Spu_o],"Dansk finansieret subsidier ialt, Kilde: ADAM[Spu_o]"
+vOffTilHh,VOFFTILHH,t,1,1,VOFFTILHH,ADAM[Tr_o_h]; ADAM[tK_o_h],"Residuale overførsler fra offentlig sektor til husholdningerne, Kilde: ADAM[tK_o_h]+ADAM[Tr_o_h])"
+vOffTilHhKap,VOFFTILHHKAP,t,1,0,VOFFTILHHKAP,ADAM[tK_o_h],"Residuale kapitaloverførsler fra offentlig sektor til husholdningerne, Kilde: ADAM[tK_o_h])"
+vOffTilHhKapPraemie,VOFFTILHHKAPPRAEMIE,t,1,0,VOFFTILHHKAPPRAEMIE,,Skattefri efterlønspræmie til husholdningerne (Tk_o_hsp))
+vOffTilHhKapRest,VOFFTILHHKAPREST,t,1,1,VOFFTILHHKAPREST,,Kapitaloverførsler til husholdningerne ekskl. skattefri efterlønspræmie (Tk_o_hr)
+vOffTilHhNPISH,VOFFTILHHNPISH,t,1,0,VOFFTILHHNPISH,ADAM[Tr_o_hnpis],"Residuale øvrige overførsler fra offentlig sektor til NPISH, Kilde: ADAM[Tr_o_hnpis])"
+vOffTilHhRest,VOFFTILHHREST,t,1,0,VOFFTILHHREST,ADAM[Trr_o_h],"Residuale øvrige overførsler fra offentlig sektor til husholdningerne, Kilde: ADAM[Trr_o_h])"
+vOffTilHhTillaeg,VOFFTILHHTILLAEG,t,1,0,VOFFTILHHTILLAEG,ADAM[Typi],"Indekstillæg, Kilde: ADAM[Typi])"
+vOffTilUdl,VOFFTILUDL,t,1,1,VOFFTILUDL,ADAM[Tr_o_e]; ADAM[tK_o_e],"Samlede overførsler fra offentlig sektor til udlandet, Kilde: ADAM[Tr_o_e]+ADAM[tK_o_e]"
+vOffTilUdlBistand,VOFFTILUDLBISTAND,t,1,0,VOFFTILUDLBISTAND,ADAM[Trr_o_e],"Udlandsbistand mv., Kilde: ADAM[Trr_o_e]"
+vOffTilUdlBNI,VOFFTILUDLBNI,t,1,0,VOFFTILUDLBNI,ADAM[Try_o_eu],"BNI-bidrag fra offentlig sektor til EU, Kilde: ADAM[Try_o_eu]"
+vOffTilUdlEU,VOFFTILUDLEU,t,1,0,VOFFTILUDLEU,ADAM[Trr_o_eu],"Øvrige overførsler fra offentlig sektor til EU, Kilde: ADAM[Trr_o_eu]"
+vOffTilUdlFO,VOFFTILUDLFO,t,1,0,VOFFTILUDLFO,ADAM[Tr_o_ef],"Residuale overførsler fra offentlig sektor til Færøerne, Kilde: ADAM[Tr_o_ef]"
+vOffTilUdlGL,VOFFTILUDLGL,t,1,0,VOFFTILUDLGL,ADAM[Tr_o_eg],"Residuale overførsler fra offentlig sektor til Grønland, Kilde: ADAM[Tr_o_eg]"
+vOffTilUdlKap,VOFFTILUDLKAP,t,1,0,VOFFTILUDLKAP,ADAM[tK_o_e],"Kapitaloverførsler fra offentlig sektor til udlandet, Kilde: ADAM[tK_o_e]"
+vOffTilUdlMoms,VOFFTILUDLMOMS,t,1,0,VOFFTILUDLMOMS,ADAM[Trg_o_eu],"Momsbidrag fra offentlig sektor til EU, Kilde: ADAM[Trg_o_eu]"
+vOffTilVirk,VOFFTILVIRK,t,1,0,VOFFTILVIRK,ADAM[tK_o_c],"Residuale overførsler fra offentlig sektor til indenlandske selskaber, Kilde: ADAM[tK_o_c]"
+vOffTilVirkInvesttilskud,VOFFTILVIRKINVESTTILSKUD,t,1,0,VOFFTILVIRKINVESTTILSKUD,,Kapitaloverførsler til selskaber (investeringstilskud) (Tk_o_ci)
+vOffTilVirkRest,VOFFTILVIRKREST,t,1,1,VOFFTILVIRKREST,,Kapitaloverførsler til selskaber (øvrige) (Tk_o_cr)
+vOffUd,VOFFUD,t,1,1,VOFFUD,,Offentlige udgifter (renter + primære)
+vOffUdbytte,VOFFUDBYTTE,t,1,1,VOFFUDBYTTE,ADAM[Tiu_z_os],"Statens udbytter af aktier og ejerandelsbeviser, Kilde: ADAM[Tiu_z_os]"
+vOffUdbytteNordsoe,VOFFUDBYTTENORDSOE,t,1,1,VOFFUDBYTTENORDSOE,ADAM[Tiue_z_os],"Statens udbytter fra Nordsøfonden, Kilde: ADAM[Tiue_z_os]"
+vOffUdbytteRest,VOFFUDBYTTEREST,t,1,1,VOFFUDBYTTEREST,ADAM[Tiur_z_os],"Statens udbytter af aktier og ejerandelsbeviser ekskl. fra Nordsøfonden, Kilde: ADAM[Tiur_z_os]"
+vOffUdNyDef,VOFFUDNYDEF,t,1,1,VOFFUDNYDEF,,Offentlige udgifter (ny definition fra 2005)
+vOffUdRest,VOFFUDREST,t,1,1,VOFFUDREST,,Øvrige offentlige udgifter.
+vOffVirk,VOFFVIRK,t,1,0,VOFFVIRK,ADAM[Tiuo_z_o],"Overskud af offentlig virksomhed, Kilde: ADAM[Tiuo_z_o]"
+vOvf,VOVF,"ovf_,t",43,43,VOVF__A0T17,ADAM[Ty_o],"Sociale overførsler fra offentlig forvaltning og service til husholdninger, Kilde: ADAM[Ty_o] for underkomponenter jf. o-set."
+vOvfSats,VOVFSATS,"ovf,t",38,38,VOVFSATS__AKTDAG,,Sociale overførsler fra offentlig forvaltning og service til husholdninger pr. person i basen (mio. kr.)
+vOvfSkatPl,VOVFSKATPL,"a_,t",102,102,VOVFSKATPL__0,,Skattepligtige indkomstoverførsler pr. person (i befolkningen) fordelt på alder.
+vOvfUbeskat,VOVFUBESKAT,"a_,t",103,102,VOVFUBESKAT__0,,Ubeskattede indkomstoverførsler pr. person (i befolkningen) fordelt på alder.
+vPens,VPENS,"pens_,t",5,5,VPENS__ALDER,,Samlet pensionsformue fordelt på pensionstype
+vPensAfk,VPENSAFK,"pens_,t",5,5,VPENSAFK__ALDER,,Pensionsafkast samlet til både husholdninger og udland fordelt på ordning
+vPensArv,VPENSARV,"pens_,a_,t",515,440,VPENSARV__ALDER__0,,Pension udbetalt til arvinger i tilfælde af død.
+vPensIndb,VPENSINDB,"pens_,t",5,5,VPENSINDB__ALDER,,Pensionsindbetalinger samlet til både husholdninger og udland fordelt på ordning
+vPensIndbOP,VPENSINDBOP,"a_,t",103,87,VPENSINDBOP__0,,Obligatorisk pensionsopsparing af overførselsindkomster.
+vPensionAkt,VPENSIONAKT,"portf_,t",8,5,VPENSIONAKT__BANK,,Porteføljen af pensionsformuen.
+vPensionAktOmv,VPENSIONAKTOMV,"portf_,t",7,4,VPENSIONAKTOMV__BANK,,Omvurderinger på pensionsformuen
+vPensionAktRenter,VPENSIONAKTRENTER,"portf_,t",7,4,VPENSIONAKTRENTER__BANK,,Formueindkomst fra pensionsaktiver
+vPensionOmv,VPENSIONOMV,t,1,1,VPENSIONOMV,,Omvurderinger på pensionsformuen
+vPensionRenter,VPENSIONRENTER,t,1,1,VPENSIONRENTER,,Formueindkomst fra pensionsaktiver
+vPensUdb,VPENSUDB,"pens_,t",5,5,VPENSUDB__ALDER,,Pensionsudbetalinger samlet til både husholdninger og udland fordelt på ordning
+vPersFradrag,VPERSFRADRAG,"a_,t",103,87,VPERSFRADRAG__0,,Imputeret personfradrag.
+vPersInd,VPERSIND,"a_,t",103,87,VPERSIND__0,ADAM[Ysp],"Personlig indkomst, Kilde: ADAM[Ysp]"
+vPersIndRest,VPERSINDREST,"a_,t",87,87,VPERSINDREST__100,,Aggregeret restled til personindkomst.
+vPersIndx,VPERSINDX,"a_,t",87,87,VPERSINDX__100,ADAM[Yt],"Personlig indkomst, Kilde: ADAM[Yt]"
+vPrimSaldo,VPRIMSALDO,t,1,1,VPRIMSALDO,ADAM[Tfn_o]; ADAM[Tion2],"Den offentlige sektors primære saldo, Kilde: ADAM[Tfn_o]-ADAM[Tion2]"
+vPrisIndeks,VPRISINDEKS,t,1,1,VPRISINDEKS,ADAM[pttyp],"Indeks til pristalsregulering af overførselsindkomster, Kilde: ADAM[pttyp]"
+vProgIndeks,VPROGINDEKS,t,1,1,VPROGINDEKS,ADAM[pcrs],"Indeks til regulering af progressionsgrænser, Kilde: ADAM[pcrs]"
+vR,VR,"r_,t",12,12,VR__BOL,ADAM[Vm<i>]; ADAM[Vm],"Materialeinput fordelt på brancherne som modtager materialeinputtet, Kilde: ADAM[Vm] eller ADAM[Vm<i>]"
+vRE,VRE,"r_,t",10,10,VRE__BOL,ADAM[V<i>]; ADAM[V],"Aggregeret materiale- og energiinput fordelt på brancherne som modtager materialeinputtet, Kilde: ADAM[V] eller ADAM[V<i>]"
+vRealiseretAktieOmv,VREALISERETAKTIEOMV,"a_,t",103,103,VREALISERETAKTIEOMV__0,,Skøn over realiserede kapitalgevinster på aktier.
+vRealiseretAktieOmvIndkomst,VREALISERETAKTIEOMVINDKOMST,t,1,1,VREALISERETAKTIEOMVINDKOMST,,Realiseret kursgevinst der indgår i aktieindkomst - dvs. ekskl. dødbo.
+vRealkreditFradrag,VREALKREDITFRADRAG,"a_,t",103,102,VREALKREDITFRADRAG__0,,Imputeret fradrag fra realkreditgæld. Ikke databelagt!
+vRenteMarginal,VRENTEMARGINAL,t,1,1,VRENTEMARGINAL,,Værdien af rentemarginal
+vRestFradrag,VRESTFRADRAG,"a_,t",87,87,VRESTFRADRAG__100,,Imputerede øvrige ligningsmæssige fradrag (befordringsfradrag m.m.)
+vRestFradragSats,VRESTFRADRAGSATS,t,1,0,VRESTFRADRAGSATS,,Eksogen del af andre fradrag kalibreret til at ramme makrodata.
+vSaldo,VSALDO,t,1,1,VSALDO,ADAM[Tfn_o],"Den offentlige sektors faktiske saldo, Kilde: ADAM[Tfn_o]"
+vSatsIndeks,VSATSINDEKS,t,1,1,VSATSINDEKS,ADAM[pttyl],"Satsregulering. Indeks til regulering af overførselsindkomster, Kilde: ADAM[pttyl]"
+vSatsIndeksx,VSATSINDEKSX,t,1,1,VSATSINDEKSX,ADAM[pttyo],"Indeks til regulering af overførselsindkomster ekskl. bidrag til obligatorisk opsparing for modtagere af indkomstoverførsler (fra 2020), Kilde: ADAM[pttyo]"
+vSelvstKapInd,VSELVSTKAPIND,"a_,t",1,1,VSELVSTKAPIND__TOT,,Selvstændiges kapitalindkomst - imputeret.
+vSelvstLoen,VSELVSTLOEN,"s_,t",11,11,VSELVSTLOEN__BOL,,Lønudbetaling til selvstændige.
+vSkatteplInd,VSKATTEPLIND,"a_,t",87,87,VSKATTEPLIND__100,ADAM[Ys],"Skattepligtig indkomst, Kilde: ADAM[Ys]"
+vSplurge,VSPLURGE,"a_,t",84,84,VSPLURGE__100,,Splurge forbrug.
+vSplurgeBolig,VSPLURGEBOLIG,"a_,t",84,84,VSPLURGEBOLIG__100,,Splurge bolig-forbrug.
+vSplurgeInd,VSPLURGEIND,"a_,t",84,84,VSPLURGEIND__100,,Splurge indkomstbegreb.
+vStatsgaeld,VSTATSGAELD,t,1,1,VSTATSGAELD,ADAM[SG],"Statsgæld, Kilde: ADAM[SG]"
+vSub,VSUB,"d_,s_,t",255,255,VSUB__BOL__BOL,,Udgift til produktsubsidier fordelt på efterspørgselskomponenter og brancher.
+vSub_m,VSUB_M,"d_,s,t",216,54,VSUB_M__BOL__BOL,,Udgift til produktsubsidier fordelt på efterspørgselskomponenter og import-grupper.
+vSub_m_k,VSUB_M_K,"i_,r_,s_,t",27,27,VSUB_M_K__IB__BOL__TJE,,Sats for produktsubsidier fra import-grupper fordelt på kapitaltype og branche til at foretage investeringingen.
+vSub_y,VSUB_Y,"d_,s,t",216,113,VSUB_Y__BOL__BOL,,Udgift til produktsubsidier fordelt på efterspørgselskomponenter og indenlandske brancher.
+vSub_y_k,VSUB_Y_K,"i_,r_,s_,t",72,72,VSUB_Y_K__IB__BOL__BYG,,Produktsubsidier fra indenlandske brancher fordelt på kapitaltype og branche til at foretage investeringingen.
+vSubEU,VSUBEU,t,1,0,VSUBEU,ADAM[Spueu],"Subsider finansieret af EU, Kilde: ADAM[Spueu]"
+vSubLoen,VSUBLOEN,"s_,t",11,11,VSUBLOEN__BOL,ADAM[Spzul]; ADAM[bspzul_x<i>],"Provenu fra løntilskud fordelt på brancher, Kilde: ADAM[Spzul] og ADAM[bspzul_x<i>]"
+vSubY,VSUBY,t,1,1,VSUBY,ADAM[Spzu],"Produktionssubsidier, Kilde: ADAM[Spzu]"
+vSubYRest,VSUBYREST,"s_,t",10,10,VSUBYREST__BOL,ADAM[Spzu]; ADAM[Spzul],"Produktionssubsidier ekskl. løntilskud, Kilde: ADAM[Spzu]-ADAM[Spzul] og imputeret branchefordeling"
+vtAfg,VTAFG,"d_,s_,t",255,255,VTAFG__BOL__BOL,,Provenu af punktafgifter fordelt på efterspørgselskomponenter og brancher ekskl. registreringsafgift.
+vtAfg_m,VTAFG_M,"d_,s,t",216,54,VTAFG_M__BOL__BOL,,Provenu af punktafgifter fordelt på efterspørgselskomponenter og import-grupper ekskl. registreringsafgift.
+vtAfg_m_k,VTAFG_M_K,"i_,r_,s_,t",27,27,VTAFG_M_K__IB__BOL__TJE,,Provenu af punktafgifter ekskl. subsidier og registreringsafgift fra import-grupper fordelt på kapitaltype og branche til at foretage investeringingen
+vtAfg_y,VTAFG_Y,"d_,s,t",216,113,VTAFG_Y__BOL__BOL,,Provenu af punktafgifter fordelt på efterspørgselskomponenter og indenlandske brancher ekskl. registreringsafgift.
+vtAfg_y_k,VTAFG_Y_K,"i_,r_,s_,t",72,72,VTAFG_Y_K__IB__BOL__BYG,,Provenu af punktafgifter ekskl. subsidier og registreringsafgift fra indenlandske brancher fordelt på kapitaltype og branche til at foretage investeringingen
+vtAfgEU,VTAFGEU,t,1,1,VTAFGEU,ADAM[Sppteu],"Produktafgifter til EU, Kilde: ADAM[Sppteu]"
+vtAktie,VTAKTIE,t,1,1,VTAKTIE,ADAM[Ssya],"Aktieskat, Kilde: ADAM[Ssya]"
+vtAktieHh,VTAKTIEHH,"a_,t",103,87,VTAKTIEHH__0,,Aktieskat betalt af danske husholdninger.
+vtAktieUdl,VTAKTIEUDL,t,1,1,VTAKTIEUDL,,Skat på udbytter til udenlandske aktionærer. Kilde: MANGLER
+vtArv,VTARV,"a_,t",103,103,VTARV__0,ADAM[sK_h_o],"Kapitalskatter (Arveafgift), Kilde: ADAM[sK_h_o] for total."
+vtAUB,VTAUB,"s_,t",11,11,VTAUB__BOL,ADAM[Spzaud]; ADAM[bspzaud_x<i>],"Provenu fra AUB - arbejdsgivernes uddannelsesbidrag mv. fra erhvervene, Kilde: ADAM[Spzaud] og ADAM[bspzaud_x<i>]"
+vtBund,VTBUND,"a_,t",103,87,VTBUND__0,ADAM[Ssysp1],"Bundskatter, Kilde: ADAM[Ssysp1]"
+vtCO2,VTCO2,"s_,t",11,11,VTCO2__BOL,ADAM[Spzco2]; ADAM[bspzco2_x<i>],"Grøn afgift, bortauktionering af CO2 kvoter fra 2013, Kilde: ADAM[Spzco2] og ADAM[bspzco2_x<i>]"
+vtDirekte,VTDIREKTE,t,1,1,VTDIREKTE,ADAM[Sy_o],"Direkte skatter, Kilde: ADAM[Sy_o]"
+vtDoedsbo,VTDOEDSBO,"a_,t",103,102,VTDOEDSBO__0,ADAM[Ssyd],"Dødsboskat, Kilde: ADAM[Ssyd]"
+vtEjd,VTEJD,"a_,t",84,84,VTEJD__100,ADAM[Spzej],"Ejendomsværdibeskatning, Kilde: ADAM[Spzej]"
+vtEU,VTEU,t,1,1,VTEU,ADAM[Spteu],"Indirekte skatter til EU, Kilde: ADAM[Spteu]"
+vtGrund,VTGRUND,"s_,t",11,11,VTGRUND__BOL,ADAM[Spzej]; ADAM[Spzejh]; ADAM[Spzejxh]; ADAM[bspzej_x<i>],"Ejendomsskatter fordelt på brancher, Kilde: ADAM[Spzej], ADAM[Spzejh] og ADAM[bspzej_x<i>]*ADAM[Spzejxh]"
+vtHh,VTHH,"a_,t",1,1,VTHH__TOT,,Skatter knyttet til husholdningerne.
+vtHhAM,VTHHAM,"a_,t",102,87,VTHHAM__0,ADAM[Sya],"Arbejdsmarkedsbidrag betalt af husholdningerne, Kilde: ADAM[Sya]"
+vtHhVaegt,VTHHVAEGT,"a_,t",102,84,VTHHVAEGT__0,ADAM[Syv],"Vægtafgifter fra husholdningerne, Kilde: ADAM[Syv]"
+vtHhx,VTHHX,"a_,t",102,102,VTHHX__0,,"Skatter knyttet til husholdningerne ekskl. pensionsafkastskat, ejendomsværdiskat, dødsboskat og øvrig skat på kapitalindkomst."
+vtHhxAfk,VTHHXAFK,"a_,t",103,102,VTHHXAFK__0,,"Imputeret kapitalbeskatning ekskl. pension, bolig og realkreditgæld."
+vtIndirekte,VTINDIREKTE,t,1,1,VTINDIREKTE,ADAM[Spt_o],"Indirekte skatter, Kilde: ADAM[Spt_o]"
+vtIOm,VTIOM,"d_,s,t",176,54,VTIOM__BOL__BOL,,"Samlet afgiftsprovenue for told, moms og punktafgifter inkl. subsidier og registreringsafgift fordelt på efterspørgselskomponenter og import-grupper."
+vtIOy,VTIOY,"d_,s,t",188,113,VTIOY__BOL__BOL,,Samlet afgiftsprovenue for moms og punktafgifter inkl. subsidier og registreringsafgift fordelt på efterspørgselskomponenter og indenlandske brancher.
+vtKilde,VTKILDE,t,1,1,VTKILDE,ADAM[Syk],"Kildeskatter, Kilde: ADAM[Syk]"
+vtKildeRest,VTKILDEREST,t,1,1,VTKILDEREST,,"Rest af kildeskatter, dækker bl.a. sømandsskat, formueskat, særlige indkomstskatter mm. signifikant frem til 1999 hvorefter data bliver bedre for underkomponenter og forsvinder helt i 2012 og frem"
+vtKirke,VTKIRKE,"a_,t",102,87,VTKIRKE__0,ADAM[Trks],"Kirkeskat, Kilde: ADAM[Trks]"
+vtKommune,VTKOMMUNE,"a_,t",103,87,VTKOMMUNE__0,ADAM[Ssys1]; ADAM[Ssys2],"Kommunal indkomstskatter, Kilde: ADAM[Ssys1]+ADAM[Ssys2]"
+vtKulbrinte,VTKULBRINTE,t,1,1,VTKULBRINTE,ADAM[Tirk],"Kulbrinteskat, Kilde: ADAM[Tirk]"
+vtLukning,VTLUKNING,"a_,t",185,166,VTLUKNING__0,,Beregningsteknisk skat til lukning af offentlig budgetrestriktion på lang sigt (HBI=0). Indgår IKKE i offentlig saldo.
+vtMedie,VTMEDIE,t,1,1,VTMEDIE,ADAM[Sym],"Medielicens, Kilde: ADAM[Sym]"
+vtMellem,VTMELLEM,"a_,t",103,87,VTMELLEM__0,ADAM[Ssyt1],"Mellemskatter, Kilde: ADAM[Ssyt1]"
+vtMoms,VTMOMS,"d_,s_,t",246,246,VTMOMS__BOL__BOL,ADAM[Spg_<d>],"Generelle afgiftsprovenu (oms/moms) fordelt på efterspørgselskomponenter og brancher, Kilde: ADAM[Spg_<d>]"
+vtMoms_m,VTMOMS_M,"d_,s,t",216,54,VTMOMS_M__BOL__BOL,,Generelle afgiftsprovenu (oms/moms) fordelt på efterspørgselskomponenter og import-grupper.
+vtMoms_m_k,VTMOMS_M_K,"i_,r_,s_,t",27,27,VTMOMS_M_K__IB__BOL__TJE,,Generelle afgiftsprovenu (oms/moms) fordelt på efterspørgselskomponenter og import-grupper fordelt på kapitaltype og branche til at foretage investeringingen
+vtMoms_y,VTMOMS_Y,"d_,s,t",216,113,VTMOMS_Y__BOL__BOL,,Generelle afgiftsprovenu (oms/moms) fordelt på efterspørgselskomponenter og indenlandske brancher.
+vtMoms_y_k,VTMOMS_Y_K,"i_,r_,s_,t",72,72,VTMOMS_Y_K__IB__BOL__BYG,,Generelle afgiftsprovenu (oms/moms) fordelt på efterspørgselskomponenter og indenlandske brancher fordelt på kapitaltype og branche til at foretage investeringingen
+vtNetAfg,VTNETAFG,"d_,s_,t",246,246,VTNETAFG__BOL__BOL,ADAM[Spp_<d>],"Provenu af punktafgifter fordelt på efterspørgselskomponenter og brancher inkl. subsidier og registreringsafgift, Kilde: ADAM[Spp_<d>]"
+vtNetAfg_m,VTNETAFG_M,"d_,s,t",216,54,VTNETAFG_M__BOL__BOL,,Provenu af punktafgifter inkl. subsidier fordelt på efterspørgselskomponenter og import-grupper.
+vtNetAfg_y,VTNETAFG_Y,"d_,s,t",216,113,VTNETAFG_Y__BOL__BOL,,Provenu af punktafgifter inkl. subsidier fordelt på efterspørgselskomponenter og indenlandske brancher.
+vtNetLoenAfg,VTNETLOENAFG,"s_,t",11,11,VTNETLOENAFG__BOL,ADAM[Spzl]; ADAM[Spzl_x<i>],"Ikke-varefordelte indirekte afgifter vedrørende lønsum, Kilde: ADAM[Spzl] og ADAM[Spzl_x<i>]"
+vtNetY,VTNETY,"s_,t",11,11,VTNETY__BOL,ADAM[Spz],"Andre produktionsskatter (ikke-varefordelte indirekte skatter), netto, Kilde: ADAM[Spz]"
+vtNetYRest,VTNETYREST,"s_,t",11,11,VTNETYREST__BOL,ADAM[Spzr]; ADAM[Spzu]; ADAM[Spzul],"Andre produktionsskatter, Restdel, Kilde: ADAM[Spzr]-(ADAM[Spzu]-ADAM[Spzul])"
+vtPAL,VTPAL,t,1,1,VTPAL,ADAM[Sywp],"PAL skat, Kilde: ADAM[Sywp]"
+vtPALudl,VTPALUDL,t,1,1,VTPALUDL,,PAL-skat betalt af udlændinge
+vtPersRest,VTPERSREST,"a_,t",102,87,VTPERSREST__0,ADAM[Syp],"Andre personlige indkomstskatter, Kilde: ADAM[Syp]"
+vtPersRestPens,VTPERSRESTPENS,"a_,t",87,87,VTPERSRESTPENS__100,ADAM[Syp]; ADAM[Sypr],"Andre personlige indkomstskatter fratrukket andre personlige indkomstskatter resterende, ADAM[Syp]-ADAM[Sypr]"
+vtPersRestPensArv,VTPERSRESTPENSARV,"a_,t",103,88,VTPERSRESTPENSARV__0,,Kapitalskatter betalt i forbindelse med dødsfald og arv - ikke-datadækket hjælpevariabel.
+vtReg,VTREG,"d_,s_,t",246,246,VTREG__BOL__BOL,ADAM[Spr_<d_>],"Registreringsafgiftsprovenu, Kilde: ADAM[Spr_<d_>]"
+vtReg_m,VTREG_M,"d_,s,t",216,54,VTREG_M__BOL__BOL,,Registreringsafgiftsprovenu fordelt på efterspørgselskomponenter og import-grupper.
+vtReg_y,VTREG_Y,"d_,s,t",216,113,VTREG_Y__BOL__BOL,,Registreringsafgiftsprovenu fordelt på efterspørgselskomponenter og indenlandske brancher.
+vtSelskab,VTSELSKAB,"s_,t",9,9,VTSELSKAB__BOL,ADAM[Syc],"Selskabsskat, Kilde: ADAM[Syc]"
+vtSelskabDrift,VTSELSKABDRIFT,"s_,t",9,9,VTSELSKABDRIFT__BOL,,Den del af selskabsskatten der hører til driften.
+vtSelskabRest,VTSELSKABREST,"s_,t",9,1,VTSELSKABREST__BOL,,Rest-led til at ramme branchefordelt selskabsskat - inkluderer tillægsskat for kulbrinteselskaber (kun relevant for udv)
+vtTold,VTTOLD,"d_,s_,t",246,84,VTTOLD__BOL__BOL,ADAM[Spm_<i>],"Toldprovenu fordelt på efterspørgselskomponenter og brancher, Kilde: ADAM[Spm_<i>]"
+vtTop,VTTOP,"a_,t",103,87,VTTOP__0,ADAM[Ssysp2]; ADAM[Ssysp3],"Topskatter, Kilde: ADAM[Ssysp2]+ADAM[Ssysp3]"
+vtTopTop,VTTOPTOP,"a_,t",103,87,VTTOPTOP__0,ADAM[Ssyt3],"Toptopskatter, Kilde: ADAM[Ssyt3]"
+vtVirkAM,VTVIRKAM,"s_,t",11,11,VTVIRKAM__BOL,ADAM[Spzam]; ADAM[bspzam_x<i>],"Provenu af arbejdsmarkedsbidrag (AMBI) vedr. værditilvækst eller lønsum, Kilde: ADAM[Spzam] og ADAM[bspzam_x<i>]"
+vtVirksomhed,VTVIRKSOMHED,"a_,t",102,87,VTVIRKSOMHED__0,ADAM[Ssyv],"Virksomhedsskat, Kilde: ADAM[Ssyv]"
+vtVirkVaegt,VTVIRKVAEGT,"s_,t",11,10,VTVIRKVAEGT__BOL,ADAM[Spzv]; ADAM[bspzv_x<i>],"Vægtafgifter fra erhvervene fordelt på brancher, Kilde: ADAM[Spzv] og ADAM[bspzv_x<i>]"
+vtY,VTY,"s_,t",10,10,VTY__BOL,ADAM[Spz]; ADAM[Spzu],"Produktionsskatter, brutto, Kilde: ADAM[Spz]-ADAM[Spzu] og imputeret branchefordeling"
+vtYRest,VTYREST,"s_,t",10,10,VTYREST__BOL,ADAM[Spzr],"Øvrige produktionsskatter, Kilde: ADAM[Spzr]"
+vUdlAkt,VUDLAKT,"portf_,t",8,6,VUDLAKT__BANK,,"Udlandets finansielle aktiver ift. DK, Kilde: jf. portfolio set."
+vUdlAktOmv,VUDLAKTOMV,"portf_,t",7,5,VUDLAKTOMV__BANK,,Omvurderinger på selskabernes finansielle aktiver
+vUdlAktRenter,VUDLAKTRENTER,"portf_,t",7,5,VUDLAKTRENTER__BANK,,Samlet formueindkomst fra aktiver for finansielle og ikke-finansielle selskaber
+vUdlNet,VUDLNET,t,1,1,VUDLNET,ADAM[Wn_e],"Udlandets finansielle nettoportefølje ift. DK, Kilde: ADAM[Wn_e]."
+vUdlNetRenter,VUDLNETRENTER,t,1,1,VUDLNETRENTER,ADAM[Tin_e],"Udlandets nettoformueindkomst ift. DK, Kilde: ADAM[Tin_e]"
+vUdlNFE,VUDLNFE,t,1,1,VUDLNFE,ADAM[Tfn_e],"Udlandets nettofordringserhvervelse, Kilde: ADAM[Tfn_e]"
+vUdlOmv,VUDLOMV,t,1,1,VUDLOMV,ADAM[Tfn_e]; ADAM[Wn_e],"Omvurderinger af udenlandsk nettoformue, Kilde: ADAM[Wn_e]-ADAM[Wn_e][-1]-ADAM[Tfn_e]"
+vUdlPas,VUDLPAS,"portf_,t",8,5,VUDLPAS__BANK,,"Udlandets finansielle passiver ift. DK, Kilde: jf. portfolio set."
+vUdlPasOmv,VUDLPASOMV,"portf_,t",7,1,VUDLPASOMV__BANK,,Omvurderinger på selskabernes finansielle passiver
+vUdlPasRenter,VUDLPASRENTER,"portf_,t",7,1,VUDLPASRENTER__BANK,,Samlet rente- og dividendeudskrivninger for finansielle og ikke-finansielle selskaber
+vUdlPensAfk,VUDLPENSAFK,t,1,1,VUDLPENSAFK,,Afkast fra pensionsformue EFTER SKAT for udlændinge.
+vUdlPensIndb,VUDLPENSINDB,t,1,1,VUDLPENSINDB,ADAM[Tpc_e_z],"Pensionsindbetalinger fra udlandet, Kilde: ADAM[Tpc_e_z]"
+vUdlPensUdb,VUDLPENSUDB,t,1,1,VUDLPENSUDB,ADAM[Typc_cf_e],"Pensionsudbetalinger til udlandet, Kilde: ADAM[Typc_cf_e]"
+vUdlUdbytteDirekte,VUDLUDBYTTEDIREKTE,t,1,1,VUDLUDBYTTEDIREKTE,,Udbytter til udenlandske direkte investeringer.
+vUdlUdbyttePortf,VUDLUDBYTTEPORTF,t,1,1,VUDLUDBYTTEPORTF,,Udbytter til udenlandske porteføljeaktier.
+vUdstedelser,VUDSTEDELSER,t,1,1,VUDSTEDELSER,ADAM[Tfs_cf_z]; ADAM[Tfs_cr_z],"Nettoudstedelser af aktier fra indenlandske selskaber, Kilde: ADAM[Tfs_cr_z]+ADAM[Tfs_cf_z]"
+vUrealiseretAktieOmv,VUREALISERETAKTIEOMV,"a_,t",103,101,VUREALISERETAKTIEOMV__0,,Skøn over endnu ikke realiserede kapitalgevinster på aktier.
+vVirkAkt,VVIRKAKT,"portf_,t",8,7,VVIRKAKT__BANK,,"Virksomhedernes finansielle aktiver, Kilde: jf. portfolio set."
+vVirkAktOmv,VVIRKAKTOMV,"portf_,t",7,6,VVIRKAKTOMV__BANK,,Omvurderinger på selskabernes finansielle aktiver
+vVirkAktRenter,VVIRKAKTRENTER,"portf_,t",7,6,VVIRKAKTRENTER__BANK,,Samlet formueindkomst fra aktiver for finansielle og ikke-finansielle selskaber
+vVirkBVT5aarSnit,VVIRKBVT5AARSNIT,t,1,1,VVIRKBVT5AARSNIT,,Centreret 5-års glidende gennemsnit af privat BVT.
+vVirkDriftPas,VVIRKDRIFTPAS,"i_,s_,t",27,27,VVIRKDRIFTPAS__IB__BOL,,Lån til gældsfinansierede investeringer.
+vVirkIndRest,VVIRKINDREST,t,1,0,VVIRKINDREST,,Rest-led i virksomheden indtjening.
+vVirkK,VVIRKK,"i_,s_,t",27,27,VVIRKK__IB__BOL,,Værdi af kapitalbeholdningen til investeringspris ekskl. husholdningernes boligkapital.
+vVirkNet,VVIRKNET,t,1,1,VVIRKNET,,"Virksomhedernes finansielle nettoportefølje, Kilde: jf. portfolio set."
+vVirkNetRenter,VVIRKNETRENTER,t,1,1,VVIRKNETRENTER,ADAM[Tin_cf]; ADAM[Tin_cr],"Samlet nettoformueindkomst for finansielle og ikke-finansielle selskaber, Kilde: ADAM[Tin_cr]+ADAM[Tin_cf]"
+vVirkNFE,VVIRKNFE,t,1,1,VVIRKNFE,ADAM[Tfn-Cf]; ADAM[Tfn_cr],"Samlet nettofordringserhvervelse for finansielle og ikke-finansielle selskaber, Kilde: ADAM[Tfn_cr]+ADAM[Tfn-Cf]"
+vVirkOevrigPas,VVIRKOEVRIGPAS,"portf_,t",8,4,VVIRKOEVRIGPAS__BANK,,Virksomhedernes gæld hverken knyttet til egenkapital eller drift.
+vVirkOevrigPasOmv,VVIRKOEVRIGPASOMV,"portf_,t",7,3,VVIRKOEVRIGPASOMV__BANK,,Omvurderinger på selskabernes gæld hverken knyttet til egenkapital eller drift
+vVirkOevrigPasRenter,VVIRKOEVRIGPASRENTER,"portf_,t",7,3,VVIRKOEVRIGPASRENTER__BANK,,Virksomhedernes renteudskrivninger for gæld hverken knyttet til egenkapital eller drift
+vVirkOevrigRealiseretOmv,VVIRKOEVRIGREALISERETOMV,t,1,1,VVIRKOEVRIGREALISERETOMV,,Skøn over virksomhedernes endnu ikke realiserede kapitalgevinster på finansielle aktiver ekskl. driftsgæld.
+vVirkOevrigUrealiseretOmv,VVIRKOEVRIGUREALISERETOMV,t,1,1,VVIRKOEVRIGUREALISERETOMV,,Skøn over virksomheders realiserede gevinst ved salg af finansielle aktiver ekskl. driftsgæld.
+vVirkOmv,VVIRKOMV,t,1,1,VVIRKOMV,ADAM[Tfn_cf]; ADAM[Tfn_cr]; ADAM[Wn_cf]; ADAM[Wn_cr],"Samlede omvurderinger af finansielle og ikke-finansielle selskabers nettoformue, Kilde: ADAM[Wn_cr]+ADAM[Wn_cf]-ADAM[Wn_cr][-1]-ADAM[Wn_cf][-1]-ADAM[Tfn_cr]-ADAM[Tfn_cf]"
+vVirkPas,VVIRKPAS,"portf_,t",8,5,VVIRKPAS__BANK,,"Virksomhedernes finansielle passiver, Kilde: jf. portfolio set."
+vVirkPasOmv,VVIRKPASOMV,"portf_,t",7,4,VVIRKPASOMV__BANK,,Omvurderinger på selskabernes finansielle passiver
+vVirkPasRenter,VVIRKPASRENTER,"portf_,t",7,4,VVIRKPASRENTER__BANK,,Samlet rente- og dividendeudskrivninger for finansielle og ikke-finansielle selskaber
+vWHh,VWHH,"a_,t",103,87,VWHH__0,,Årsløn pr. person.
+vWxDK,VWXDK,t,1,1,VWXDK,,Lønsum til grænsearbejdere.
+vX,VX,"x_,t",6,6,VX__XENE,ADAM[E<i>]; ADAM[E],"Eksport fordelt på eksportgrupper, Kilde: ADAM[E] eller ADAM[E<i>]"
+vXm,VXM,"x_,t",6,6,VXM__XENE,,Import til reeksport fordelt på eksportgrupper.
+vXtjenester,VXTJENESTER,t,1,1,VXTJENESTER,,Samlet tjenesteeksport inkl. søfart og turisme
+vXvarer,VXVARER,t,1,1,VXVARER,,Samlet vareeksport inkl. energi
+vXy,VXY,"x_,t",6,6,VXY__XENE,,Direkte eksport fordelt på eksportgrupper.
+vY,VY,"s_,t",12,12,VY__BOL,ADAM[X<i>]; ADAM[X],"Produktionsværdi fordelt på brancher, Kilde: ADAM[X] eller ADAM[X<i>]"

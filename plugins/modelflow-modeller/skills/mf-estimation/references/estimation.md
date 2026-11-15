@@ -184,6 +184,52 @@ Every `EstimatorBackend` instance exposes:
 | `c_params` | Sorted list of parameter placeholders found in the equation |
 | `endo_var` | The endogenous variable name |
 | `estimation_smpl` | The sample actually used (after NaN trimming for OLS) |
+| `af_df` | DataFrame `Actual`, `Fitted` over `smpl`, in left-hand-side units (static fit) |
+| `residuals_df` | DataFrame `Residuals` over `smpl` |
+
+## Fitted values: static and dynamic
+
+Take the ECM `dlog(cons) = c(1)*dlog(y) + c(2)*(log(cons(-1)) - log(y(-1)) - c(3))`
+tagged `<est=nls_lmfit, stoc, fit>`. The `fit` option makes Makemodel add a
+fitted equation (in `mm.normal_fit`, and part of the model):
+
+```
+FRML <FIT> CONS_FITTED = CONS(-1)*EXP( 1.09*(LOG(Y)-LOG(Y(-1))) - 1.17*(LOG(CONS(-1))-LOG(Y(-1)) + 0.514) ) $
+```
+
+`CONS_FITTED` is the right-hand side **without** the add factor `CONS_A`. It
+contains `CONS(-1)`, and where that value comes from decides what kind of fit you get.
+
+**Static (one-step-ahead) fit.** `CONS(-1)` and every other right-hand side value
+are the actual data in every period. Errors do not carry forward, and this is the
+fit the estimator minimized. Four ways to get it:
+
+```python
+est = mm.estimation_records[0]['estimator_object']
+est.af_df                        # Actual/Fitted in dlog(cons) units, estimation sample only
+est.residuals_df
+
+df.mfcalc(mm.normal_fit)         # CONS_FITTED in levels, from the data
+
+mfit = mm.mmodel
+base = mfit.insertModelVar(df)
+mfit(base, 1995, 2020, solver='res')     # or 'res_ng': all equations once on the input data
+```
+
+`mfcalc`, `res` and `res_ng` give the same `CONS_FITTED` (checked 2026-11-15).
+`res` evaluates every equation, so with `CONS_A = 0` the `CONS` column in the result
+is the fit too, not the actual data. Take the actual values from the input.
+
+**Dynamic fit.** In a normal multi-period solve, `CONS(-1)` is the model's own
+solved `CONS` from the period before (only the first period uses data), and in a
+full model `Y` is solved too. Errors accumulate, so this is a stricter test of
+how well the model tracks history.
+
+- Add factors set to the historical residuals (the usual baseline): solved `CONS`
+  = actual `CONS`, so `CONS_FITTED` is the static fit in levels.
+- Add factors zero: `CONS` = `CONS_FITTED`, the dynamic simulation path.
+- In a scenario: `CONS_FITTED` is the model's prediction before the judgement in
+  `CONS_A` is added.
 
 ## Makemodel integration
 

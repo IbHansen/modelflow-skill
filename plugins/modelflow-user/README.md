@@ -22,6 +22,7 @@ and explaining results, and making tables and charts.
 | `mf-attribution` | `totdif` (which shock) and `dekomp` (which input) |
 | `mf-reports` | `mpak.table`, `mpak.plot`, combining, PDF/LaTeX/HTML, stored reports |
 | `mf-variable-names` | Read and check names: MFMod mnemonics, FRB/US names, ModelFlow suffixes; parser script |
+| `mf-makro-names` | Read and find MAKRO (DREAM) names: prefixes, Danish words, GAMS indices, ModelFlow form; decoder script and name list |
 | `mf-ode-simulate` | Run ODE models (orbits, projectiles): the dataframe, events, checking the time step |
 | `mf-animate` | Animations of results in a notebook: 2-D, 3-D, scenarios unfolding; size and saving |
 | `mf-troubleshoot-run` | No effect, not converged, NaN, results that changed |

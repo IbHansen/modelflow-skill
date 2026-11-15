@@ -3,6 +3,8 @@ name: mf-estimation
 description: >
   This skill should be used when estimating ModelFlow equations: "estimate an
   equation", "<estimator=ols>", "<est=nls_lmfit>", "<smpl=...>", "OLS", "NLS",
+  "fitted values", "actual vs fitted", "residuals of the estimation",
+  "static or dynamic fit", "_FITTED",
   "lmfit", "EViews estimation", "c(1)", "coefficients", "param_names",
   "Estimate_ols", "Estimate_nls_lmfit", "with_defaults", "error correction",
   "estimation sample", "ST. constraints", "bounds on coefficients", "initial
@@ -64,6 +66,23 @@ ls = Estimate_nls_lmfit.with_defaults(input_df=df, smpl=(1995, 2020))
 Named coefficients instead of `c(n)`: `param_names=['lambda', 'beta']` (magic
 option or `estimator_kwargs={'param_names': [...]}`) allows `lambda(1)`,
 `beta(1)`.
+
+## Fitted values
+
+- **Static (one-step-ahead) fit** – every right-hand side value, lagged
+  endogenous included, is the actual data; this is the fit the estimator
+  minimized.
+  - `rec['estimator_object'].af_df` (Actual, Fitted) and `.residuals_df` –
+    in left-hand-side units (`dlog(cons)`, not `cons`), estimation sample only.
+  - In levels: tag the equation `fit` (`><est=ols, stoc, fit> ...`); Makemodel
+    adds `CONS_FITTED = <rhs without the add factor>` (`mm.normal_fit`). Then
+    `df.mfcalc(mm.normal_fit)`, or `mm.mmodel(base, solver='res')` / `'res_ng'`
+    (each equation once on the input data, no iteration). Both verified to match.
+    `res` also overwrites `CONS` with the fit when `CONS_A` is 0 – take actuals
+    from the input.
+- **Dynamic fit** – a normal multi-period solve: `CONS(-1)` is the model's own
+  solved value, so errors accumulate. With add factors set to the residuals,
+  solved `CONS` is actual and `CONS_FITTED` equals the static fit again.
 
 ## Traps
 

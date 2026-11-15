@@ -7,7 +7,7 @@ description: >
   "what is the ModelFlow name of this GAMS variable", "translate variable names",
   "map ADAM to MFMod", "name a new variable", or "which suffixes are reserved".
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Naming conventions
@@ -21,7 +21,7 @@ nothing in MFMod.
 | MFMod (World Bank) | EViews → `GrabWfModel` | `mf-variable-names` (modelflow-user), summary below |
 | FRB/US (Federal Reserve) | EViews / pyfrbus | `references/frbus.md` |
 | ADAM (Statistics Denmark) | Gekko `.frm` → `Makemodel(type_input='gekko')` | `references/adam.md` |
-| MAKRO (DREAM) | GAMS → `doable` + GDX | `references/makro.md` |
+| MAKRO (DREAM) | GAMS → `doable` + GDX | `mf-makro-names` (modelflow-user), translation side in `references/makro.md` |
 
 ## Pattern versus fact
 
@@ -66,6 +66,11 @@ price base, units, currency, sector, frequency and transformation. ADAM `fCp`
 (private consumption, chained volume) and MFMod `DNKNECONPRVTKN` describe the
 same idea but need a check of the base year and definition. Say when there is
 no exact counterpart.
+
+MAKRO to ADAM: DREAM's text often names the ADAM series behind the data
+(`qBNP` "BNP, Kilde: ADAM[fY]"); `mf-makro-names` lists them in the `adam`
+column of its name table. MAKRO `p`, `q`, `v` are growth- and inflation-adjusted,
+ADAM's are not.
 
 ## MFMod in short
 
