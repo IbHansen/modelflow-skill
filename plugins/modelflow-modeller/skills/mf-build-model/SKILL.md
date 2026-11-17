@@ -3,7 +3,8 @@ name: mf-build-model
 description: >
   This skill should be used when creating a ModelFlow model from equations and data:
   "build a model", "new model", "Makemodel", "%%Makemymodel", "markdown model",
-  "model from equations", "model(text)", "Mexplode", "type_input", "string of
+  "model from equations", "model(text)", "Mexplode", "type_input",
+  "type_input='single'", "one equation over several lines", "string of
   equations", "equations from a file", "eq_start", "eq_end", "separator",
   "comment_start", "transform function", "other model format", "replacements",
   "input_df", "save the model", "modeldump", "pcim", "var_description", "equpdate",
@@ -33,7 +34,7 @@ normalized equations.
 | --- | --- | --- |
 | markdown: documentation with model lines | `'markdown'` (default) | lines starting with `>` |
 | a plain string of equations | `'modelflow'` | every line (or `FRML ... $` statements) |
-| one-line FRML string | `'single'` | `FRML ... $` statements on one line |
+| one equation over several lines | `'single'` | the whole text, lines joined with a space |
 
 **Trap:** a plain string passed with the default `type_input='markdown'` has no
 `>` lines, so the model is silently empty. Pass `type_input='modelflow'`.
@@ -79,7 +80,6 @@ mm = Makemodel(text, type_input='modelflow')
 
 - Options go first on the line (`<stoc> ...`); `FRML` and `$` are optional.
 - `FRML ... $` statements may span several lines; the `$` ends each one.
-- `type_input='single'`: all statements on one line, each `FRML ... $`.
 - Use a string model for generated equations, files read from disk
   (`Makemodel(open('model.frm').read(), type_input='modelflow')`), and scripts;
   use markdown when the model is documented alongside the equations.
@@ -87,6 +87,30 @@ mm = Makemodel(text, type_input='modelflow')
 Verified: the string above gives `AGR_Y`, `IND_Y`, `SER_Y` with add factors and
 fix variables, `GDP = (AGR_Y+IND_Y+SER_Y)` and the normalized `CONS` equation –
 the same as the markdown form with `>` on each line.
+
+### One equation: `type_input='single'`
+
+The whole text is one equation: the lines are joined with a space, so a long
+equation – or its options on a line of their own – can be split freely. No `>`,
+`FRML` or `$` needed. Handy for estimating one equation at a time:
+
+```python
+from functools import partial
+makeeq = partial(Makemodel, type_input='single', estimator_classes={'ls': ls})
+
+mcon = makeeq('''<stoc, fit, est=ls>
+dlog(con) = -lambda*(log(con(-1))-log(y(-1))-log(abs(beta_longterm(1))))
+            + beta_shortterm(10)*dlog(y)   st. lambda=0.3''')
+```
+
+Verified 2026-11-17 (ModelFlow 2.94):
+- one equation over several lines, with or without its options on their own
+  line – works (2.93 and earlier glued a line-ending `<...>` tag to the next
+  line and failed with "FRML does not match required pattern");
+- `FRML ... $` statements, one or several, on one line or several – work, the
+  `$` separates them;
+- two plain equations on separate lines – fail with a `SyntaxError`, as they
+  are joined into one. Use `type_input='modelflow'` for several equations.
 
 ## Equations in any other format: separators, comments, transform
 
