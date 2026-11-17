@@ -4,7 +4,8 @@ description: >
   This skill should be used when estimating ModelFlow equations: "estimate an
   equation", "<estimator=ols>", "<est=nls_lmfit>", "<smpl=...>", "OLS", "NLS",
   "fitted values", "actual vs fitted", "residuals of the estimation",
-  "static or dynamic fit", "_FITTED", "FRML <est=...>",
+  "static or dynamic fit", "_FITTED", "af_df", "af_level_df", "actual_fitted",
+  "fit of the level when the equation is in dlog", "FRML <est=...>",
   "lmfit", "EViews estimation", "c(1)", "coefficients", "param_names",
   "Estimate_ols", "Estimate_nls_lmfit", "with_defaults", "error correction",
   "estimation sample", "ST. constraints", "bounds on coefficients", "initial
@@ -85,7 +86,18 @@ option or `estimator_kwargs={'param_names': [...]}`) allows `lambda(1)`,
   minimized.
   - `rec['estimator_object'].af_df` (Actual, Fitted) and `.residuals_df` –
     in left-hand-side units (`dlog(cons)`, not `cons`), estimation sample only.
-  - In levels: tag the equation `fit` (`><est=ols, stoc, fit> ...`); Makemodel
+    Plain column names, because the left-hand side can be an expression.
+  - `.af_level_df` – the variable itself (`CONS`, not `dlog(cons)`): columns
+    `CONS__Actual`, `CONS__Fitted`, `CONS__Residuals` (variable name + `__`),
+    estimation sample only, residual in the units of `CONS`. It is the estimated
+    equation solved for the variable and evaluated with the actual lags, so it
+    needs no `fit` tag. When the left-hand side is the variable itself it holds
+    the numbers of `af_df`/`residuals_df`. `None` (with a message) if the
+    equation can't be solved for the variable. All equations at once:
+    `mm.actual_fitted()` (columns `(CONS, Actual)` ...; `level=False` gives the
+    left-hand-side units). `plot_actual_vs_fitted(est, level=True)` draws it,
+    and the estimation report shows it too.
+  - In levels for any period: tag the equation `fit` (`><est=ols, stoc, fit> ...`); Makemodel
     adds `CONS_FITTED = <rhs without the add factor>` (`mm.normal_fit`). Then
     `df.mfcalc(mm.normal_fit)`, or `mm.mmodel(base, solver='res')` / `'res_ng'`
     (each equation once on the input data, no iteration). Both verified to match.
@@ -105,11 +117,14 @@ FRML <est=ols,       stoc, fit, smpl=1995 2020> inv = c(1) + c(2)*y $
 '''
 mm = Makemodel(text, eq_start='FRML', eq_end='$', input_df=df)
 
-for rec in mm.estimation_records:          # 1. static fit, left-hand-side units
+for rec in mm.estimation_records:          # 1. static fit, estimation sample
     est = rec['estimator_object']
-    print(est.endo_var, est.af_df, est.residuals_df)
+    print(est.endo_var, est.af_df, est.residuals_df)   # left-hand-side units
+    print(est.af_level_df)                             # CONS__Actual, CONS__Fitted, CONS__Residuals
 
-mfit = mm.mmodel                           # 2. static fit in levels
+mm.actual_fitted()                         # all equations, columns (CONS, Actual) ...
+
+mfit = mm.mmodel                           # 2. static fit in levels, any period
 base = mfit.insertModelVar(df)
 r = mfit(base, 1995, 2020, solver='res_ng')
 r[['CONS_FITTED', 'INV_FITTED']]
@@ -122,7 +137,11 @@ CONS_FITTED = CONS(-1)*EXP( 1.091*(LOG(Y)-LOG(Y(-1))) - 1.167*(LOG(CONS(-1))-LOG
 INV_FITTED  = -0.583 + 0.204*Y
 ```
 
-`af_df` is `dlog(cons)` for the first equation and `inv` for the second.
+`af_df` is `dlog(cons)` for the first equation and `inv` for the second;
+`af_level_df` is `CONS` and `INV`. Over the estimation sample
+`af_level_df['CONS__Fitted']` equals `CONS_FITTED` from `res_ng` (checked
+2026-11-17 on the toy model consumption equation,
+`modeltest/estimation/toymodel_consumption_fit.py` in the modelflow repo).
 
 ## Traps
 

@@ -186,6 +186,8 @@ Every `EstimatorBackend` instance exposes:
 | `estimation_smpl` | The sample actually used (after NaN trimming for OLS) |
 | `af_df` | DataFrame `Actual`, `Fitted` over `smpl`, in left-hand-side units (static fit) |
 | `residuals_df` | DataFrame `Residuals` over `smpl` |
+| `af_level_df` | DataFrame `<VAR>__Actual`, `<VAR>__Fitted`, `<VAR>__Residuals` over `smpl` for the variable itself (`CONS` when the left-hand side is `DLOG(CONS)`), static fit; `None` if the equation can't be solved for the variable |
+| `lhs_is_transformed` | True when the left-hand side is not just the variable (`DLOG(CONS)`, `LOG(CONS/P)` ...) |
 
 ## Fitted values: static and dynamic
 
@@ -202,12 +204,14 @@ contains `CONS(-1)`, and where that value comes from decides what kind of fit yo
 
 **Static (one-step-ahead) fit.** `CONS(-1)` and every other right-hand side value
 are the actual data in every period. Errors do not carry forward, and this is the
-fit the estimator minimized. Four ways to get it:
+fit the estimator minimized. Five ways to get it:
 
 ```python
 est = mm.estimation_records[0]['estimator_object']
 est.af_df                        # Actual/Fitted in dlog(cons) units, estimation sample only
 est.residuals_df
+est.af_level_df                  # CONS__Actual/CONS__Fitted/CONS__Residuals, estimation sample only
+mm.actual_fitted()               # af_level_df of all equations, columns (CONS, Actual) ...
 
 df.mfcalc(mm.normal_fit)         # CONS_FITTED in levels, from the data
 
@@ -217,6 +221,10 @@ mfit(base, 1995, 2020, solver='res')     # or 'res_ng': all equations once on th
 ```
 
 `mfcalc`, `res` and `res_ng` give the same `CONS_FITTED` (checked 2026-11-15).
+`af_level_df` needs no `fit` tag – it solves the baked equation for `CONS` with
+`mfcalc` – and over the estimation sample `CONS__Fitted` equals `CONS_FITTED`
+(checked 2026-11-17). Only `af_level_df` has the `CONS__` prefix: `af_df` keeps
+plain `Actual`/`Fitted`, as its left-hand side can be an expression.
 `res` evaluates every equation, so with `CONS_A = 0` the `CONS` column in the result
 is the fit too, not the actual data. Take the actual values from the input.
 

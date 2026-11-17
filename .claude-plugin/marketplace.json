@@ -23,7 +23,7 @@
       "name": "modelflow-modeller",
       "source": "./plugins/modelflow-modeller",
       "description": "For people who build and maintain models in ModelFlow: equations, FRML options, Makemodel, estimation, data, structure, solver tuning, importing and debugging.",
-      "version": "0.3.3"
+      "version": "0.3.4"
     }
   ]
 }
