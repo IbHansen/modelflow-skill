@@ -5,9 +5,12 @@ description: >
   "which solver", "solver=", "sim", "sim_ng", "newton", "newton_fbmin_ng",
   "newtonstack", "forward-looking", "leads", "Fair-Taylor", "alfa", "damping",
   "max_iterations", "relconv", "absconv", "nonlin", "jacobian=", "ljit", "speed up
-  the solve", "not converged", or "the solve is slow".
+  the solve", "not converged", "the solve is slow", "factorizer", "permc_spec",
+  "SuperLU", "UMFPACK", "PARDISO", "MUMPS", "normal equations", "iparm", "split",
+  "stacked Jacobian", "out of memory in the stacked solve", or "can not solve this
+  linear system".
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Choosing and tuning the solver
@@ -79,6 +82,20 @@ Newton (`newton_ng`, `newton_fbmin_ng`, stacked):
 | `newton_absconv` | 0.001 | absolute tolerance on `___RES` residuals |
 | `forcenum` | False | numerical instead of symbolic derivatives |
 
+Stacked Newton (`newtonstack_ng`, forward-looking models):
+
+| Option | Default | Effect |
+| --- | --- | --- |
+| `split` | 1 | prolog and epilog solved as period loops, only the core stacked; `0` stacks the whole model |
+| `factorizer` | `None` (SuperLU) | the linear solver of the Newton step: `'umfpack'`, `'pardiso'`, `'normal'`, `'mumps'`, a function, or `modelfactorize.normal(iparm=..., krylov=..., refine_tol=...)` |
+| `permc_spec` | `'NATURAL'` (stacked) | SuperLU ordering; `'COLAMD'` for some cut spans; never `'MMD_AT_PLUS_A'` |
+| `newton_reset` | False | keep the stacked factorization between calls; each further shock costs only back-substitutions |
+
+The factorizer decides whether a large stacked model can be solved at all: SuperLU for
+banded systems such as FRB/US, `'normal'` (normal equations with PARDISO) for very large
+ones such as MAKRO, `'mumps'` when PARDISO is too inaccurate. Choices, options,
+measurements and a decision sequence: `references/factorization.md`.
+
 ## A tuning sequence
 
 1. Solve a short span with `silent=0, stats=True`.
@@ -87,6 +104,8 @@ Newton (`newton_ng`, `newton_fbmin_ng`, stacked):
 3. Slow → `newton_fbmin_ng`, then `ljit=True` for repeated runs.
 4. Newton diverges → `newtonalfa=0.5, newtonnodamp=5`, lower `nonlin`, or
    `jacobian='gauss'`.
+4a. Stacked solve runs out of memory, is slow in the factorization, or raises "can not
+   solve this linear system" → change `factorizer`, see `references/factorization.md`.
 5. Compare the solutions of two solvers on the scenario before trusting a switch;
    they agree to about `relconv`.
 
