@@ -11,7 +11,7 @@ description: >
   "estimation sample", "ST. constraints", "bounds on coefficients", "initial
   values", or building a model where some equations are estimated.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Estimating equations while building a model
@@ -65,6 +65,7 @@ mm = Makemodel(text, eq_start='FRML', eq_end='$', input_df=df)
 | `ols` | `Estimate_ols` | linear in the coefficients (statsmodels) |
 | `nls_lmfit` | `Estimate_nls_lmfit` | non-linear, e.g. error-correction forms (lmfit) |
 | `nls_eviews` | `Estimate_nls_eviews` | non-linear through an EViews installation |
+| `r_lm` / `r_nls` | `Estimate_r_lm` / `Estimate_r_nls` | in R: lm, Newey-West HAC, ivreg (2SLS), nls, nlsLM – see `mf-r-estimation`; R setup in `mf-r-install` |
 
 Custom settings through a factory, referenced by name. `Makemodel` finds it in
 the caller's namespace (or pass `estimator_namespace={'ls': ls}`):
