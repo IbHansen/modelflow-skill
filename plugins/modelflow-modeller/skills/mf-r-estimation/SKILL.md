@@ -22,8 +22,8 @@ gets plain data columns and fits them. The classes are ordinary estimator
 backends: everything in `mf-estimation` works the same way: `coef_ser`,
 `tvalues`, `af_df`, `af_level_df`, the HTML report and Makemodel tags.
 
-Needs R plus the R packages. See `mf-r-install` (normally
-`MODELFLOW_RSCRIPT` pointing at the conda environment `mfr`). Ships with the
+Needs R (and RStudio) installed from their own installers, plus four R
+packages; see `mf-r-install`. Ships with the
 ModelFlow release after 2.94; until then use a source checkout.
 
 ## Methods

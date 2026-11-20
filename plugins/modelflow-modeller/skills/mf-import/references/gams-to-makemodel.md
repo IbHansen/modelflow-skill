@@ -36,7 +36,7 @@ code symbolically. Instead:
 
 ## The data pipeline (`modelgrabgdx.py`)
 
-Requires GAMS installed and `pip install "gamsapi[transfer]"`.
+Requires `pip install "gamsapi[transfer]" gamspy-base` (pandas < 3.1), no GAMS installation: `modelgrabgdx` reads with the GDX library of `gamspy-base` (from the release after 2.94; with 2.94 pass `gams_dir=gamspy_base.directory`).
 
 ```python
 from modelgrabgdx import GdxStaticDataset

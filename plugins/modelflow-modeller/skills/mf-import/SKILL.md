@@ -19,7 +19,7 @@ metadata:
 | World Bank macro text | `modelmacrograb.GrabMacroModel` | model, no Excel needed |
 | Gekko `.frm` text | `Makemodel(text, type_input='gekko')` | equations |
 | Gekko databank `.gbk` | `modelgrabgekkobank.read_gbk(path)` | annual data only |
-| GAMS `.gdx` | `modelgrabgdx.model_grab_gdx(files, gams_dir=...)` | data (scenarios bundled); needs `gamsapi[transfer]` and GAMS |
+| GAMS `.gdx` | `modelgrabgdx.model_grab_gdx(files)` | data (scenarios bundled); needs `pip install "gamsapi[transfer]" gamspy-base`, no GAMS installation |
 | Dynare `.mod` | `model_dynare.grap_modfile` | main, residual and parameter models |
 | Excel workbook | `modelgrabexcel.getexcelmodel(name)` | cell formulas as equations; array formulas not supported |
 

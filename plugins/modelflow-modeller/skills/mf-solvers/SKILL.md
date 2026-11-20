@@ -6,11 +6,12 @@ description: >
   "newtonstack", "forward-looking", "leads", "Fair-Taylor", "alfa", "damping",
   "max_iterations", "relconv", "absconv", "nonlin", "jacobian=", "ljit", "speed up
   the solve", "not converged", "the solve is slow", "factorizer", "permc_spec",
-  "SuperLU", "UMFPACK", "PARDISO", "MUMPS", "normal equations", "iparm", "split",
+  "SuperLU", "UMFPACK", "PARDISO", "MUMPS", "normal equations", "iparm", "refine_tol",
+  "factorizer as a dict", "the loaded model does not use my factorizer", "split",
   "stacked Jacobian", "out of memory in the stacked solve", or "can not solve this
   linear system".
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # Choosing and tuning the solver
@@ -87,7 +88,7 @@ Stacked Newton (`newtonstack_ng`, forward-looking models):
 | Option | Default | Effect |
 | --- | --- | --- |
 | `split` | 1 | prolog and epilog solved as period loops, only the core stacked; `0` stacks the whole model |
-| `factorizer` | `None` (SuperLU) | the linear solver of the Newton step: `'umfpack'`, `'pardiso'`, `'normal'`, `'mumps'`, a function, or `modelfactorize.normal(iparm=..., krylov=..., refine_tol=...)` |
+| `factorizer` | `None` (SuperLU) | the linear solver of the Newton step: `'umfpack'`, `'pardiso'`, `'normal'`, `'mumps'`, a dict with options such as `{'method': 'normal', 'iparm': {1: 13}, 'refine_tol': 1e-6}` (saved with the model by `modeldump`), a function, or `modelfactorize.normal(...)` |
 | `permc_spec` | `'NATURAL'` (stacked) | SuperLU ordering; `'COLAMD'` for some cut spans; never `'MMD_AT_PLUS_A'` |
 | `newton_reset` | False | keep the stacked factorization between calls; each further shock costs only back-substitutions |
 
