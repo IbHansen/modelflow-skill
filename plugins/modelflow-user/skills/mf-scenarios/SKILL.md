@@ -8,7 +8,7 @@ description: >
   the model", "keep the solution", "run several scenarios", "targeting",
   "invert", "hit a target path", "instruments", "set_smpl", or "mfcalc".
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Running scenarios

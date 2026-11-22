@@ -8,7 +8,7 @@ description: >
   "nbody_template", "NO{list}", "all the other elements", "dS/dt", or turning physics,
   epidemiology (SIR) or growth equations written as derivatives into a ModelFlow model.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # ODE models: from laws of motion to Runge–Kutta equations
@@ -69,8 +69,9 @@ derivative) – a bordered table in a notebook, text elsewhere; `report='text'` 
 - **Exogenous variables** (masses, `G`, gravity, drag constants) are read at each
   stage's own time: start of step → `E(-1)`, end → `E`, in between → interpolated.
   They may vary over the rows.
-- **Auxiliaries that a derivative needs** are recomputed at every stage; they must not
-  be simultaneous among themselves. An auxiliary no derivative needs (a reporting
+- **Auxiliaries that a derivative needs** are recomputed at every stage. If they are
+  simultaneous among themselves (an algebraic loop), every stage holds a simultaneous
+  block: experimental, solve with `solver='newton_ng'` (see Implicit methods). An auxiliary no derivative needs (a reporting
   variable such as kinetic energy) is computed once at the end of the step, as written.
 - **A self-referencing auxiliary** (`T = T(-1) + 1`) is an error: make it a state
   (`<ODE> T = 1`).
@@ -79,7 +80,7 @@ derivative) – a bordered table in a notebook, text elsewhere; `report='text'` 
 ## Methods
 
 `method=` is `'euler'` (1st order), `'heun'`, `'midpoint'`, `'ralston'` (2nd),
-`'rk4'` (4th, the default), or your own explicit Butcher tableau:
+`'rk4'` (4th, the default), the implicit methods below, or your own Butcher tableau:
 
 ```python
 from fractions import Fraction
@@ -87,8 +88,36 @@ kutta3 = dict(a=[[], [0.5], [-1, 2]], b=[Fraction(1, 6), Fraction(2, 3), Fractio
 text = ode_transform(laws, method=kutta3)
 ```
 
-`a` is strictly lower triangular (explicit methods only). The tables are in
-`modelode.BUTCHER`.
+A strictly lower triangular `a` is an explicit method. The tables are in
+`modelode.BUTCHER`; `modelode.is_implicit(tableau)` tells which kind a tableau is.
+
+## Implicit methods and simultaneous steps (experimental, since 2026-11-22)
+
+For **stiff** systems (a fast and a slow process together, e.g. dY/dt = -1000*(Y - g(t))),
+explicit methods blow up unless DT is tiny. Implicit methods are stable:
+
+| `method=` | Order |
+| --- | --- |
+| `'backward_euler'` | 1 |
+| `'trapezoid'` (Crank–Nicolson), `'implicit_midpoint'` | 2 |
+| `'radau3'` (Radau IIA, 2 stages) | 3 |
+
+A stage then uses its own derivative, so each period holds a simultaneous block.
+`ode_transform` prints a note. Solve with
+
+```python
+m(df, 1, n, solver='newton_ng', relconv=1e-12)
+```
+
+- the default solver picks Gauss-Seidel, which diverges when DT × stiffness > 1;
+- legacy `solver='newton'` stops at an absolute change of 0.001 (`newton_absconv`): far
+  above the error of the method;
+- `newton_ng` with its default `relconv` leaves errors of order 1e-9; tighten it, or use
+  `nonlin=True` (fresh Jacobian every iteration).
+
+Checked 2026-11-22 (`modeltest/odetest/ode_implicit_test.py`): on the stiff example
+(K = 1000, DT = 0.01) euler and rk4 overflow; backward_euler, trapezoid, implicit_midpoint
+and radau3 match `solve_ivp(method='Radau')` to 1e-6 to 3e-9.
 
 ## What is generated
 
@@ -173,7 +202,6 @@ All problems are listed before the exception:
 | `DT inside an <ODE> equation` | write the derivative, not the step |
 | `DT in an equation that is not a step` | `DT` only as `S = S(-1) + DT*f` |
 | `auxiliary X refers to itself` | make it a state: `<ODE> X = ...` |
-| `auxiliaries needed by a derivative are simultaneous` | solve the loop by hand or make one of them a state |
 | `X is determined twice` | one equation per variable |
 | `generated names already exist` | rename variables ending in `__S1`, `__K1`, ... |
 | `no state equation found` | tag the derivatives `<ODE>` |

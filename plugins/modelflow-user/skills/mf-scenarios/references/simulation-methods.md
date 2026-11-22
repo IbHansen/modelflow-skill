@@ -53,16 +53,17 @@ When non-convergence happens, the standard diagnostic ladder is:
 The model's *active sample* governs what tables, plots, and the `[]` selector show. Two methods manage it:
 
 ```python
-mpak.smpl(2025, 2040)            # set the active sample (persistent)
-mpak.smpl()                      # reset to the full range
+mpak.smpl(2025, 2040)            # set the active sample from now on
+mpak.smpl()                      # no arguments: returns the active sample, changes nothing
+                                 # (only the first time does it set the widest range)
 
 with mpak.set_smpl(2025, 2040):  # set temporarily inside a with-block
     mpak['*NYGDP*'].plot()
 ```
 
-`.set_smpl(...)` as a context manager is the right pattern when temporarily restricting display — it restores the previous sample on exit even if an exception fires.
+`.set_smpl(...)` is a context manager: it restores the previous sample when the with-block ends, even if an exception fires. Called without `with`, as `mpak.set_smpl(2025, 2040)`, it does nothing and gives no warning. Use `.smpl()` to change the sample from now on.
 
-Note this is purely about *display*. Solve windows are controlled by the `start` / `end` arguments to the model call, not by `.smpl()`.
+Solve windows are controlled by the `start` / `end` arguments to the model call, not by `.smpl()`. But a solve sets the active sample: `mpak(df, 2025, 2050)` calls `mpak.smpl(2025, 2050)`, so afterwards tables and plots show the solve span until `.smpl()` changes it. To show a shorter range after a solve, call `mpak.smpl(...)` after the solve, or use `with mpak.set_smpl(...)`.
 
 ---
 

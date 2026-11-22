@@ -4,9 +4,10 @@ description: >
   This skill should be used when preparing data for a ModelFlow model: "databank",
   "dataframe for the model", "index", "annual or quarterly", "missing variables",
   "NaN", "starting values", "mfcalc", "upd", "insertModelVar", "baseline data",
-  "matrix variable", or when a model solves to zeros or NaN because of its data.
+  "matrix variable", "smpl", "set_smpl", "current_per", "time range of tables
+  and charts", or when a model solves to zeros or NaN because of its data.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Data for a model
@@ -23,6 +24,28 @@ A model solves on a pandas DataFrame: rows are periods, columns are variables.
   `df.columns = df.columns.str.upper()`.
 - **Values**: float. Integer columns of `_X` / `_D` are converted when fixing.
 - Lags need history: solving from 2020 with `X(-4)` reads 2016–2019.
+
+## The model's time range: `smpl` and `set_smpl`
+
+`mmodel.current_per` is the time range that tables, charts and `mmodel['...']`
+use when no period is given.
+
+```python
+mmodel.smpl(2025, 2040)              # sets current_per from now on
+mmodel.smpl()                        # no arguments: returns current_per (sets the
+                                     # widest range the lags and leads allow if none)
+
+with mmodel.set_smpl(2025, 2040):    # only inside the with block
+    mmodel['#Headline']
+# current_per is back to what it was, also after an exception
+```
+
+`set_smpl` is a context manager. Called without `with`, as
+`mmodel.set_smpl(2025, 2040)`, it does nothing and gives no warning. Use `smpl`
+to change the range from now on, and `with set_smpl` to change it for a few lines.
+
+A solve sets the range too: `mmodel(df, 2030, 2129)` calls `smpl(2030, 2129)`,
+so after a solve tables and charts show the solve span until `smpl` changes it.
 
 ## Missing variables
 

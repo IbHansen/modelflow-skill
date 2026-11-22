@@ -24,7 +24,7 @@ solvers, importing models from EViews, Gekko, GAMS or Excel, and debugging.
 | `mf-estimation` | `<est=ols>`, `<est=nls_lmfit>`, `<smpl=...>`, estimator factories |
 | `mf-r-estimation` | Estimating in R: `<est=r_lm>`, `<est=r_nls>`, `Estimate_r` with lm, HAC, ivreg (2SLS), nls, nlsLM; R's output and diagnostics |
 | `mf-r-install` | Setting up R for ModelFlow: own conda environment (`mfr`) or CRAN R, `MODELFLOW_RSCRIPT`, R packages |
-| `mf-data` | The dataframe, missing variables, `upd`, `mfcalc`, add factors from history |
+| `mf-data` | The dataframe, the time range (`smpl`, `with set_smpl`), missing variables, `upd`, `mfcalc`, add factors from history |
 | `mf-structure` | Prolog/core/epilog, feedback set, graphs, convergence problems, stability |
 | `mf-solvers` | Which solver, and tuning (`alfa`, `jacobian`, `nonlin`, `ljit` ...) |
 | `mf-naming` | Naming conventions of ADAM, MAKRO, FRB/US and MFMod; names on import; naming new variables |
