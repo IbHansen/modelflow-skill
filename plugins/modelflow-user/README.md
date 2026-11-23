@@ -34,17 +34,30 @@ and explaining results, and making tables and charts.
 
 The plugin also starts an MCP server, `modelflow`, that keeps models in memory
 between calls, so Claude can load a model once and then run and compare
-scenarios directly:
+scenarios directly. It works the standard ModelFlow way: scenarios are kept in
+`model.keep_solutions` (solved with `keep='name'`, the baseline as `'Baseline'`),
+and tables, charts, attribution and reports come from ModelFlow's own
+`model.table`, `model.plot`, `model.get_att` and `model.reports`, through the
+`modelinspect` module that the JupyterLab Model Workbench also uses. Every result
+ends with the notebook code that gives the same output.
 
 | Tool | Use |
 | --- | --- |
 | `load_model` | Load a `.pcim` (path, URL or repository name) and solve the baseline |
 | `find_variables` | Search by name pattern, `!description` or `#group` |
 | `explain_variable` | Description, equation, options, where it is used |
-| `run_scenario` | Apply `upd` text and solve; shows the headline effects |
-| `show_results` | Levels, differences, percent differences or growth, chosen periods |
-| `list_models` | Loaded models and their scenarios |
+| `dependencies` | Direct inputs and users of a variable, and links further out |
+| `run_scenario` | Apply `upd` text, solve and keep; shows the headline effects |
+| `show_results` | `model.table` with any datatype (`growth`, `difpctlevel`, `diflevel` ...), scenarios and periods |
+| `plot_results` | `model.plot` charts saved as PNG files |
+| `attribution` | `model.get_att` for any scenario against any reference |
+| `list_reports`, `show_report`, `save_report` | Reports stored with the model (`model.reports`); a report as text and a self-contained HTML page |
+| `list_models` | Loaded models, kept solutions and reports |
 | `environment_status`, `list_environments`, `select_environment` | Which conda environment the server uses |
+
+Charts and report pages are written to `modelflow_output` in the working folder
+(`out_dir` changes it). The server needs a ModelFlow version that includes
+`modelinspect.py`.
 
 The server runs in the Miniforge environment `modelflow`, which needs ModelFlow
 and the `mcp` package:
