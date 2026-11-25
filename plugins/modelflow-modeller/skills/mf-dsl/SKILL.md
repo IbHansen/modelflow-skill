@@ -48,6 +48,12 @@ Callable in an equation (evaluated by the solver):
 `LOGIT_INVERSE`, `NORMCDF`, `CLOGNORM`, `QGAMMA`, `SUM_EXCEL`, `RECODE`, plus any
 function passed with `funks=[...]`.
 
+`RECODE(condition, yes, no)` gives `yes` when the condition holds, else `no`. Only the
+chosen branch is evaluated, so a branch can guard the other: `RECODE(X>0, LOG(X), 0)`
+works when `X<=0`. This holds in ModelFlow later than 2.96; up to 2.96 both branches
+are evaluated and the guard fails with a math error. A `recode` passed in `funks=` is
+an ordinary function call, where both branches are evaluated.
+
 Shorthands that must be **normalized away** before solving: `DLOG(X)`,
 `DIFF(X)`, `MOVAVG(X,n)`, `PCT_GROWTH(X)`. `Makemodel`, `%%Makemymodel` and
 `df.mfcalc` rewrite them (`DLOG(X)` → `LOG(X)-LOG(X(-1))`). A plain `model(text)`
