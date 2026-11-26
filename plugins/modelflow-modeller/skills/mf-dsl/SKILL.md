@@ -7,7 +7,7 @@ description: >
   can I use", "LIST", "DO ... ENDDO", "sum(", "user function", "funks", or when an
   equation will not parse.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # The ModelFlow equation language
@@ -50,7 +50,7 @@ function passed with `funks=[...]`.
 
 `RECODE(condition, yes, no)` gives `yes` when the condition holds, else `no`. Only the
 chosen branch is evaluated, so a branch can guard the other: `RECODE(X>0, LOG(X), 0)`
-works when `X<=0`. This holds in ModelFlow later than 2.96; up to 2.96 both branches
+works when `X<=0`. This holds from ModelFlow 2.98; up to 2.97 both branches
 are evaluated and the guard fails with a math error. A `recode` passed in `funks=` is
 an ordinary function call, where both branches are evaluated.
 

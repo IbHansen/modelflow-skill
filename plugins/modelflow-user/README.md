@@ -20,7 +20,7 @@ and explaining results, and making tables and charts.
 | `mf-scenarios` | `upd`, solving and keeping scenarios, fixing, add factors |
 | `mf-results` | Differences from baseline, `keep_plot`, getting numbers out |
 | `mf-attribution` | `totdif` (which shock) and `dekomp` (which input) |
-| `mf-reports` | `mpak.table`, `mpak.plot`, combining, PDF/LaTeX/HTML, stored reports |
+| `mf-reports` | `mpak.table`, `mpak.plot`, combining, PDF/LaTeX/HTML, stored reports, `reportdump`/`reportload` (.rsim files) |
 | `mf-variable-names` | Read and check names: MFMod mnemonics, FRB/US names, ModelFlow suffixes; parser script |
 | `mf-makro-names` | Read and find MAKRO (DREAM) names: prefixes, Danish words, GAMS indices, ModelFlow form; decoder script and name list |
 | `mf-ode-simulate` | Run ODE models (orbits, projectiles): the dataframe, events, checking the time step |

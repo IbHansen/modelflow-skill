@@ -208,7 +208,7 @@ mpak.add_report(small)                   # stored in mpak.reports['small_report'
 new = mpak.get_report('small_report')    # rebuilds against current .basedf/.lastdf
 ```
 
-`{cty_name}` is a string-substitution placeholder ModelFlow expands from model metadata. `mpak.reports` is part of model state and is preserved across `modeldump` / `modelload`, so stored reports survive disk round-trips.
+`{cty_name}` is a string-substitution placeholder ModelFlow expands from model metadata. `mpak.reports` is part of model state and is preserved across `modeldump` / `modelload`, so stored reports survive disk round-trips (`modeldump(..., reports=False)` leaves them out). From 2.98, `mpak.reportdump('file')` / `other.reportload('file')` move the definitions between models through a `.rsim` file; see `mf-reports`.
 
 Standard scenario-then-report workflow:
 
